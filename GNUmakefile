@@ -85,7 +85,7 @@ TEMPLATES += PSI/Db/iocAdminVxWorks.substitutions
 
 ############ SCRIPTS #########
 SCRIPTS += PSI/startup.cmd
-
+SCRIPTS += PSI/cfg/iocStats.archtmp
 
 ############ QT screens ##########
 QT += PSI/qt/iocStats.ui
