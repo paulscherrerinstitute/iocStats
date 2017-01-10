@@ -20,11 +20,6 @@ ifeq (mingw,$(findstring mingw, $(T_A)))
   POSIX=NO
 endif
 
-# For Linux soruce files cn be located in Linux, posix or default
-# folder in following order: Linux > posix > default
-
-USR_CPPFLAGS_Linux += -I$(PWD)/iocStats/devIocStats/os/Linux -I$(PWD)/iocStats/devIocStats/os/posix -I$(PWD)/iocStats/devIocStats/os/default
-
 SOURCES_Linux += iocStats/devIocStats/os/Linux/osdCpuUsage.c
 SOURCES_Linux += iocStats/devIocStats/os/Linux/osdCpuUtilization.c
 SOURCES_Linux += iocStats/devIocStats/os/Linux/osdFdUsage.c
@@ -63,6 +58,7 @@ SOURCES_Linux += iocStats/devIocStats/os/default/osdBootInfo.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdSystemInfo.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdHostInfo.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/default/osdPIDInfo.c
+
 ############# OSI sources #############
 SOURCES += iocStats/devIocStats/devIocStatsAnalog.c
 SOURCES += iocStats/devIocStats/devIocStatsString.c
