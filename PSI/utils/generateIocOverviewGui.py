@@ -23,20 +23,19 @@ def generate_panel(items,
         outfile: outputfile
     """
     ioc_ui_str = """
-                <?xml version="1.0" encoding="UTF-8"?>
-                <item>
+                <item row="{0}" column="{1}">
                     <widget class="QWidget" name="widget" native="true">
                         <property name="geometry">
                             <rect>
                                 <x>0</x>
                                 <y>0</y>
-                                <width>221</width>
+                                <width>217</width>
                                 <height>32</height>
                             </rect>
                         </property>
                         <property name="minimumSize">
                             <size>
-                                <width>0</width>
+                                <width>217</width>
                                 <height>32</height>
                             </size>
                         </property>
@@ -105,7 +104,6 @@ def generate_panel(items,
 
     # Empty Tab with grid layout.
     tab_str = """
-              <?xml version="1.0" encoding="UTF-8"?>
               <widget class="QWidget" name="tab">
                   <attribute name="title">
                       <string>{}</string>
@@ -115,7 +113,7 @@ def generate_panel(items,
                           <rect>
                               <x>0</x>
                               <y>0</y>
-                              <width>891</width>
+                              <width>1100</width>
                               <height>591</height>
                           </rect>
                       </property>
@@ -124,7 +122,6 @@ def generate_panel(items,
               </widget>"""
 
     vertical_spacer_str = """
-                          <?xml version="1.0" encoding="UTF-8"?>
                           <item row="{}" column="{}">
                               <spacer name="verticalSpacer">
                                   <property name="orientation">
@@ -287,13 +284,13 @@ def main():
           # Get IOC name and filter out non-production IOCs
           ioc = parse_ioc_name(pv['Channel'].split(':')[0])
 
-          if ioc_name['name'] in prod_iocs:
+          if ioc['name'] in prod_iocs:
               # avoid duplication of IOCs (however it should not be the case)
-              logging.warning('IOC {} already on the list.'.format(ioc_name))
+              logging.warning('IOC {} already on the list.'.format(ioc['name']))
 
-          elif not ioc_name['domain'] in domains or ioc_name['type'] not in types:
+          elif not ioc['domain'] in domains or ioc['type'] not in types:
               # Non-production IOC
-              logging.warning('IOC skipped! IOC {} does not follow naming convention.'.format(ioc_name))
+              logging.warning('IOC skipped! IOC {} does not follow naming convention.'.format(ioc['name']))
 
           else:
               # valid ioc
