@@ -79,12 +79,10 @@ TEMPLATES += iocStats/iocAdmin/Db/iocGeneralTime.template
 TEMPLATES += iocStats/iocAdmin/Db/iocScanMonSum.template
 TEMPLATES += iocStats/iocAdmin/Db/iocVxWorksOnly.template
 
-# Load subs from PSI folder until substitution files bug (missing quotes around macros)
-# is fixed in vanilla 
-TEMPLATES += PSI/Db/iocAdminScanMon.substitutions
-TEMPLATES += PSI/Db/iocAdminSoft.substitutions
-TEMPLATES += PSI/Db/iocAdminRTEMS.substitutions
-TEMPLATES += PSI/Db/iocAdminVxWorks.substitutions
+TEMPLATES += iocStats/iocAdmin/Db/iocAdminScanMon.substitutions
+TEMPLATES += iocStats/iocAdmin/Db/iocAdminSoft.substitutions
+TEMPLATES += iocStats/iocAdmin/Db/iocAdminRTEMS.substitutions
+TEMPLATES += iocStats/iocAdmin/Db/iocAdminVxWorks.substitutions
 
 ############ SCRIPTS #########
 SCRIPTS += PSI/startup.cmd
