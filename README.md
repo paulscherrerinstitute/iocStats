@@ -51,23 +51,17 @@ optional arguments:
 
 Currently script supports 3 modes of GUI generation:
 
- 1) Automatic IOC detection. Sorting by accelerator section (SIN, S10, ...)
+1. Automatic IOC detection. Sorting by accelerator section (SIN, S10, ...)
+  - Finds all SwissFEL IOCs running iocStats.
+  - Filters out those with invalid name.
+  - Groups IOCs by accelerator section (each group one tab)
 
-    a) Find all SwissFEL IOCs running iocStats.
+2. Automatic IOC detection. Sorting by the host type (CVME, CPPM, ...)
+ - Finds all SwissFEL IOCs running iocStats.
+ - Filters out those with invalid name.
+ - Groups IOCs by accelerator host type (each group one tab)
 
-    b) Filter out those with invalid naming.
-
-    c) Group by accelerator section (each group one tab)
-
- 2) Automatic IOC detection. Sorting by the host type (CVME, CPPM, ...)
-
-    a) Find all SwissFEL IOCs running iocStats.
-
-    b) Filter out those with invalid naming.
-
-    c) Group by accelerator host type (each group one tab)
-
- 3) Use user defined sorting of IOCs into groups. Simple JSON configuration file can be used:
+3. Use user defined sorting of IOCs into groups. Simple JSON configuration file can be used:
  ```
 {
     "_tab_order_":["Group 2", "Group 1"],
