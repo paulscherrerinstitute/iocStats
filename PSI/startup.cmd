@@ -3,7 +3,6 @@
 #########################
 
 epicsEnvSet("ENGINEER","$(USER)")
-epicsEnvSet("LOCATION","$(INSTBASE)/iocBoot/ioc/$(IOC)")
 epicsEnvSet("STARTUP","$(PWD)")
 epicsEnvSet("ST_CMD","startup.script")
 
