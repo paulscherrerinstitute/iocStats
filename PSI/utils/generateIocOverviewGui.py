@@ -113,7 +113,7 @@ def generate_panel(items,
                           <rect>
                               <x>0</x>
                               <y>0</y>
-                              <width>1100</width>
+                              <width>1105</width>
                               <height>591</height>
                           </rect>
                       </property>
