@@ -109,6 +109,17 @@
 #include <string.h>
 #include <time.h>
 
+#include <epicsVersion.h>
+#define EPICS_VERSION_MIN(a,b,c) (EPICS_VERSION*10000+EPICS_REVISION*100+EPICS_MODIFICATION>=(a)*10000+(b)*100+(c)) 
+
+#if EPICS_VERSION_MIN(3,14,11)
+#define HAVE_initHookAfterCaServerInit
+#include <initHooks.h>
+static int caServInitialized = 0;
+#else
+#define caServInitialized interruptAccept
+#endif
+
 #include <epicsThread.h>
 #include <epicsTimer.h>
 #include <epicsMutex.h>
@@ -123,7 +134,6 @@
 #include <aoRecord.h>
 #include <recGbl.h>
 #include <epicsExport.h>
-#include <initHooks.h>
 
 #include "devIocStats.h"
 
@@ -277,7 +287,6 @@ static unsigned cainfo_clients = 0;
 static unsigned cainfo_connex  = 0;
 static epicsTimerQueueId timerQ = 0;
 static epicsMutexId scan_mutex;
-static int caServInitialized = 0;
 
 /* ---------------------------------------------------------------------- */
 
@@ -303,12 +312,14 @@ wdogCreate(void (*fn)(int), long arg)
 	return epicsTimerQueueCreateTimer(timerQ, (void (*)(void*))fn, (void*)arg);
 }
 
+#ifdef HAVE_initHookAfterCaServerInit
 static void notifyOnCaServInit(initHookState state)
 {
     if (state == initHookAfterCaServerInit) {
         caServInitialized = 1;
     }
 }
+#endif
 
 static void scan_time(int type)
 {
@@ -397,7 +408,9 @@ static long ai_init(int pass)
 
     if (pass) return 0;
 
+#ifdef HAVE_initHookAfterCaServerInit
     initHookRegister(&notifyOnCaServInit);
+#endif
 
     /* Create timers */
     for (i = 0; i < TOTAL_TYPES; i++) {
