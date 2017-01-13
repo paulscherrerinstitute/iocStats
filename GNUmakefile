@@ -1,18 +1,9 @@
 include /ioc/tools/driver.makefile
 
-# To properly load header files
-
 MODULE=iocStats
 
 BUILDCLASSES += Linux
-#EXCLUDE_VERSIONS = 3.13 3.14.8
-#ARCH_FILTER=eldk52-e500v2 eldk42-ppc4xxFP SL%
-#ARCH_FILTER=eldk42-ppc4xxFP
-#ARCH_FILTER=eldk52-e500v2
-#ARCH_FILTER=SL%
-#ARCH_FILTER=eldk52-e500v2 SL%
-
-
+EXCLUDE_VERSIONS = 3.13
 
 ############# OSD sources #############
 # Base 3.14 does not correctly define POSIX=NO for mingw
@@ -33,18 +24,18 @@ SOURCES_Linux += iocStats/devIocStats/os/default/osdSuspTasks.c
 SOURCES_Linux += iocStats/devIocStats/os/default/osdIFErrors.c
 SOURCES_Linux += iocStats/devIocStats/os/default/osdBootInfo.c
 
-#SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdCpuUsage.c
-#SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdCpuUtilization.c
-#SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdFdUsage.c
-#SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdMemUsage.c
-#SOURCES_vxWorks += iocStats/devIocStats/os/default/osdWorkspaceUsage.c
-#SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdClustInfo.c
-#SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdSuspTasks.c
-#SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdIFErrors.c
-#SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdBootInfo.c
-#SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdSystemInfo.c
-#SOURCES_vxWorks += iocStats/devIocStats/os/default/osdHostInfo.c
-#SOURCES_vxWorks += iocStats/devIocStats/os/default/osdPIDInfo.c
+SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdCpuUsage.c
+SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdCpuUtilization.c
+SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdFdUsage.c
+SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdMemUsage.c
+SOURCES_vxWorks += iocStats/devIocStats/os/default/osdWorkspaceUsage.c
+SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdClustInfo.c
+SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdSuspTasks.c
+SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdIFErrors.c
+SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdBootInfo.c
+SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdSystemInfo.c
+SOURCES_vxWorks += iocStats/devIocStats/os/posix/osdHostInfo.c
+SOURCES_vxWorks += iocStats/devIocStats/os/default/osdPIDInfo.c
 
 #SOURCES_WIN32 += iocStats/devIocStats/os/default/osdCpuUsage.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdCpuUtilization.c
@@ -86,10 +77,9 @@ TEMPLATES += iocStats/iocAdmin/Db/iocAdminVxWorks.substitutions
 
 ############ SCRIPTS #########
 SCRIPTS += PSI/startup.cmd
+SCRIPTS += PSI/vxWorks.cmd
 SCRIPTS += PSI/cfg/iocStats.archtmp
 
 ############ QT screens ##########
 QT += PSI/qt/iocStats.ui
 QT += PSI/qt/iocStats_CA_DETAILS.ui
-
-
