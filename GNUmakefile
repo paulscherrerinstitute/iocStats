@@ -3,7 +3,6 @@ include /ioc/tools/driver.makefile
 MODULE=iocStats
 
 BUILDCLASSES += Linux
-EXCLUDE_VERSIONS = 3.13
 
 ############# OSD sources #############
 # Base 3.14 does not correctly define POSIX=NO for mingw
@@ -36,6 +35,7 @@ SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdBootInfo.c
 SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdSystemInfo.c
 SOURCES_vxWorks += iocStats/devIocStats/os/posix/osdHostInfo.c
 SOURCES_vxWorks += iocStats/devIocStats/os/default/osdPIDInfo.c
+SOURCES_3.13    += PSI/rsrv.c
 
 #SOURCES_WIN32 += iocStats/devIocStats/os/default/osdCpuUsage.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdCpuUtilization.c
