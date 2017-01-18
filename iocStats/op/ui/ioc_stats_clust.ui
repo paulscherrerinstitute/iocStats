@@ -658,7 +658,7 @@ QWidget#centralWidget {background: rgba(200, 200, 200, 255);}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(ioc):$(pool)_CLUST_AVAIL_0</string>
+                <string>$(ioc):$(pool)_CLUST_AV_0</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -1036,7 +1036,7 @@ QWidget#centralWidget {background: rgba(200, 200, 200, 255);}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(ioc):$(pool)_CLUST_AVAIL_1</string>
+                <string>$(ioc):$(pool)_CLUST_AV_1</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -1306,7 +1306,7 @@ QWidget#centralWidget {background: rgba(200, 200, 200, 255);}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(ioc):$(pool)_CLUST_AVAIL_3</string>
+                <string>$(ioc):$(pool)_CLUST_AV_3</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -1576,7 +1576,7 @@ QWidget#centralWidget {background: rgba(200, 200, 200, 255);}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(ioc):$(pool)_CLUST_AVAIL_4</string>
+                <string>$(ioc):$(pool)_CLUST_AV_4</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -1846,7 +1846,7 @@ QWidget#centralWidget {background: rgba(200, 200, 200, 255);}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(ioc):$(pool)_CLUST_AVAIL_2</string>
+                <string>$(ioc):$(pool)_CLUST_AV_2</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -2116,7 +2116,7 @@ QWidget#centralWidget {background: rgba(200, 200, 200, 255);}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(ioc):$(pool)_CLUST_AVAIL_5</string>
+                <string>$(ioc):$(pool)_CLUST_AV_5</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -2386,7 +2386,7 @@ QWidget#centralWidget {background: rgba(200, 200, 200, 255);}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(ioc):$(pool)_CLUST_AVAIL_6</string>
+                <string>$(ioc):$(pool)_CLUST_AV_6</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -2656,7 +2656,7 @@ QWidget#centralWidget {background: rgba(200, 200, 200, 255);}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(ioc):$(pool)_CLUST_AVAIL_7</string>
+                <string>$(ioc):$(pool)_CLUST_AV_7</string>
             </property>
             <property name="foreground">
                 <color alpha="255">

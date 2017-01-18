@@ -4738,7 +4738,7 @@ QWidget#centralWidget {background: rgba(200, 200, 200, 255);}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(ioc):SYS_CLUST_AVAIL_0</string>
+                <string>$(ioc):SYS_CLUST_AV_0</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -4792,7 +4792,7 @@ QWidget#centralWidget {background: rgba(200, 200, 200, 255);}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(ioc):SYS_CLUST_AVAIL_1</string>
+                <string>$(ioc):SYS_CLUST_AV_1</string>
             </property>
             <property name="foreground">
                 <color alpha="255">

@@ -4329,7 +4329,7 @@ $(pv_value)</tooltip>
     <format_type>1</format_type>
     <precision_from_pv>true</precision_from_pv>
     <transparent>false</transparent>
-    <pv_name>$(ioc):SYS_CLUST_AVAIL_0</pv_name>
+    <pv_name>$(ioc):SYS_CLUST_AV_0</pv_name>
     <background_color>
       <color name="Gray_9" />
     </background_color>
@@ -4372,7 +4372,7 @@ $(pv_value)</tooltip>
     <format_type>1</format_type>
     <precision_from_pv>true</precision_from_pv>
     <transparent>false</transparent>
-    <pv_name>$(ioc):SYS_CLUST_AVAIL_1</pv_name>
+    <pv_name>$(ioc):SYS_CLUST_AV_1</pv_name>
     <background_color>
       <color name="Gray_9" />
     </background_color>

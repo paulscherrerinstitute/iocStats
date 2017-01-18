@@ -1387,7 +1387,7 @@ composite {
 				height=15
 			}
 			monitor {
-				chan="$(ioc):SYS_CLUST_AVAIL_0"
+				chan="$(ioc):SYS_CLUST_AV_0"
 				clr=14
 				bclr=9
 			}
@@ -1404,7 +1404,7 @@ composite {
 				height=15
 			}
 			monitor {
-				chan="$(ioc):SYS_CLUST_AVAIL_1"
+				chan="$(ioc):SYS_CLUST_AV_1"
 				clr=14
 				bclr=9
 			}
