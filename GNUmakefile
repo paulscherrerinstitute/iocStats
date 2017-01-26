@@ -3,12 +3,14 @@ include /ioc/tools/driver.makefile
 MODULE=iocStats
 
 BUILDCLASSES += Linux
+EXCLUDE_VERSIONS = 3.13
 
 ############# OSD sources #############
 # Base 3.14 does not correctly define POSIX=NO for mingw
 ifeq (mingw,$(findstring mingw, $(T_A)))
   POSIX=NO
 endif
+
 
 SOURCES_Linux += iocStats/devIocStats/os/Linux/osdCpuUsage.c
 SOURCES_Linux += iocStats/devIocStats/os/Linux/osdCpuUtilization.c
@@ -56,6 +58,11 @@ SOURCES += iocStats/devIocStats/devIocStatsString.c
 SOURCES += iocStats/devIocStats/devIocStatsWaveform.c
 SOURCES += iocStats/devIocStats/devIocStatsSub.c
 SOURCES += iocStats/devIocStats/devIocStatsTest.c
+
+# CA link statistics
+USR_INCLUDES+=-I$(EPICS_BASE)/src/db
+SOURCES += iocStats/devIocStats/ioccar.c
+
 # For DTYP="IOC stats"
 DBDS += iocStats/devIocStats/devIocStats.dbd
 
@@ -74,6 +81,7 @@ TEMPLATES += iocStats/iocAdmin/Db/iocAdminScanMon.substitutions
 TEMPLATES += iocStats/iocAdmin/Db/iocAdminSoft.substitutions
 TEMPLATES += iocStats/iocAdmin/Db/iocAdminRTEMS.substitutions
 TEMPLATES += iocStats/iocAdmin/Db/iocAdminVxWorks.substitutions
+
 
 ############ SCRIPTS #########
 SCRIPTS += PSI/startup.cmd

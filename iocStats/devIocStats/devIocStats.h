@@ -118,3 +118,6 @@ extern int devIocStatsGetPwd (char **pval);
 extern int devIocStatsGetHostname (char **pval);
 extern int devIocStatsGetPID (double *proc_id);
 extern int devIocStatsGetPPID (double *proc_id);
+
+/* CA Links */
+extern long ioccar(unsigned int *pcal, unsigned int *pcalnconn, unsigned int *pcaldconn);

@@ -223,6 +223,9 @@ static void statsIFOErrs(double *);
 static void statsRecords(double *);
 static void statsPID(double *);
 static void statsPPID(double *);
+static void statsCALinks(double *);
+static void statsCALinksBroken(double *);
+static void statsCALinkDisconnects(double *);
 
 struct {
 	char *name;
@@ -263,6 +266,9 @@ static validGetParms statsGetParms[]={
 	{ "records",			statsRecords,           STATIC_TYPE },
 	{ "proc_id",			statsPID,               STATIC_TYPE },
 	{ "parent_proc_id",		statsPPID,              STATIC_TYPE },
+	{ "calinks",                    statsCALinks,	        CA_TYPE },
+	{ "calinks_broken",             statsCALinksBroken,     CA_TYPE },
+	{ "calink_disconnects",         statsCALinkDisconnects, CA_TYPE },
 	{ NULL,NULL,0 }
 };
 
@@ -287,6 +293,9 @@ static unsigned cainfo_clients = 0;
 static unsigned cainfo_connex  = 0;
 static epicsTimerQueueId timerQ = 0;
 static epicsMutexId scan_mutex;
+static unsigned num_links            = 0;
+static unsigned num_links_broken     = 0;
+static unsigned num_link_disconnects = 0;
 
 /* ---------------------------------------------------------------------- */
 
@@ -372,6 +381,9 @@ static void scan_time(int type)
       {
           unsigned cainfo_clients_local = 0;
           unsigned cainfo_connex_local  = 0;
+          unsigned num_links_local            = 0;
+          unsigned num_links_broken_local     = 0;
+          unsigned num_link_disconnects_local = 0;
 
           /* Guard to ensure that the caServ is initialized */
           if (!caServInitialized) {
@@ -379,9 +391,13 @@ static void scan_time(int type)
           }
 
           casStatsFetch(&cainfo_connex_local, &cainfo_clients_local);
+          ioccar(&num_links_local, &num_links_broken_local, &num_link_disconnects_local);
           epicsMutexLock(scan_mutex);
           cainfo_clients = cainfo_clients_local;
           cainfo_connex  = cainfo_connex_local;
+          num_links = num_links_local;
+          num_links_broken = num_links_broken_local;
+          num_link_disconnects = num_link_disconnects_local;
           epicsMutexUnlock(scan_mutex);
           break;
       }
@@ -768,4 +784,16 @@ static void statsPPID(double *val)
 {
     *val = 0;
     devIocStatsGetPPID(val);
+}
+static void statsCALinks(double *val)
+{
+    *val = (double)num_links;
+}
+static void statsCALinksBroken(double *val)
+{
+    *val = (double)num_links_broken;
+}
+static void statsCALinkDisconnects(double *val)
+{
+    *val = (double)num_link_disconnects;
 }

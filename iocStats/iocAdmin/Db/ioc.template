@@ -91,6 +91,42 @@ record(ai, "$(IOCNAME):CA_CONN_CNT") {
   info(autosaveFields_pass0, "HOPR LOPR HIHI HIGH LOW LOLO HHSV HSV LSV LLSV")
 }
 
+record(ai, "$(IOCNAME):CALINK_CNT") {
+  field(DESC, "Number of CA Links")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP, "@calinks")
+  field(HIHI, "0")
+  field(HIGH, "0")
+  field(HHSV, "NO_ALARM")
+  field(HSV, "NO_ALARM")
+  info(autosaveFields_pass0, "HOPR LOPR HIHI HIGH LOW LOLO HHSV HSV LSV LLSV")
+}
+
+record(ai, "$(IOCNAME):CALINK_BROKEN") {
+  field(DESC, "Number of Not Connected CA Links")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP, "@calinks_broken")
+  field(HIHI, "10")
+  field(HIGH, "1")
+  field(HHSV, "MAJOR")
+  field(HSV, "MINOR")
+  info(autosaveFields_pass0, "HOPR LOPR HIHI HIGH LOW LOLO HHSV HSV LSV LLSV")
+}
+
+record(ai, "$(IOCNAME):CALINK_DISCON") {
+  field(DESC, "Number of CA Link Disconnects")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP, "@calink_disconnects")
+  field(HIHI, "0")
+  field(HIGH, "0")
+  field(HHSV, "NO_ALARM")
+  field(HSV, "NO_ALARM")
+  info(autosaveFields_pass0, "HOPR LOPR HIHI HIGH LOW LOLO HHSV HSV LSV LLSV")
+}
+
 record(ai, "$(IOCNAME):RECORD_CNT") {
   field(DESC, "Number of Records")
   field(PINI, "YES")
@@ -361,3 +397,33 @@ record(ai, "$(IOCNAME):PARENT_ID") {
   field(DTYP, "IOC stats")
   field(INP, "@parent_proc_id")
 }
+
+record(calcout, "$(IOCNAME):CALCSTATUS")
+{
+    field(INPA, "$(IOCNAME):SUSP_TASK_CNT.SEVR CP MS")
+    field(INPB, "$(IOCNAME):SYS_CPU_LOAD.SEVR CP MS")
+    field(INPC, "$(IOCNAME):IOC_CPU_LOAD.SEVR CP MS")
+    field(INPD, "$(IOCNAME):MEM_FREE.SEVR CP MS")
+    field(INPE, "$(IOCNAME):FD_FREE.SEVR CP MS")
+    field(INPF, "$(IOCNAME):SCANMON_SEVR.SEVR CP MS")
+    field(INPG, "$(IOCNAME):CA_CLNT_CNT.SEVR CP MS")
+    field(INPH, "$(IOCNAME):CALINK_BROKEN.SEVR CP MS")
+#   field(INPI,  #network status)
+    field(CALC, "A?1:B+C?2:D?3:E?4:F?5:G?6:H?7:I?8:0")
+    field(IVOA, "Don't drive outputs")
+    field(OUT,  "$(IOCNAME):STATUS PP MS")
+}
+
+record(mbbi, "$(IOCNAME):STATUS")
+{ 
+    field(ZRST, "OK")
+    field(ONST, "THREADS")
+    field(TWST, "LOAD")
+    field(THST, "MEMORY")
+    field(FRST, "FDS")
+    field(FVST, "SCANS")
+    field(SXST, "CLIENTS")
+    field(SVST, "CALINKS")
+    field(EIST, "NETWORK")
+}
+
