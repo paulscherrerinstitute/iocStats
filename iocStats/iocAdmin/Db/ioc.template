@@ -58,7 +58,7 @@ record( sub, "$(IOCNAME):READACF")
 }
 record(sub, "$(IOCNAME):SYSRESET")
 {
-    alias("$(IOCNAME):SysReset")
+#    alias("$(IOCNAME):SysReset")
     field(DESC, "IOC Restart" )
     field(SNAM, "rebootProc")
     field(BRSV,"INVALID")
@@ -164,6 +164,7 @@ record(calc, "$(IOCNAME):FD_FREE") {
 }
 
 record(ai, "$(IOCNAME):SYS_CPU_LOAD") {
+  alias("$(IOCNAME):LOAD") # DZ: compatibility to earlier version
   field(DESC, "System CPU Load")
   field(SCAN, "I/O Intr")
   field(DTYP, "IOC stats")
@@ -179,7 +180,7 @@ record(ai, "$(IOCNAME):SYS_CPU_LOAD") {
 }
 
 record(ai, "$(IOCNAME):IOC_CPU_LOAD") {
-  alias("$(IOCNAME):LOAD")
+#  alias("$(IOCNAME):LOAD")
   field(DESC, "IOC CPU Load")
   field(SCAN, "I/O Intr")
   field(DTYP, "IOC stats")
