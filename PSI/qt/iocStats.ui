@@ -19,8 +19,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>771</width>
-      <height>33</height>
+      <width>765</width>
+      <height>35</height>
      </rect>
     </property>
     <property name="statusTip">
@@ -31,6 +31,9 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading</set>
+    </property>
+    <property name="indent">
+     <number>10</number>
     </property>
     <property name="colorMode">
      <enum>caLabel::Default</enum>
@@ -175,10 +178,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>20</y>
+       <y>17</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):MEM_FREE</string>
@@ -205,10 +214,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>40</y>
+       <y>37</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):MEM_USED</string>
@@ -235,10 +250,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>60</y>
+       <y>57</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):MEM_MAX</string>
@@ -268,7 +289,7 @@
       <x>10</x>
       <y>200</y>
       <width>371</width>
-      <height>121</height>
+      <height>191</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -285,7 +306,7 @@
       <rect>
        <x>0</x>
        <y>20</y>
-       <width>121</width>
+       <width>125</width>
        <height>16</height>
       </rect>
      </property>
@@ -325,7 +346,7 @@
       <rect>
        <x>0</x>
        <y>40</y>
-       <width>121</width>
+       <width>125</width>
        <height>16</height>
       </rect>
      </property>
@@ -364,10 +385,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>20</y>
+       <y>19</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):CA_CLNT_CNT</string>
@@ -394,10 +421,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>40</y>
+       <y>39</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):CA_CONN_CNT</string>
@@ -424,7 +457,7 @@
      <property name="geometry">
       <rect>
        <x>140</x>
-       <y>70</y>
+       <y>68</y>
        <width>181</width>
        <height>16</height>
       </rect>
@@ -446,8 +479,8 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>70</y>
-       <width>121</width>
+       <y>68</y>
+       <width>125</width>
        <height>16</height>
       </rect>
      </property>
@@ -464,7 +497,7 @@
      <property name="geometry">
       <rect>
        <x>140</x>
-       <y>90</y>
+       <y>160</y>
        <width>181</width>
        <height>21</height>
       </rect>
@@ -477,6 +510,162 @@
      </property>
      <property name="args">
       <string>IOC=$(IOC)</string>
+     </property>
+    </widget>
+    <widget class="caLabel" name="calabel_11">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>95</y>
+       <width>125</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>No. of CA Links</string>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_10">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>95</y>
+       <width>181</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(IOC):CALINK_CNT</string>
+     </property>
+     <property name="colorMode">
+      <enum>caLineEdit::Default</enum>
+     </property>
+     <property name="unitsEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="caLed" name="caled_17">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>112</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(IOC):CALINK_BROKEN</string>
+     </property>
+     <property name="colorMode">
+      <enum>caLed::Alarm</enum>
+     </property>
+     <property name="falseColor">
+      <color>
+       <red>160</red>
+       <green>160</green>
+       <blue>160</blue>
+      </color>
+     </property>
+     <property name="trueColor">
+      <color>
+       <red>0</red>
+       <green>205</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="caLabel" name="calabel_12">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>115</y>
+       <width>125</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>No of Broken Links</string>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_11">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>115</y>
+       <width>181</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(IOC):CALINK_BROKEN</string>
+     </property>
+     <property name="colorMode">
+      <enum>caLineEdit::Default</enum>
+     </property>
+     <property name="unitsEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_16">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>135</y>
+       <width>181</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(IOC):CALINK_DISCON</string>
+     </property>
+     <property name="colorMode">
+      <enum>caLineEdit::Default</enum>
+     </property>
+     <property name="unitsEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="caLabel" name="calabel_17">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>135</y>
+       <width>125</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>No. of Link Disconnects</string>
      </property>
     </widget>
    </widget>
@@ -496,10 +685,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>20</y>
+       <y>18</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):FD_FREE</string>
@@ -544,10 +739,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>40</y>
+       <y>38</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):FD_CNT</string>
@@ -592,10 +793,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>60</y>
+       <y>58</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):FD_MAX</string>
@@ -727,10 +934,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>80</y>
+       <y>78</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):FD_UPD_TIME</string>
@@ -795,10 +1008,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>20</y>
+       <y>18</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):01HZ_UPD_TIME</string>
@@ -941,10 +1160,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>40</y>
+       <y>38</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):02HZ_UPD_TIME</string>
@@ -993,10 +1218,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>60</y>
+       <y>58</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):05HZ_UPD_TIME</string>
@@ -1045,10 +1276,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>80</y>
+       <y>78</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):1HZ_UPD_TIME</string>
@@ -1115,10 +1352,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>100</y>
+       <y>98</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):2HZ_UPD_TIME</string>
@@ -1185,10 +1428,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>120</y>
+       <y>118</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):5HZ_UPD_TIME</string>
@@ -1255,10 +1504,16 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>140</y>
+       <y>138</y>
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):10HZ_UPD_TIME</string>
@@ -1402,6 +1657,12 @@
        <height>21</height>
       </rect>
      </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
+     </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):SYS_CPU_LOAD</string>
      </property>
@@ -1432,6 +1693,12 @@
        <height>21</height>
       </rect>
      </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
+     </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):IOC_CPU_LOAD</string>
      </property>
@@ -1461,6 +1728,12 @@
        <width>21</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):HB_VISUALISE</string>
@@ -1523,61 +1796,6 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="caGraphics" name="caRectangle_6">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>751</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="foreground">
-      <color>
-       <red>255</red>
-       <green>176</green>
-       <blue>255</blue>
-      </color>
-     </property>
-     <property name="linestyle" stdset="0">
-      <enum>caGraphics::Solid</enum>
-     </property>
-     <property name="lineSize">
-      <number>2</number>
-     </property>
-     <property name="lineColor">
-      <color>
-       <red>255</red>
-       <green>176</green>
-       <blue>255</blue>
-      </color>
-     </property>
-     <property name="colorMode">
-      <enum>caGraphics::Alarm</enum>
-     </property>
-     <property name="visibility">
-      <enum>caGraphics::Calc</enum>
-     </property>
-     <property name="visibilityCalc">
-      <string notr="true">B!=0</string>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(IOC):IOC_CPU_LOAD</string>
-     </property>
-     <property name="channelB">
-      <string notr="true">$(IOC):IOC_CPU_LOAD.STAT</string>
-     </property>
-     <property name="form">
-      <enum>caGraphics::Rectangle</enum>
-     </property>
-     <property name="background" stdset="0">
-      <color alpha="0">
-       <red>255</red>
-       <green>176</green>
-       <blue>255</blue>
-      </color>
-     </property>
-    </widget>
     <widget class="caGraphics" name="caRectangle_7">
      <property name="geometry">
       <rect>
@@ -1610,8 +1828,17 @@
      <property name="colorMode">
       <enum>caGraphics::Alarm</enum>
      </property>
+     <property name="visibility">
+      <enum>caGraphics::IfNotZero</enum>
+     </property>
+     <property name="visibilityCalc">
+      <string notr="true">A+B</string>
+     </property>
      <property name="channel" stdset="0">
-      <string notr="true">$(IOC):SYS_CPU_LOAD</string>
+      <string notr="true">$(IOC):SYS_CPU_LOAD.SEVR</string>
+     </property>
+     <property name="channelB">
+      <string notr="true">$(IOC):IOC_CPU_LOAD.SEVR</string>
      </property>
      <property name="form">
       <enum>caGraphics::Rectangle</enum>
@@ -1625,7 +1852,6 @@
      </property>
     </widget>
     <zorder>caRectangle_7</zorder>
-    <zorder>caRectangle_6</zorder>
     <zorder>calabel_26</zorder>
     <zorder>calineedit_25</zorder>
     <zorder>calabel_27</zorder>
@@ -1640,7 +1866,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>400</y>
+      <y>390</y>
       <width>751</width>
       <height>211</height>
      </rect>
@@ -1773,7 +1999,7 @@
       <rect>
        <x>140</x>
        <y>160</y>
-       <width>551</width>
+       <width>595</width>
        <height>16</height>
       </rect>
      </property>
@@ -1954,7 +2180,7 @@
       <rect>
        <x>140</x>
        <y>180</y>
-       <width>551</width>
+       <width>595</width>
        <height>16</height>
       </rect>
      </property>
@@ -1971,6 +2197,185 @@
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="caLabel" name="calabel_37">
+     <property name="geometry">
+      <rect>
+       <x>423</x>
+       <y>20</y>
+       <width>90</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Owner</string>
+     </property>
+    </widget>
+    <widget class="caLabel" name="calabel_39">
+     <property name="geometry">
+      <rect>
+       <x>423</x>
+       <y>40</y>
+       <width>90</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Location</string>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_36">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>20</y>
+       <width>215</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(IOC):ENGINEER</string>
+     </property>
+     <property name="colorMode">
+      <enum>caLineEdit::Default</enum>
+     </property>
+     <property name="unitsEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_38">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>40</y>
+       <width>215</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(IOC):LOCATION</string>
+     </property>
+     <property name="colorMode">
+      <enum>caLineEdit::Default</enum>
+     </property>
+     <property name="unitsEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="caMultiLineString" name="camultilinestring">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>70</y>
+       <width>316</width>
+       <height>76</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(IOC):MOD_VER</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>228</blue>
+      </color>
+     </property>
+     <property name="colorMode">
+      <enum>caMultiLineString::Static</enum>
+     </property>
+     <property name="frameColor">
+      <color>
+       <red>0</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="fontScaleMode" stdset="0">
+      <enum>caMultiLineString::None</enum>
+     </property>
+    </widget>
+    <widget class="caLabel" name="calabel_40">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>55</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Modules</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_30">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>3</y>
+      <width>111</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(IOC):STATUS</string>
+    </property>
+    <property name="colorMode">
+     <enum>caLineEdit::Alarm_Static</enum>
+    </property>
+    <property name="framePresent" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="frameLineWidth" stdset="0">
+     <number>2</number>
+    </property>
+    <property name="alarmHandling">
+     <enum>caLineEdit::onBackground</enum>
+    </property>
+    <property name="formatType">
+     <enum>caLineEdit::string</enum>
+    </property>
    </widget>
   </widget>
  </widget>
@@ -1999,6 +2404,11 @@
    <class>caLineEdit</class>
    <extends>QLineEdit</extends>
    <header>caLineEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>caMultiLineString</class>
+   <extends>QPlainTextEdit</extends>
+   <header>caMultiLineString</header>
   </customwidget>
   <customwidget>
    <class>caCalc</class>
