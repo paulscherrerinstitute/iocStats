@@ -43,7 +43,7 @@ To include vanilla updates into this project following must be done:
 
  1. This reporsitory must be cloned to your machine.
  ```
- git clone https://git.psi.ch/cosylab/iocStats.git
+ git clone https://git.psi.ch/epics_driver_modules/iocStats.git
  ```
   
  2. Remote reporsitory to the vanilla sources must be added:
