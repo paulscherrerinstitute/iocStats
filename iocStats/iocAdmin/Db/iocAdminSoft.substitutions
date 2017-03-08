@@ -7,10 +7,11 @@
 #==============================================================================
 #
 file ioc.template
-{
-pattern { IOCNAME , TODFORMAT           }
-	{ "$(IOC)"  , "%m/%d/%Y %H:%M:%S" }
-}
+{{
+    IOCNAME    = "$(IOC)"dat
+    TIMEFORMAT = "%d.%m.%Y %H:%M:%S %Z"
+}}
+
 file iocGeneralTime.template
 {
 pattern { IOCNAME }
