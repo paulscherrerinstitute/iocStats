@@ -48,6 +48,8 @@
  *              Added process ID and parent process ID.
  *              Perform statistics in a task separate from the low priority
  *              callback task.
+ *  2017-01-16  Dirk Zimoch (PSI):
+ *              Added CA link statistics.
  */
 
 /*
