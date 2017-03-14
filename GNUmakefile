@@ -89,5 +89,4 @@ SCRIPTS += PSI/vxWorks.cmd
 SCRIPTS += PSI/cfg/iocStats.archtmp
 
 ############ QT screens ##########
-QT += PSI/qt/iocStats.ui
-QT += PSI/qt/iocStats_CA_DETAILS.ui
+QT += $(wildcard PSI/qt/*)
