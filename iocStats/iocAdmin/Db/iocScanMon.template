@@ -9,7 +9,7 @@ record(sub, "$(IOCNAME):$(SCANNAME)_UPD_TIME") {
 	field(DESC, "$(SCANNAME) Update Time")
 	field(SCAN, "$(SCAN)")
 	field(EGU, "second")
-	field(PREC, "5")
+	field(PREC, "3")
 	field(MDEL, "0.00001")
 	field(HYST, "0.00002")
 	field(INAM, "scanMonInit")
