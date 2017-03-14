@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>768</width>
-    <height>618</height>
+    <width>644</width>
+    <height>676</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>765</width>
+      <width>646</width>
       <height>35</height>
      </rect>
     </property>
@@ -43,10 +43,15 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>100</y>
-      <width>371</width>
-      <height>91</height>
+      <y>105</y>
+      <width>321</width>
+      <height>96</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
     </property>
     <property name="title">
      <string>Memory</string>
@@ -54,15 +59,16 @@
     <widget class="caLabel" name="calabel_2">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>20</y>
-       <width>51</width>
-       <height>16</height>
+       <x>0</x>
+       <y>25</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -72,11 +78,17 @@
     <widget class="caLineEdit" name="calineedit">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>20</y>
-       <width>181</width>
-       <height>16</height>
+       <x>135</x>
+       <y>25</y>
+       <width>150</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -94,15 +106,16 @@
     <widget class="caLabel" name="calabel_3">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>40</y>
-       <width>51</width>
-       <height>16</height>
+       <x>0</x>
+       <y>45</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -112,11 +125,17 @@
     <widget class="caLineEdit" name="calineedit_2">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>40</y>
-       <width>181</width>
-       <height>16</height>
+       <x>135</x>
+       <y>45</y>
+       <width>150</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -134,11 +153,17 @@
     <widget class="caLineEdit" name="calineedit_3">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>60</y>
-       <width>181</width>
-       <height>16</height>
+       <x>135</x>
+       <y>65</y>
+       <width>150</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string/>
@@ -159,15 +184,16 @@
     <widget class="caLabel" name="calabel_4">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>60</y>
-       <width>51</width>
-       <height>16</height>
+       <x>0</x>
+       <y>65</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -177,8 +203,8 @@
     <widget class="caLed" name="caled_8">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>17</y>
+       <x>290</x>
+       <y>25</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -213,8 +239,8 @@
     <widget class="caLed" name="caled_9">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>37</y>
+       <x>290</x>
+       <y>45</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -249,8 +275,8 @@
     <widget class="caLed" name="caled_10">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>57</y>
+       <x>290</x>
+       <y>65</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -287,9 +313,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>200</y>
-      <width>371</width>
-      <height>191</height>
+      <y>210</y>
+      <width>321</width>
+      <height>196</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -298,6 +324,11 @@
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>Channel Access &amp;&amp; Database</string>
     </property>
@@ -305,28 +336,35 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>20</y>
+       <y>50</y>
        <width>125</width>
-       <height>16</height>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>No. of Clients</string>
+      <string>Clients</string>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_4">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>20</y>
-       <width>181</width>
-       <height>16</height>
+       <x>135</x>
+       <y>50</y>
+       <width>150</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -338,35 +376,42 @@
       <enum>caLineEdit::Default</enum>
      </property>
      <property name="unitsEnabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_6">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>40</y>
+       <y>70</y>
        <width>125</width>
-       <height>16</height>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>No. of Connections</string>
+      <string>Connections</string>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_5">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>40</y>
-       <width>181</width>
-       <height>16</height>
+       <x>135</x>
+       <y>70</y>
+       <width>150</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -378,14 +423,14 @@
       <enum>caLineEdit::Default</enum>
      </property>
      <property name="unitsEnabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="caLed" name="caled_11">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>19</y>
+       <x>290</x>
+       <y>50</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -398,42 +443,6 @@
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):CA_CLNT_CNT</string>
-     </property>
-     <property name="colorMode">
-      <enum>caLed::Alarm</enum>
-     </property>
-     <property name="falseColor">
-      <color>
-       <red>160</red>
-       <green>160</green>
-       <blue>160</blue>
-      </color>
-     </property>
-     <property name="trueColor">
-      <color>
-       <red>0</red>
-       <green>205</green>
-       <blue>0</blue>
-      </color>
-     </property>
-    </widget>
-    <widget class="caLed" name="caled_12">
-     <property name="geometry">
-      <rect>
-       <x>330</x>
-       <y>39</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="ledWidth">
-      <number>17</number>
-     </property>
-     <property name="ledHeight">
-      <number>17</number>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(IOC):CA_CONN_CNT</string>
      </property>
      <property name="colorMode">
       <enum>caLed::Alarm</enum>
@@ -456,11 +465,17 @@
     <widget class="caLineEdit" name="calineedit_31">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>68</y>
-       <width>181</width>
-       <height>16</height>
+       <x>135</x>
+       <y>25</y>
+       <width>150</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -472,35 +487,46 @@
       <enum>caLineEdit::Default</enum>
      </property>
      <property name="unitsEnabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_32">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>68</y>
+       <y>25</y>
        <width>125</width>
-       <height>16</height>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>No. of Records</string>
+      <string>Records</string>
      </property>
     </widget>
     <widget class="caRelatedDisplay" name="carelateddisplay">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>160</y>
-       <width>181</width>
-       <height>21</height>
+       <x>135</x>
+       <y>165</y>
+       <width>151</width>
+       <height>26</height>
       </rect>
+     </property>
+     <property name="label">
+      <string notr="true">CA Details</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>220</red>
+       <green>191</green>
+       <blue>110</blue>
+      </color>
      </property>
      <property name="labels">
       <string>CA Details</string>
@@ -511,6 +537,9 @@
      <property name="args">
       <string>IOC=$(IOC)</string>
      </property>
+     <property name="stackingMode" stdset="0">
+      <enum>caRowColMenu::Menu</enum>
+     </property>
     </widget>
     <widget class="caLabel" name="calabel_11">
      <property name="geometry">
@@ -518,26 +547,33 @@
        <x>0</x>
        <y>95</y>
        <width>125</width>
-       <height>16</height>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>No. of CA Links</string>
+      <string>CA Links</string>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_10">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>135</x>
        <y>95</y>
-       <width>181</width>
-       <height>16</height>
+       <width>150</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -549,14 +585,14 @@
       <enum>caLineEdit::Default</enum>
      </property>
      <property name="unitsEnabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="caLed" name="caled_17">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>112</y>
+       <x>290</x>
+       <y>115</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -594,26 +630,33 @@
        <x>0</x>
        <y>115</y>
        <width>125</width>
-       <height>16</height>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>No of Broken Links</string>
+      <string>Broken Links</string>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_11">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>135</x>
        <y>115</y>
-       <width>181</width>
-       <height>16</height>
+       <width>150</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -625,17 +668,23 @@
       <enum>caLineEdit::Default</enum>
      </property>
      <property name="unitsEnabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_16">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>135</x>
        <y>135</y>
-       <width>181</width>
-       <height>16</height>
+       <width>150</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -647,7 +696,7 @@
       <enum>caLineEdit::Default</enum>
      </property>
      <property name="unitsEnabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_17">
@@ -656,27 +705,33 @@
        <x>0</x>
        <y>135</y>
        <width>125</width>
-       <height>16</height>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>No. of Link Disconnects</string>
+      <string>Disconnects</string>
      </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>100</y>
-      <width>371</width>
-      <height>111</height>
+      <x>350</x>
+      <y>105</y>
+      <width>286</width>
+      <height>96</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
     </property>
     <property name="title">
      <string>File Descriptors</string>
@@ -684,8 +739,8 @@
     <widget class="caLed" name="caled_15">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>18</y>
+       <x>255</x>
+       <y>25</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -720,15 +775,16 @@
     <widget class="caLabel" name="calabel_7">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>60</y>
-       <width>101</width>
-       <height>16</height>
+       <x>0</x>
+       <y>65</y>
+       <width>110</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -738,8 +794,8 @@
     <widget class="caLed" name="caled_14">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>38</y>
+       <x>255</x>
+       <y>45</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -774,15 +830,16 @@
     <widget class="caLabel" name="calabel_9">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>101</width>
-       <height>16</height>
+       <x>0</x>
+       <y>45</y>
+       <width>110</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -792,8 +849,8 @@
     <widget class="caLed" name="caled_13">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>58</y>
+       <x>255</x>
+       <y>65</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -828,11 +885,17 @@
     <widget class="caLineEdit" name="calineedit_6">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>40</y>
-       <width>181</width>
-       <height>16</height>
+       <x>120</x>
+       <y>45</y>
+       <width>130</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -850,15 +913,16 @@
     <widget class="caLabel" name="calabel_8">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>101</width>
-       <height>16</height>
+       <x>0</x>
+       <y>25</y>
+       <width>110</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -868,11 +932,17 @@
     <widget class="caLineEdit" name="calineedit_7">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>20</y>
-       <width>181</width>
-       <height>16</height>
+       <x>120</x>
+       <y>25</y>
+       <width>130</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -890,11 +960,17 @@
     <widget class="caLineEdit" name="calineedit_8">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>60</y>
-       <width>181</width>
-       <height>16</height>
+       <x>120</x>
+       <y>65</y>
+       <width>130</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string/>
@@ -912,103 +988,29 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="caLabel" name="calabel_10">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>80</y>
-       <width>101</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>9</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Update Time</string>
-     </property>
-    </widget>
-    <widget class="caLed" name="caled_16">
-     <property name="geometry">
-      <rect>
-       <x>330</x>
-       <y>78</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="ledWidth">
-      <number>17</number>
-     </property>
-     <property name="ledHeight">
-      <number>17</number>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(IOC):FD_UPD_TIME</string>
-     </property>
-     <property name="colorMode">
-      <enum>caLed::Alarm</enum>
-     </property>
-     <property name="falseColor">
-      <color>
-       <red>160</red>
-       <green>160</green>
-       <blue>160</blue>
-      </color>
-     </property>
-     <property name="trueColor">
-      <color>
-       <red>0</red>
-       <green>205</green>
-       <blue>0</blue>
-      </color>
-     </property>
-    </widget>
-    <widget class="caLineEdit" name="calineedit_9">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>80</y>
-       <width>181</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(IOC):FD_UPD_TIME</string>
-     </property>
-     <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
-     </property>
-     <property name="unitsEnabled">
-      <bool>true</bool>
-     </property>
-    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>220</y>
-      <width>371</width>
-      <height>171</height>
+      <x>350</x>
+      <y>210</y>
+      <width>286</width>
+      <height>196</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
     <property name="title">
-     <string>Threads Update Time</string>
+     <string>Threads</string>
     </property>
     <widget class="caLed" name="caled_24">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>18</y>
+       <x>255</x>
+       <y>25</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -1043,65 +1045,74 @@
     <widget class="caLabel" name="calabel_18">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>60</y>
-       <width>61</width>
-       <height>16</height>
+       <x>0</x>
+       <y>65</y>
+       <width>110</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>0.5 Hz</string>
+      <string>2 second</string>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_19">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>40</y>
-       <width>61</width>
-       <height>16</height>
+       <x>0</x>
+       <y>45</y>
+       <width>110</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>0.2 Hz</string>
+      <string>5 second</string>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_20">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>20</y>
-       <width>61</width>
-       <height>16</height>
+       <x>0</x>
+       <y>25</y>
+       <width>110</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>0.1 Hz</string>
+      <string>10 second</string>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_18">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>20</y>
-       <width>181</width>
-       <height>16</height>
+       <x>120</x>
+       <y>25</y>
+       <width>130</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1119,29 +1130,36 @@
     <widget class="caLabel" name="calabel_21">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>80</y>
-       <width>61</width>
-       <height>16</height>
+       <x>0</x>
+       <y>85</y>
+       <width>110</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>1 Hz</string>
+      <string>1 second</string>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_19">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>40</y>
-       <width>181</width>
-       <height>16</height>
+       <x>120</x>
+       <y>45</y>
+       <width>130</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1159,8 +1177,8 @@
     <widget class="caLed" name="caled_25">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>38</y>
+       <x>255</x>
+       <y>45</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -1195,11 +1213,17 @@
     <widget class="caLineEdit" name="calineedit_20">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>60</y>
-       <width>181</width>
-       <height>16</height>
+       <x>120</x>
+       <y>65</y>
+       <width>130</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1217,8 +1241,8 @@
     <widget class="caLed" name="caled_26">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>58</y>
+       <x>255</x>
+       <y>65</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -1253,11 +1277,17 @@
     <widget class="caLineEdit" name="calineedit_21">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>80</y>
-       <width>181</width>
-       <height>16</height>
+       <x>120</x>
+       <y>85</y>
+       <width>130</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1275,8 +1305,8 @@
     <widget class="caLed" name="caled_27">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>78</y>
+       <x>255</x>
+       <y>85</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -1311,29 +1341,36 @@
     <widget class="caLabel" name="calabel_22">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>100</y>
-       <width>61</width>
-       <height>16</height>
+       <x>0</x>
+       <y>105</y>
+       <width>110</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>2 Hz</string>
+      <string>0.5 second</string>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_22">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>100</y>
-       <width>181</width>
-       <height>16</height>
+       <x>120</x>
+       <y>105</y>
+       <width>130</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1351,8 +1388,8 @@
     <widget class="caLed" name="caled_28">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>98</y>
+       <x>255</x>
+       <y>105</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -1387,29 +1424,36 @@
     <widget class="caLabel" name="calabel_23">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>120</y>
-       <width>61</width>
-       <height>16</height>
+       <x>0</x>
+       <y>125</y>
+       <width>110</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>5 Hz</string>
+      <string>0.2 second</string>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_23">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>120</y>
-       <width>181</width>
-       <height>16</height>
+       <x>120</x>
+       <y>125</y>
+       <width>130</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1427,8 +1471,8 @@
     <widget class="caLed" name="caled_29">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>118</y>
+       <x>255</x>
+       <y>125</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -1463,29 +1507,36 @@
     <widget class="caLabel" name="calabel_24">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>140</y>
-       <width>61</width>
-       <height>16</height>
+       <x>0</x>
+       <y>145</y>
+       <width>110</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>10 Hz</string>
+      <string>0.1 second</string>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_24">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>140</y>
-       <width>181</width>
-       <height>16</height>
+       <x>120</x>
+       <y>145</y>
+       <width>130</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1503,8 +1554,8 @@
     <widget class="caLed" name="caled_30">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>138</y>
+       <x>255</x>
+       <y>145</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -1517,6 +1568,89 @@
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):10HZ_UPD_TIME</string>
+     </property>
+     <property name="colorMode">
+      <enum>caLed::Alarm</enum>
+     </property>
+     <property name="falseColor">
+      <color>
+       <red>160</red>
+       <green>160</green>
+       <blue>160</blue>
+      </color>
+     </property>
+     <property name="trueColor">
+      <color>
+       <red>0</red>
+       <green>205</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_39">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>170</y>
+       <width>130</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(IOC):SUSP_TASK_CNT</string>
+     </property>
+     <property name="colorMode">
+      <enum>caLineEdit::Default</enum>
+     </property>
+     <property name="unitsEnabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="caLabel" name="calabel_31">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>170</y>
+       <width>110</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>dead</string>
+     </property>
+    </widget>
+    <widget class="caLed" name="caled_34">
+     <property name="geometry">
+      <rect>
+       <x>255</x>
+       <y>170</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="ledWidth">
+      <number>17</number>
+     </property>
+     <property name="ledHeight">
+      <number>17</number>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(IOC):SUSP_TASK_CNT</string>
      </property>
      <property name="colorMode">
       <enum>caLed::Alarm</enum>
@@ -1561,9 +1695,14 @@
      <rect>
       <x>10</x>
       <y>40</y>
-      <width>751</width>
-      <height>51</height>
+      <width>626</width>
+      <height>56</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
     </property>
     <property name="title">
      <string>CPU</string>
@@ -1571,15 +1710,16 @@
     <widget class="caLabel" name="calabel_26">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>22</y>
-       <width>91</width>
-       <height>16</height>
+       <x>0</x>
+       <y>25</y>
+       <width>126</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1589,11 +1729,17 @@
     <widget class="caLineEdit" name="calineedit_25">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>22</y>
+       <x>135</x>
+       <y>25</y>
        <width>91</width>
-       <height>16</height>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1611,15 +1757,16 @@
     <widget class="caLabel" name="calabel_27">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>22</y>
+       <x>280</x>
+       <y>25</y>
        <width>81</width>
-       <height>16</height>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1629,11 +1776,17 @@
     <widget class="caLineEdit" name="calineedit_26">
      <property name="geometry">
       <rect>
-       <x>360</x>
-       <y>22</y>
+       <x>366</x>
+       <y>25</y>
        <width>91</width>
-       <height>16</height>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1651,8 +1804,8 @@
     <widget class="caLed" name="caled_32">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>20</y>
+       <x>230</x>
+       <y>25</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -1687,8 +1840,8 @@
     <widget class="caLed" name="caled_33">
      <property name="geometry">
       <rect>
-       <x>460</x>
-       <y>20</y>
+       <x>461</x>
+       <y>25</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -1723,8 +1876,8 @@
     <widget class="caLed" name="caled_31">
      <property name="geometry">
       <rect>
-       <x>710</x>
-       <y>20</y>
+       <x>595</x>
+       <y>25</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -1759,99 +1912,22 @@
     <widget class="caLabel" name="calabel_25">
      <property name="geometry">
       <rect>
-       <x>520</x>
-       <y>22</y>
-       <width>81</width>
-       <height>16</height>
+       <x>490</x>
+       <y>25</y>
+       <width>100</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
       <string>Heart Beat</string>
      </property>
     </widget>
-    <widget class="caLineEdit" name="calineedit_17">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
-       <y>22</y>
-       <width>91</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(IOC):HEARTBEAT</string>
-     </property>
-     <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
-     </property>
-     <property name="unitsEnabled">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="caGraphics" name="caRectangle_7">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>751</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="foreground">
-      <color>
-       <red>255</red>
-       <green>176</green>
-       <blue>255</blue>
-      </color>
-     </property>
-     <property name="linestyle" stdset="0">
-      <enum>caGraphics::Solid</enum>
-     </property>
-     <property name="lineSize">
-      <number>2</number>
-     </property>
-     <property name="lineColor">
-      <color>
-       <red>255</red>
-       <green>176</green>
-       <blue>255</blue>
-      </color>
-     </property>
-     <property name="colorMode">
-      <enum>caGraphics::Alarm</enum>
-     </property>
-     <property name="visibility">
-      <enum>caGraphics::IfNotZero</enum>
-     </property>
-     <property name="visibilityCalc">
-      <string notr="true">A+B</string>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(IOC):SYS_CPU_LOAD.SEVR</string>
-     </property>
-     <property name="channelB">
-      <string notr="true">$(IOC):IOC_CPU_LOAD.SEVR</string>
-     </property>
-     <property name="form">
-      <enum>caGraphics::Rectangle</enum>
-     </property>
-     <property name="background" stdset="0">
-      <color alpha="0">
-       <red>255</red>
-       <green>176</green>
-       <blue>255</blue>
-      </color>
-     </property>
-    </widget>
-    <zorder>caRectangle_7</zorder>
     <zorder>calabel_26</zorder>
     <zorder>calineedit_25</zorder>
     <zorder>calabel_27</zorder>
@@ -1860,16 +1936,21 @@
     <zorder>caled_33</zorder>
     <zorder>caled_31</zorder>
     <zorder>calabel_25</zorder>
-    <zorder>calineedit_17</zorder>
+    <zorder>calabel</zorder>
    </widget>
    <widget class="QGroupBox" name="groupBox_6">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>390</y>
-      <width>751</width>
-      <height>211</height>
+      <y>415</y>
+      <width>626</width>
+      <height>251</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
     </property>
     <property name="title">
      <string>General</string>
@@ -1877,11 +1958,17 @@
     <widget class="caLineEdit" name="calineedit_32">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>20</y>
-       <width>251</width>
-       <height>16</height>
+       <x>135</x>
+       <y>90</y>
+       <width>190</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1899,15 +1986,16 @@
     <widget class="caLabel" name="calabel_33">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>101</width>
-       <height>16</height>
+       <x>0</x>
+       <y>90</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1917,11 +2005,17 @@
     <widget class="caLineEdit" name="calineedit_33">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>40</y>
-       <width>251</width>
-       <height>16</height>
+       <x>135</x>
+       <y>110</y>
+       <width>190</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1939,15 +2033,16 @@
     <widget class="caLabel" name="calabel_34">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>101</width>
-       <height>16</height>
+       <x>0</x>
+       <y>110</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1957,11 +2052,17 @@
     <widget class="caLineEdit" name="calineedit_34">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>60</y>
-       <width>251</width>
-       <height>16</height>
+       <x>135</x>
+       <y>130</y>
+       <width>190</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1979,15 +2080,16 @@
     <widget class="caLabel" name="calabel_35">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>60</y>
-       <width>101</width>
-       <height>16</height>
+       <x>0</x>
+       <y>130</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1997,11 +2099,17 @@
     <widget class="caLineEdit" name="calineedit_35">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>160</y>
-       <width>595</width>
-       <height>16</height>
+       <x>135</x>
+       <y>200</y>
+       <width>476</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2019,15 +2127,16 @@
     <widget class="caLabel" name="calabel_36">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>160</y>
-       <width>101</width>
-       <height>16</height>
+       <x>0</x>
+       <y>200</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2037,15 +2146,16 @@
     <widget class="caLabel" name="calabel_30">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>130</y>
-       <width>101</width>
-       <height>16</height>
+       <x>0</x>
+       <y>65</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2055,11 +2165,17 @@
     <widget class="caLineEdit" name="calineedit_27">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>90</y>
-       <width>251</width>
-       <height>16</height>
+       <x>135</x>
+       <y>25</y>
+       <width>476</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2077,15 +2193,16 @@
     <widget class="caLabel" name="calabel_28">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>90</y>
-       <width>101</width>
-       <height>16</height>
+       <x>0</x>
+       <y>25</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2095,11 +2212,17 @@
     <widget class="caLineEdit" name="calineedit_29">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>130</y>
-       <width>251</width>
-       <height>16</height>
+       <x>135</x>
+       <y>65</y>
+       <width>476</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2117,15 +2240,16 @@
     <widget class="caLabel" name="calabel_29">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>110</y>
-       <width>101</width>
-       <height>16</height>
+       <x>0</x>
+       <y>45</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2135,11 +2259,17 @@
     <widget class="caLineEdit" name="calineedit_28">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>110</y>
-       <width>251</width>
-       <height>16</height>
+       <x>135</x>
+       <y>45</y>
+       <width>476</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2157,15 +2287,16 @@
     <widget class="caLabel" name="calabel_38">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>180</y>
-       <width>111</width>
-       <height>16</height>
+       <x>0</x>
+       <y>220</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2178,11 +2309,17 @@
     <widget class="caLineEdit" name="calineedit_37">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>180</y>
-       <width>595</width>
-       <height>16</height>
+       <x>135</x>
+       <y>220</y>
+       <width>476</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2200,15 +2337,16 @@
     <widget class="caLabel" name="calabel_37">
      <property name="geometry">
       <rect>
-       <x>423</x>
-       <y>20</y>
-       <width>90</width>
-       <height>16</height>
+       <x>0</x>
+       <y>155</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2218,15 +2356,16 @@
     <widget class="caLabel" name="calabel_39">
      <property name="geometry">
       <rect>
-       <x>423</x>
-       <y>40</y>
-       <width>90</width>
-       <height>16</height>
+       <x>0</x>
+       <y>175</y>
+       <width>125</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2236,15 +2375,16 @@
     <widget class="caLineEdit" name="calineedit_36">
      <property name="geometry">
       <rect>
-       <x>520</x>
-       <y>20</y>
-       <width>215</width>
-       <height>16</height>
+       <x>135</x>
+       <y>155</y>
+       <width>190</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="alignment">
@@ -2263,11 +2403,17 @@
     <widget class="caLineEdit" name="calineedit_38">
      <property name="geometry">
       <rect>
-       <x>520</x>
-       <y>40</y>
-       <width>215</width>
-       <height>16</height>
+       <x>135</x>
+       <y>175</y>
+       <width>190</width>
+       <height>19</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Sans Typewriter</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2283,19 +2429,25 @@
      </property>
     </widget>
     <widget class="caMultiLineString" name="camultilinestring">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
-       <x>420</x>
-       <y>70</y>
-       <width>316</width>
-       <height>76</height>
+       <x>345</x>
+       <y>110</y>
+       <width>266</width>
+       <height>86</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Lucida Sans Typewriter</family>
-       <pointsize>10</pointsize>
+       <pointsize>11</pointsize>
       </font>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
      </property>
      <property name="verticalScrollBarPolicy">
       <enum>Qt::ScrollBarAsNeeded</enum>
@@ -2313,13 +2465,6 @@
      <property name="colorMode">
       <enum>caMultiLineString::Static</enum>
      </property>
-     <property name="frameColor">
-      <color>
-       <red>0</red>
-       <green>0</green>
-       <blue>0</blue>
-      </color>
-     </property>
      <property name="fontScaleMode" stdset="0">
       <enum>caMultiLineString::None</enum>
      </property>
@@ -2327,15 +2472,16 @@
     <widget class="caLabel" name="calabel_40">
      <property name="geometry">
       <rect>
-       <x>420</x>
-       <y>55</y>
-       <width>101</width>
-       <height>16</height>
+       <x>345</x>
+       <y>90</y>
+       <width>86</width>
+       <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <family>Sans Serif</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2349,7 +2495,7 @@
    <widget class="caLineEdit" name="calineedit_30">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>524</x>
       <y>3</y>
       <width>111</width>
       <height>30</height>
@@ -2377,6 +2523,57 @@
      <enum>caLineEdit::string</enum>
     </property>
    </widget>
+   <widget class="caFrame" name="caframe_2">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>-2</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="visibility">
+     <enum>caFrame::IfNotZero</enum>
+    </property>
+    <property name="visibilityCalc">
+     <string notr="true">G</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(IOC):ELB-PON-SIGN</string>
+    </property>
+    <widget class="caRelatedDisplay" name="carelateddisplay_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>7</y>
+       <width>81</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="label">
+      <string notr="true">ifcmon</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>220</red>
+       <green>191</green>
+       <blue>110</blue>
+      </color>
+     </property>
+     <property name="labels">
+      <string>ifcmon</string>
+     </property>
+     <property name="files">
+      <string>ifcmon_main.ui</string>
+     </property>
+     <property name="args">
+      <string>IOC=$(IOC)</string>
+     </property>
+     <property name="stackingMode" stdset="0">
+      <enum>caRowColMenu::Menu</enum>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <customwidgets>
@@ -2386,14 +2583,15 @@
    <header>caRelatedDisplay</header>
   </customwidget>
   <customwidget>
+   <class>caFrame</class>
+   <extends>QFrame</extends>
+   <header>caFrame</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>caLabel</class>
    <extends>QLabel</extends>
    <header>caLabel</header>
-  </customwidget>
-  <customwidget>
-   <class>caGraphics</class>
-   <extends>QWidget</extends>
-   <header>caGraphics</header>
   </customwidget>
   <customwidget>
    <class>caLed</class>
