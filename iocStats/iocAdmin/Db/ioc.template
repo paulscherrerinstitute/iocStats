@@ -97,11 +97,11 @@ record(ai, "$(IOCNAME):CA_CONN_CNT") {
   field(SCAN, "I/O Intr")
   field(DTYP, "IOC stats")
   field(INP, "@ca_connections")
-  field(HOPR, "5000")
-  field(HIHI, "4500")
-  field(HIGH, "4000")
-  field(HHSV, "MAJOR")
-  field(HSV, "MINOR")
+  field(HOPR, "100000")
+  field(HIHI, "0")
+  field(HIGH, "0")
+  field(HHSV, "NO_ALARM")
+  field(HSV, "NO_ALARM")
   info(autosaveFields_pass0, "HOPR LOPR HIHI HIGH LOW LOLO HHSV HSV LSV LLSV")
 }
 
