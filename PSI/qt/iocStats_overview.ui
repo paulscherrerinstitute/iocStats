@@ -51,6 +51,9 @@
         <height>606</height>
        </rect>
       </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
       </property>
@@ -62,8 +65,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude">
@@ -107,6 +110,9 @@
         <height>606</height>
        </rect>
       </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
       </property>
@@ -118,8 +124,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_3">
@@ -163,6 +169,9 @@
         <height>606</height>
        </rect>
       </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
       </property>
@@ -174,8 +183,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_2">
@@ -208,7 +217,7 @@
     </widget>
     <widget class="QWidget" name="CAM">
      <attribute name="title">
-      <string>Cam</string>
+      <string>CAM</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_4">
       <property name="geometry">
@@ -218,6 +227,9 @@
         <width>941</width>
         <height>606</height>
        </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
@@ -230,8 +242,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_4">
@@ -264,7 +276,7 @@
     </widget>
     <widget class="QWidget" name="VAC">
      <attribute name="title">
-      <string>Vac</string>
+      <string>VAC</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_5">
       <property name="geometry">
@@ -274,6 +286,9 @@
         <width>941</width>
         <height>606</height>
        </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
@@ -286,8 +301,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_5">
@@ -300,7 +315,7 @@
          </rect>
         </property>
         <property name="macro">
-         <string>$(VA_IOCS);$(VM_IOCS)</string>
+         <string>$(VA_IOCS)</string>
         </property>
         <property name="filename" stdset="0">
          <string notr="true">iocStats_include.ui</string>
@@ -320,7 +335,7 @@
     </widget>
     <widget class="QWidget" name="MA">
      <attribute name="title">
-      <string>Mag</string>
+      <string>MAG</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_6">
       <property name="geometry">
@@ -330,6 +345,9 @@
         <width>941</width>
         <height>606</height>
        </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
@@ -342,8 +360,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_6">
@@ -374,9 +392,9 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="RF">
+    <widget class="QWidget" name="LLRF">
      <attribute name="title">
-      <string>RF</string>
+      <string>LLRF</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_7">
       <property name="geometry">
@@ -386,6 +404,9 @@
         <width>941</width>
         <height>606</height>
        </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
@@ -398,11 +419,70 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_7">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="macro">
+         <string>$(LLRF_IOCS);$(ILK_IOCS)</string>
+        </property>
+        <property name="filename" stdset="0">
+         <string notr="true">iocStats_include.ui</string>
+        </property>
+        <property name="stacking">
+         <enum>caInclude::ColumnRow</enum>
+        </property>
+        <property name="numberOfItems" stdset="0">
+         <number>1</number>
+        </property>
+        <property name="maximumColumns" stdset="0">
+         <number>3</number>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="RF">
+     <attribute name="title">
+      <string>RF</string>
+     </attribute>
+     <widget class="QScrollArea" name="scrollArea_15">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>941</width>
+        <height>606</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_15">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>941</width>
+         <height>606</height>
+        </rect>
+       </property>
+       <widget class="caInclude" name="cainclude_15">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -430,65 +510,9 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="IL">
-     <attribute name="title">
-      <string>ILK</string>
-     </attribute>
-     <widget class="QScrollArea" name="scrollArea_15">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>941</width>
-        <height>606</height>
-       </rect>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAsNeeded</enum>
-      </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents_15">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>937</width>
-         <height>602</height>
-        </rect>
-       </property>
-       <widget class="caInclude" name="cainclude_15">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>300</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="macro">
-         <string>$(IL_IOCS)</string>
-        </property>
-        <property name="filename" stdset="0">
-         <string notr="true">iocStats_include.ui</string>
-        </property>
-        <property name="stacking">
-         <enum>caInclude::ColumnRow</enum>
-        </property>
-        <property name="numberOfItems" stdset="0">
-         <number>1</number>
-        </property>
-        <property name="maximumColumns" stdset="0">
-         <number>3</number>
-        </property>
-       </widget>
-      </widget>
-     </widget>
-    </widget>
     <widget class="QWidget" name="MO">
      <attribute name="title">
-      <string>Mot</string>
+      <string>MOT</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_8">
       <property name="geometry">
@@ -498,6 +522,9 @@
         <width>941</width>
         <height>606</height>
        </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
@@ -510,8 +537,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_8">
@@ -544,7 +571,7 @@
     </widget>
     <widget class="QWidget" name="BM">
      <attribute name="title">
-      <string>BxM</string>
+      <string>DB*M</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_12">
       <property name="geometry">
@@ -554,6 +581,9 @@
         <width>941</width>
         <height>606</height>
        </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
@@ -566,8 +596,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_12">
@@ -600,7 +630,7 @@
     </widget>
     <widget class="QWidget" name="SC">
      <attribute name="title">
-      <string>SCR</string>
+      <string>DSCR</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_13">
       <property name="geometry">
@@ -610,6 +640,9 @@
         <width>941</width>
         <height>606</height>
        </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
@@ -622,8 +655,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_13">
@@ -654,9 +687,68 @@
       </widget>
      </widget>
     </widget>
+    <widget class="QWidget" name="DR">
+     <attribute name="title">
+      <string>DDR</string>
+     </attribute>
+     <widget class="QScrollArea" name="scrollArea_14">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>941</width>
+        <height>606</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_14">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>941</width>
+         <height>606</height>
+        </rect>
+       </property>
+       <widget class="caInclude" name="cainclude_14">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="macro">
+         <string>$(DR_IOCS)</string>
+        </property>
+        <property name="filename" stdset="0">
+         <string notr="true">iocStats_include.ui</string>
+        </property>
+        <property name="stacking">
+         <enum>caInclude::ColumnRow</enum>
+        </property>
+        <property name="numberOfItems" stdset="0">
+         <number>1</number>
+        </property>
+        <property name="maximumColumns" stdset="0">
+         <number>3</number>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
     <widget class="QWidget" name="DI">
      <attribute name="title">
-      <string>Diag</string>
+      <string>DI</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_11">
       <property name="geometry">
@@ -666,6 +758,9 @@
         <width>941</width>
         <height>606</height>
        </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
@@ -678,8 +773,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_11">
@@ -712,7 +807,7 @@
     </widget>
     <widget class="QWidget" name="KV">
      <attribute name="title">
-      <string>KV</string>
+      <string>KKV</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_30">
       <property name="geometry">
@@ -722,6 +817,9 @@
         <width>941</width>
         <height>606</height>
        </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
@@ -734,8 +832,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_30">
@@ -779,6 +877,9 @@
         <height>606</height>
        </rect>
       </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
       </property>
@@ -790,8 +891,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>606</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_9">
@@ -832,8 +933,11 @@
         <x>0</x>
         <y>0</y>
         <width>941</width>
-        <height>606</height>
+        <height>416</height>
        </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAsNeeded</enum>
@@ -846,8 +950,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>937</width>
-         <height>602</height>
+         <width>941</width>
+         <height>416</height>
         </rect>
        </property>
        <widget class="caInclude" name="cainclude_10">
@@ -876,6 +980,76 @@
         </property>
        </widget>
       </widget>
+     </widget>
+     <widget class="QScrollArea" name="scrollArea_16">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>450</y>
+        <width>941</width>
+        <height>156</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_16">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>941</width>
+         <height>156</height>
+        </rect>
+       </property>
+       <widget class="caInclude" name="cainclude_16">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="macro">
+         <string>$(TE_IOCS)</string>
+        </property>
+        <property name="filename" stdset="0">
+         <string notr="true">iocStats_include.ui</string>
+        </property>
+        <property name="stacking">
+         <enum>caInclude::ColumnRow</enum>
+        </property>
+        <property name="numberOfItems" stdset="0">
+         <number>1</number>
+        </property>
+        <property name="maximumColumns" stdset="0">
+         <number>3</number>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="caLabel" name="calabel_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>422</y>
+        <width>131</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Test IOCs</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
      </widget>
     </widget>
    </widget>

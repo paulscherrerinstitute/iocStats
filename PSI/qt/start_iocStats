@@ -4,58 +4,47 @@
 # running iocStats (they have a channel "<IOC>:TOD")
 # Sort alphabetically, then sort by location and finally group by topic.
 
+TEST='NICOLE|CHRISTOPH|DIDIER|-GJ'
+EXCLUDE=''
+
 startDM >/dev/null 2>&1 -macro $(
     wget -q -O - 'http://epics-boot-info.psi.ch/find-channel.aspx/S%:TOD?limit=0&format=csv&header=no&facility=SWISSFEL' | sort \
     | awk -F : '
-        /^SLG/    { SLG = SLG $1 "\n"; next }
-        /^SIN/    { SIN = SIN $1 "\n"; next }
-        /^S[0-9]/ { SNN = SNN $1 "\n"; next }
-        /^SAR/    { SAR = SAR $1 "\n"; next }
-        /^SAT/    { SAT = SAT $1 "\n"; next }
-        /^SGE/    { SGE = SGE $1 "\n"; next }
-                  { SXX = SXX $1 "\n"; }
+        /^SLG/      { SLG = SLG $1 "\n"; next }
+        /^SIN/      { SIN = SIN $1 "\n"; next }
+        /^S[0-9]/   { SNN = SNN $1 "\n"; next }
+        /^SAR/      { SAR = SAR $1 "\n"; next }
+        /^SAT/      { SAT = SAT $1 "\n"; next }
+        /^SGE/      { SGE = SGE $1 "\n"; next }
+                    { SXX = SXX $1 "\n"; }
         END { print SLG, SIN, SNN, SAR, SAT, SGE, SXX }' \
-    | awk '
-         /^$/       { next }
-         /-.*-TI/   { TI_IOCS=TI_IOCS "IOC=" $1 ";"; next}
-         /CAM/      { CA_IOCS=CA_IOCS "IOC=" $1 ";"; next}
-         /-.*-LAS/  { LA_IOCS=LA_IOCS "IOC=" $1 ";"; next}
-         /-VAC/     { VA_IOCS=VA_IOCS "IOC=" $1 ";"; next}
-         /-.*-VM/   { VM_IOCS=VM_IOCS "IOC=" $1 ";"; next}
-         /-MAG/     { MA_IOCS=MA_IOCS "IOC=" $1 ";"; next}
-         /-LLRF/    { RF_IOCS=RF_IOCS "IOC=" $1 ";"; next}
-         /-.*-R/    { RF_IOCS=RF_IOCS "IOC=" $1 ";"; next}
-         /-ILK/     { IL_IOCS=IL_IOCS "IOC=" $1 ";"; next}
-         /-MOT/     { MO_IOCS=MO_IOCS "IOC=" $1 ";"; next}
-         /-DBPM/    { BP_IOCS=BP_IOCS "IOC=" $1 ";"; next}
-         /-DBLM/    { BL_IOCS=BL_IOCS "IOC=" $1 ";"; next}
-         /-DBCM/    { BC_IOCS=BC_IOCS "IOC=" $1 ";"; next}
-         /-DBAM/    { BA_IOCS=BA_IOCS "IOC=" $1 ";"; next}
-         /-DSCR/    { SC_IOCS=SC_IOCS "IOC=" $1 ";"; next}
-         /-D/       { DI_IOCS=DI_IOCS "IOC=" $1 ";"; next}
-         /-KKV/     { KV_IOCS=KV_IOCS "IOC=" $1 ";"; next}
-         /^SLG/     { LG_IOCS=LG_IOCS "IOC=" $1 ";"; next}
-         /^STS/     { TS_IOCS=TS_IOCS "IOC=" $1 ";"; next}
-         /^SGE/     { GE_IOCS=GE_IOCS "IOC=" $1 ";"; next}
-                    { OT_IOCS=OT_IOCS "IOC=" $1 ";"; }
-    END { print "TS_IOCS=" TS_IOCS \
-               ",TI_IOCS=" TI_IOCS \
-               ",LA_IOCS=" LA_IOCS \
-               ",LG_IOCS=" LG_IOCS \
-               ",CA_IOCS=" CA_IOCS \
-               ",VA_IOCS=" VA_IOCS \
-               ",VM_IOCS=" VM_IOCS \
-               ",MA_IOCS=" MA_IOCS \
-               ",RF_IOCS=" RF_IOCS \
-               ",IL_IOCS=" IL_IOCS \
-               ",MO_IOCS=" MO_IOCS \
-               ",BA_IOCS=" BA_IOCS \
-               ",BC_IOCS=" BC_IOCS \
-               ",BL_IOCS=" BL_IOCS \
-               ",BP_IOCS=" BP_IOCS \
-               ",SC_IOCS=" SC_IOCS \
-               ",DI_IOCS=" DI_IOCS \
-               ",KV_IOCS=" KV_IOCS \
-               ",GE_IOCS=" GE_IOCS \
-               ",OT_IOCS=" OT_IOCS \
+    | awk -v test=$TEST -v exclude=$EXCLUDE '
+        /^$/        { next }      
+exclude && $1~exclude { next }         
+test && $1~test     { IOCS["TE"]=IOCS["TE"] "IOC=" $1 ";"; next}
+        /TEST/      { IOCS["TE"]=IOCS["TE"] "IOC=" $1 ";"; next}
+        /-TI/       { IOCS["TI"]=IOCS["TI"] "IOC=" $1 ";"; next}
+        /CAM/       { IOCS["CA"]=IOCS["CA"] "IOC=" $1 ";"; next}
+        /-LAS/      { IOCS["LA"]=IOCS["LA"] "IOC=" $1 ";"; next}
+        /-VAC/      { IOCS["VA"]=IOCS["VA"] "IOC=" $1 ";"; next}
+        /-.*-VM/    { IOCS["VA"]=IOCS["VA"] "IOC=" $1 ";"; next}
+        /-VCS/      { IOCS["VA"]=IOCS["VA"] "IOC=" $1 ";"; next}
+        /-MAG/      { IOCS["MA"]=IOCS["MA"] "IOC=" $1 ";"; next}
+        /-LLRF/     { IOCS["LLRF"]=IOCS["LLRF"] "IOC=" $1 ";"; next}
+        /-ILK/      { IOCS["ILK"]=IOCS["ILK"] "IOC=" $1 ";"; next}
+        /-R/        { IOCS["RF"]=IOCS["RF"] "IOC=" $1 ";"; next}
+        /-MOT/      { IOCS["MO"]=IOCS["MO"] "IOC=" $1 ";"; next}
+        /-DBPM/     { IOCS["BP"]=IOCS["BP"] "IOC=" $1 ";"; next}
+        /-DBLM/     { IOCS["BL"]=IOCS["BL"] "IOC=" $1 ";"; next}
+        /-DBCM/     { IOCS["BC"]=IOCS["BC"] "IOC=" $1 ";"; next}
+        /-DBAM/     { IOCS["BA"]=IOCS["BA"] "IOC=" $1 ";"; next}
+        /-DSCR/     { IOCS["SC"]=IOCS["SC"] "IOC=" $1 ";"; next}
+        /-DDR/      { IOCS["DR"]=IOCS["DR"] "IOC=" $1 ";"; next}
+        /-D/        { IOCS["DI"]=IOCS["DI"] "IOC=" $1 ";"; next}
+        /-KKV/      { IOCS["KV"]=IOCS["KV"] "IOC=" $1 ";"; next}
+        /^SLG/      { IOCS["LG"]=IOCS["LG"] "IOC=" $1 ";"; next}
+        /^STS/      { IOCS["TS"]=IOCS["TS"] "IOC=" $1 ";"; next}
+        /^SGE/      { IOCS["GE"]=IOCS["GE"] "IOC=" $1 ";"; next}
+                    { IOCS["OT"]=IOCS["OT"] "IOC=" $1 ";"; }
+    END { for (i in IOCS) { printf ("%s_IOCS=%s,", i, IOCS[i]) }
 }') iocStats_overview.ui
