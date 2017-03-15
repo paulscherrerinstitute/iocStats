@@ -7,7 +7,7 @@
 TEST='NICOLE|CHRISTOPH|DIDIER|-GJ'
 EXCLUDE=''
 
-startDM >/dev/null 2>&1 -macro $(
+startDM >/dev/null 2>&1 -noMsg -macro $(
     wget -q -O - 'http://epics-boot-info.psi.ch/find-channel.aspx/S%:TOD?limit=0&format=csv&header=no&facility=SWISSFEL' | sort \
     | awk -F : '
         /^SLG/      { SLG = SLG $1 "\n"; next }
