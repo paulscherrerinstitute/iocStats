@@ -6,16 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
-    <height>30</height>
+    <width>295</width>
+    <height>28</height>
    </rect>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="caRelatedDisplay" name="caRelatedDisplay_0">
     <property name="geometry">
      <rect>
-      <x>2</x>
-      <y>1</y>
+      <x>0</x>
+      <y>0</y>
       <width>220</width>
       <height>28</height>
      </rect>
@@ -43,8 +43,8 @@
    <widget class="caLineEdit" name="calineedit_30">
     <property name="geometry">
      <rect>
-      <x>222</x>
-      <y>1</y>
+      <x>220</x>
+      <y>0</y>
       <width>75</width>
       <height>28</height>
      </rect>

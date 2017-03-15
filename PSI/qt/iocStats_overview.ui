@@ -40,7 +40,7 @@
     </property>
     <widget class="QWidget" name="TS">
      <attribute name="title">
-      <string>T&amp;&amp;S</string>
+      <string>TS</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea">
       <property name="geometry">
@@ -92,6 +92,12 @@
         </property>
         <property name="maximumColumns" stdset="0">
          <number>3</number>
+        </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
         </property>
        </widget>
       </widget>
@@ -152,6 +158,12 @@
         <property name="maximumColumns" stdset="0">
          <number>3</number>
         </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
        </widget>
       </widget>
      </widget>
@@ -210,6 +222,12 @@
         </property>
         <property name="maximumColumns" stdset="0">
          <number>3</number>
+        </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
         </property>
        </widget>
       </widget>
@@ -270,6 +288,12 @@
         <property name="maximumColumns" stdset="0">
          <number>3</number>
         </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
        </widget>
       </widget>
      </widget>
@@ -328,6 +352,12 @@
         </property>
         <property name="maximumColumns" stdset="0">
          <number>3</number>
+        </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
         </property>
        </widget>
       </widget>
@@ -388,6 +418,12 @@
         <property name="maximumColumns" stdset="0">
          <number>3</number>
         </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
        </widget>
       </widget>
      </widget>
@@ -446,6 +482,12 @@
         </property>
         <property name="maximumColumns" stdset="0">
          <number>3</number>
+        </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
         </property>
        </widget>
       </widget>
@@ -506,6 +548,12 @@
         <property name="maximumColumns" stdset="0">
          <number>3</number>
         </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
        </widget>
       </widget>
      </widget>
@@ -565,13 +613,19 @@
         <property name="maximumColumns" stdset="0">
          <number>3</number>
         </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
        </widget>
       </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="BM">
      <attribute name="title">
-      <string>DB*M</string>
+      <string>BLM</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_12">
       <property name="geometry">
@@ -610,7 +664,7 @@
          </rect>
         </property>
         <property name="macro">
-         <string>$(BA_IOCS);$(BC_IOCS);$(BL_IOCS);$(BP_IOCS)</string>
+         <string>$(BL_IOCS)</string>
         </property>
         <property name="filename" stdset="0">
          <string notr="true">iocStats_include.ui</string>
@@ -624,13 +678,19 @@
         <property name="maximumColumns" stdset="0">
          <number>3</number>
         </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
        </widget>
       </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="SC">
      <attribute name="title">
-      <string>DSCR</string>
+      <string>SCR</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_13">
       <property name="geometry">
@@ -683,13 +743,19 @@
         <property name="maximumColumns" stdset="0">
          <number>3</number>
         </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
        </widget>
       </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="DR">
      <attribute name="title">
-      <string>DDR</string>
+      <string>DRM</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_14">
       <property name="geometry">
@@ -742,13 +808,19 @@
         <property name="maximumColumns" stdset="0">
          <number>3</number>
         </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
        </widget>
       </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="DI">
      <attribute name="title">
-      <string>DI</string>
+      <string>DIAG</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_11">
       <property name="geometry">
@@ -787,7 +859,7 @@
          </rect>
         </property>
         <property name="macro">
-         <string>$(DI_IOCS)</string>
+         <string>$(BA_IOCS);$(BC_IOCS);$(BP_IOCS);$(DI_IOCS);</string>
         </property>
         <property name="filename" stdset="0">
          <string notr="true">iocStats_include.ui</string>
@@ -800,6 +872,12 @@
         </property>
         <property name="maximumColumns" stdset="0">
          <number>3</number>
+        </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
         </property>
        </widget>
       </widget>
@@ -860,6 +938,12 @@
         <property name="maximumColumns" stdset="0">
          <number>3</number>
         </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
        </widget>
       </widget>
      </widget>
@@ -918,6 +1002,12 @@
         </property>
         <property name="maximumColumns" stdset="0">
          <number>3</number>
+        </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
         </property>
        </widget>
       </widget>
@@ -978,6 +1068,12 @@
         <property name="maximumColumns" stdset="0">
          <number>3</number>
         </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
        </widget>
       </widget>
      </widget>
@@ -1032,6 +1128,12 @@
         <property name="maximumColumns" stdset="0">
          <number>3</number>
         </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
        </widget>
       </widget>
      </widget>
@@ -1058,7 +1160,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>946</width>
+      <width>950</width>
       <height>50</height>
      </rect>
     </property>
