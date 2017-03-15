@@ -14,6 +14,70 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="palette">
+    <palette>
+     <active>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>236</red>
+         <green>236</green>
+         <blue>236</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>236</red>
+         <green>236</green>
+         <blue>236</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>236</red>
+         <green>236</green>
+         <blue>236</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>236</red>
+         <green>236</green>
+         <blue>236</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
    <widget class="caLabel" name="calabel">
     <property name="geometry">
      <rect>
@@ -23,8 +87,15 @@
       <height>35</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>22</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="statusTip">
-     <string>Expert</string>
+     <string>Operation</string>
     </property>
     <property name="text">
      <string>$(IOC)</string>
@@ -35,8 +106,15 @@
     <property name="indent">
      <number>10</number>
     </property>
+    <property name="background">
+     <color>
+      <red>218</red>
+      <green>218</green>
+      <blue>218</blue>
+     </color>
+    </property>
     <property name="colorMode">
-     <enum>caLabel::Default</enum>
+     <enum>caLabel::Static</enum>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox">
@@ -96,8 +174,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):MEM_FREE</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -143,8 +228,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):MEM_USED</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -174,8 +266,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):MEM_MAX</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -372,8 +471,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):CA_CLNT_CNT</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>false</bool>
@@ -419,8 +525,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):CA_CONN_CNT</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>false</bool>
@@ -483,8 +596,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):RECORD_CNT</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>false</bool>
@@ -523,9 +643,9 @@
      </property>
      <property name="background">
       <color>
-       <red>220</red>
-       <green>191</green>
-       <blue>110</blue>
+       <red>183</red>
+       <green>157</green>
+       <blue>92</blue>
       </color>
      </property>
      <property name="labels">
@@ -581,8 +701,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):CALINK_CNT</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>false</bool>
@@ -664,8 +791,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):CALINK_BROKEN</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>false</bool>
@@ -692,8 +826,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):CALINK_DISCON</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>false</bool>
@@ -903,8 +1044,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):FD_CNT</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -950,8 +1098,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):FD_FREE</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -981,8 +1136,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):FD_MAX</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -1120,8 +1282,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):01HZ_UPD_TIME</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -1167,8 +1336,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):02HZ_UPD_TIME</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -1231,8 +1407,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):05HZ_UPD_TIME</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -1295,8 +1478,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):1HZ_UPD_TIME</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -1378,8 +1568,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):2HZ_UPD_TIME</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -1461,8 +1658,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):5HZ_UPD_TIME</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -1544,8 +1748,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):10HZ_UPD_TIME</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -1608,8 +1819,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):SUSP_TASK_CNT</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>false</bool>
@@ -1747,8 +1965,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):SYS_CPU_LOAD</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -1794,8 +2019,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):IOC_CPU_LOAD</string>
      </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
+     </property>
      <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+      <enum>caLineEdit::Static</enum>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -1928,15 +2160,6 @@
       <string>Heart Beat</string>
      </property>
     </widget>
-    <zorder>calabel_26</zorder>
-    <zorder>calineedit_25</zorder>
-    <zorder>calabel_27</zorder>
-    <zorder>calineedit_26</zorder>
-    <zorder>caled_32</zorder>
-    <zorder>caled_33</zorder>
-    <zorder>caled_31</zorder>
-    <zorder>calabel_25</zorder>
-    <zorder>calabel</zorder>
    </widget>
    <widget class="QGroupBox" name="groupBox_6">
     <property name="geometry">
@@ -1960,7 +2183,7 @@
       <rect>
        <x>135</x>
        <y>90</y>
-       <width>190</width>
+       <width>225</width>
        <height>19</height>
       </rect>
      </property>
@@ -1976,11 +2199,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):TOD</string>
      </property>
-     <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
      </property>
-     <property name="unitsEnabled">
-      <bool>true</bool>
+     <property name="colorMode">
+      <enum>caLineEdit::Static</enum>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_33">
@@ -2007,7 +2234,7 @@
       <rect>
        <x>135</x>
        <y>110</y>
-       <width>190</width>
+       <width>225</width>
        <height>19</height>
       </rect>
      </property>
@@ -2023,11 +2250,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):STARTTOD</string>
      </property>
-     <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
      </property>
-     <property name="unitsEnabled">
-      <bool>true</bool>
+     <property name="colorMode">
+      <enum>caLineEdit::Static</enum>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_34">
@@ -2054,7 +2285,7 @@
       <rect>
        <x>135</x>
        <y>130</y>
-       <width>190</width>
+       <width>225</width>
        <height>19</height>
       </rect>
      </property>
@@ -2070,11 +2301,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):UPTIME</string>
      </property>
-     <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
      </property>
-     <property name="unitsEnabled">
-      <bool>true</bool>
+     <property name="colorMode">
+      <enum>caLineEdit::Static</enum>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_35">
@@ -2117,11 +2352,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):ST_SCRIPT</string>
      </property>
-     <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
      </property>
-     <property name="unitsEnabled">
-      <bool>true</bool>
+     <property name="colorMode">
+      <enum>caLineEdit::Static</enum>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_36">
@@ -2159,7 +2398,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Kernel Version</string>
+      <string>OS Version</string>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_27">
@@ -2183,11 +2422,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):HOSTNAME</string>
      </property>
-     <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
      </property>
-     <property name="unitsEnabled">
-      <bool>true</bool>
+     <property name="colorMode">
+      <enum>caLineEdit::Static</enum>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_28">
@@ -2230,11 +2473,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):KERNEL_VERS</string>
      </property>
-     <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
      </property>
-     <property name="unitsEnabled">
-      <bool>true</bool>
+     <property name="colorMode">
+      <enum>caLineEdit::Static</enum>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_29">
@@ -2277,11 +2524,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):EPICS_VERS</string>
      </property>
-     <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
      </property>
-     <property name="unitsEnabled">
-      <bool>true</bool>
+     <property name="colorMode">
+      <enum>caLineEdit::Static</enum>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_38">
@@ -2327,11 +2578,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):APP_DIR</string>
      </property>
-     <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
      </property>
-     <property name="unitsEnabled">
-      <bool>true</bool>
+     <property name="colorMode">
+      <enum>caLineEdit::Static</enum>
      </property>
     </widget>
     <widget class="caLabel" name="calabel_37">
@@ -2377,7 +2632,7 @@
       <rect>
        <x>135</x>
        <y>155</y>
-       <width>190</width>
+       <width>225</width>
        <height>19</height>
       </rect>
      </property>
@@ -2393,11 +2648,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):ENGINEER</string>
      </property>
-     <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
      </property>
-     <property name="unitsEnabled">
-      <bool>true</bool>
+     <property name="colorMode">
+      <enum>caLineEdit::Static</enum>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_38">
@@ -2405,7 +2664,7 @@
       <rect>
        <x>135</x>
        <y>175</y>
-       <width>190</width>
+       <width>225</width>
        <height>19</height>
       </rect>
      </property>
@@ -2421,11 +2680,15 @@
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):LOCATION</string>
      </property>
-     <property name="colorMode">
-      <enum>caLineEdit::Default</enum>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>224</blue>
+      </color>
      </property>
-     <property name="unitsEnabled">
-      <bool>true</bool>
+     <property name="colorMode">
+      <enum>caLineEdit::Static</enum>
      </property>
     </widget>
     <widget class="caMultiLineString" name="camultilinestring">
@@ -2434,9 +2697,9 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>345</x>
+       <x>375</x>
        <y>110</y>
-       <width>266</width>
+       <width>236</width>
        <height>86</height>
       </rect>
      </property>
@@ -2459,7 +2722,7 @@
       <color>
        <red>255</red>
        <green>255</green>
-       <blue>228</blue>
+       <blue>224</blue>
       </color>
      </property>
      <property name="colorMode">
@@ -2472,7 +2735,7 @@
     <widget class="caLabel" name="calabel_40">
      <property name="geometry">
       <rect>
-       <x>345</x>
+       <x>375</x>
        <y>90</y>
        <width>86</width>
        <height>19</height>
@@ -2490,6 +2753,89 @@
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
+    </widget>
+    <widget class="caFrame" name="caframe">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>70</y>
+       <width>256</width>
+       <height>86</height>
+      </rect>
+     </property>
+     <property name="visibility">
+      <enum>caFrame::Calc</enum>
+     </property>
+     <property name="visibilityCalc">
+      <string notr="true">G</string>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(IOC):TIME</string>
+     </property>
+     <widget class="caLineEdit" name="calineedit_41">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>20</y>
+        <width>225</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Sans Typewriter</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">$(IOC):TIME</string>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>255</green>
+        <blue>224</blue>
+       </color>
+      </property>
+      <property name="colorMode">
+       <enum>caLineEdit::Static</enum>
+      </property>
+     </widget>
+     <widget class="caLineEdit" name="calineedit_40">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>40</y>
+        <width>225</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Sans Typewriter</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="channel" stdset="0">
+       <string notr="true">$(IOC):STARTTIME</string>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>255</green>
+        <blue>224</blue>
+       </color>
+      </property>
+      <property name="colorMode">
+       <enum>caLineEdit::Static</enum>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="caLineEdit" name="calineedit_30">
@@ -2555,9 +2901,9 @@
      </property>
      <property name="background">
       <color>
-       <red>220</red>
-       <green>191</green>
-       <blue>110</blue>
+       <red>183</red>
+       <green>157</green>
+       <blue>92</blue>
       </color>
      </property>
      <property name="labels">
