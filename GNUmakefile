@@ -24,6 +24,7 @@ SOURCES_Linux += iocStats/devIocStats/os/default/osdClustInfo.c
 SOURCES_Linux += iocStats/devIocStats/os/default/osdSuspTasks.c
 SOURCES_Linux += iocStats/devIocStats/os/default/osdIFErrors.c
 SOURCES_Linux += iocStats/devIocStats/os/default/osdBootInfo.c
+SOURCES_Linux += iocStats/devIocStats/os/Linux/osdFileSystem.c
 
 SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdCpuUsage.c
 SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdCpuUtilization.c
@@ -37,6 +38,7 @@ SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdBootInfo.c
 SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdSystemInfo.c
 SOURCES_vxWorks += iocStats/devIocStats/os/posix/osdHostInfo.c
 SOURCES_vxWorks += iocStats/devIocStats/os/default/osdPIDInfo.c
+SOURCES_vxWorks += iocStats/devIocStats/os/default/osdFileSystem.c
 SOURCES_3.13    += PSI/rsrv.c
 
 #SOURCES_WIN32 += iocStats/devIocStats/os/default/osdCpuUsage.c
@@ -51,6 +53,7 @@ SOURCES_3.13    += PSI/rsrv.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdSystemInfo.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdHostInfo.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/default/osdPIDInfo.c
+#SOURCES_WIN32 += iocStats/devIocStats/os/default/osdFileSystem.c
 
 ############# OSI sources #############
 SOURCES += iocStats/devIocStats/devIocStatsAnalog.c
@@ -84,8 +87,7 @@ TEMPLATES += iocStats/iocAdmin/Db/iocAdminVxWorks.substitutions
 
 
 ############ SCRIPTS #########
-SCRIPTS += PSI/startup.cmd
-SCRIPTS += PSI/vxWorks.cmd
+SCRIPTS += $(wildcard PSI/*.cmd)
 SCRIPTS += PSI/cfg/iocStats.archtmp
 
 ############ QT screens ##########

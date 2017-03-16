@@ -50,6 +50,9 @@
  *              callback task.
  *  2017-01-16  Dirk Zimoch (PSI):
  *              Added CA link statistics.
+ *  2017-02-09  Dirk Zimoch (PSI):
+ *              Added file system usage.
+ *              Linux only at the moment.
  */
 
 /*
@@ -167,7 +170,7 @@ struct pvtClustArea
 };
 typedef struct pvtClustArea pvtClustArea;
 
-typedef void (*statGetFunc)(double*);
+typedef void (*statGetFunc)();
 
 struct validGetParms
 {
@@ -271,6 +274,8 @@ static validGetParms statsGetParms[]={
 	{ "calinks",                    statsCALinks,	        CA_TYPE },
 	{ "calinks_broken",             statsCALinksBroken,     CA_TYPE },
 	{ "calink_disconnects",         statsCALinkDisconnects, CA_TYPE },
+	{ "fs_usage",                   statsFsUsage,           FD_TYPE },
+	{ "fs_free",                    statsFsFree,            FD_TYPE },
 	{ NULL,NULL,0 }
 };
 
@@ -298,6 +303,8 @@ static epicsMutexId scan_mutex;
 static unsigned num_links            = 0;
 static unsigned num_links_broken     = 0;
 static unsigned num_link_disconnects = 0;
+static fsInfo[10] = {};
+
 
 /* ---------------------------------------------------------------------- */
 
@@ -525,6 +532,38 @@ static long ai_init_record(aiRecord* pr)
 	}
 	parm = pr->inp.value.instio.string;
 	for(i=0;statsGetParms[i].name && pvt==NULL;i++)
+	{
+		if(strcmp(parm,statsGetParms[i].name)==0)
+		{
+			pvt=(pvtArea*)malloc(sizeof(pvtArea));
+			pvt->index=i;
+			pvt->type=statsGetParms[i].type;
+		}
+	}
+	
+	if(pvt==NULL)
+	{
+		recGblRecordError(S_db_badField,(void*)pr,
+			"devAiStats (init_record) Illegal INP parm field");
+		return S_db_badField;
+	}
+
+	/* Make sure record processing routine does not perform any conversion*/
+	pr->linr=menuConvertNO_CONVERSION;
+	pr->dpvt=pvt;
+	return 0;
+}
+
+static long ai_fs_init_record(aiRecord* pr)
+{
+	if(pr->inp.type!=INST_IO)
+	{
+		recGblRecordError(S_db_badField,(void*)pr,
+			"devAiFs (init_record) Illegal INP field");
+		return S_db_badField;
+	}
+	parm = pr->inp.value.instio.string;
+	for(i=0;statsFsGetParms[i].name && pvt==NULL;i++)
 	{
 		if(strcmp(parm,statsGetParms[i].name)==0)
 		{
@@ -796,6 +835,10 @@ static void statsCALinksBroken(double *val)
     *val = (double)num_links_broken;
 }
 static void statsCALinkDisconnects(double *val)
+{
+    *val = (double)num_link_disconnects;
+}
+static void statsFsUsage(double *val)
 {
     *val = (double)num_link_disconnects;
 }

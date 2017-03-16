@@ -65,6 +65,12 @@ typedef struct {
     double iocLoad;
 } loadInfo;
 
+typedef struct {
+    const char* path;
+    double fsUsage;
+    double fsFreeBytes;
+} fsInfo;
+
 /* Functions (API) for OSD layer */
 /* All funcs return 0 (OK) / -1 (ERROR) */
 
@@ -79,6 +85,9 @@ extern int devIocStatsGetCpuUtilization (loadInfo *pval);
 /* FD Usage */
 extern int devIocStatsInitFDUsage (void);
 extern int devIocStatsGetFDUsage (fdInfo *pval);
+
+/* File system Usage */
+extern int devIocStatsGetFileSystemUsage(fsInfo *pval);
 
 /* Memory Usage */
 extern int devIocStatsInitMemUsage (void);
