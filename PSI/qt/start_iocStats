@@ -23,6 +23,9 @@ startDM >/dev/null 2>&1 -noMsg -macro $(
 exclude && $1~exclude { next }         
 test && $1~test     { IOCS["TE"]=IOCS["TE"] "IOC=" $1 ";"; next}
         /TEST/      { IOCS["TE"]=IOCS["TE"] "IOC=" $1 ";"; next}
+        /-TS/       { IOCS["TS"]=IOCS["TS"] "IOC=" $1 ";"; next}
+        /-ALCSYNC/  { IOCS["TS"]=IOCS["TS"] "IOC=" $1 ";"; next}
+        /-SRX/      { IOCS["TS"]=IOCS["TS"] "IOC=" $1 ";"; next}
         /-TI/       { IOCS["TI"]=IOCS["TI"] "IOC=" $1 ";"; next}
         /CAM/       { IOCS["CA"]=IOCS["CA"] "IOC=" $1 ";"; next}
         /-LAS/      { IOCS["LA"]=IOCS["LA"] "IOC=" $1 ";"; next}
