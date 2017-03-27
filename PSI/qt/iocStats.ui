@@ -539,42 +539,6 @@
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="caLed" name="caled_11">
-     <property name="geometry">
-      <rect>
-       <x>290</x>
-       <y>50</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="ledWidth">
-      <number>17</number>
-     </property>
-     <property name="ledHeight">
-      <number>17</number>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(IOC):CA_CLNT_CNT</string>
-     </property>
-     <property name="colorMode">
-      <enum>caLed::Alarm</enum>
-     </property>
-     <property name="falseColor">
-      <color>
-       <red>160</red>
-       <green>160</green>
-       <blue>160</blue>
-      </color>
-     </property>
-     <property name="trueColor">
-      <color>
-       <red>0</red>
-       <green>205</green>
-       <blue>0</blue>
-      </color>
-     </property>
-    </widget>
     <widget class="caLineEdit" name="calineedit_31">
      <property name="geometry">
       <rect>
