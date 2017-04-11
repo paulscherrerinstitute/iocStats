@@ -53,7 +53,7 @@ SOURCES_3.13    += PSI/rsrv.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdSystemInfo.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdHostInfo.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/default/osdPIDInfo.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/default/osdFileSystem.c
+#SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdFileSystem.c
 
 ############# OSI sources #############
 SOURCES += iocStats/devIocStats/devIocStatsAnalog.c
