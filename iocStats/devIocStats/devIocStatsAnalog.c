@@ -170,7 +170,15 @@ struct pvtClustArea
 };
 typedef struct pvtClustArea pvtClustArea;
 
-typedef void (*statGetFunc)();
+struct pvtFsArea
+{
+	int index;
+	int type;
+	fsInfo* fs;
+};
+typedef struct pvtFsArea pvtFsArea;
+
+typedef void (*statGetFunc)(double*);
 
 struct validGetParms
 {
@@ -198,6 +206,9 @@ static long ai_ioint_info(int cmd,aiRecord* pr,IOSCANPVT* iopvt);
 static long ai_clusts_init(int pass);
 static long ai_clusts_init_record(aiRecord *);
 static long ai_clusts_read(aiRecord *);
+
+static long ai_fs_init_record(aiRecord* pr);
+static long ai_fs_read(aiRecord* pr);
 
 static long ao_init_record(aoRecord* pr);
 static long ao_write(aoRecord*);
@@ -274,8 +285,6 @@ static validGetParms statsGetParms[]={
 	{ "calinks",                    statsCALinks,	        CA_TYPE },
 	{ "calinks_broken",             statsCALinksBroken,     CA_TYPE },
 	{ "calink_disconnects",         statsCALinkDisconnects, CA_TYPE },
-	{ "fs_usage",                   statsFsUsage,           FD_TYPE },
-	{ "fs_free",                    statsFsFree,            FD_TYPE },
 	{ NULL,NULL,0 }
 };
 
@@ -285,6 +294,8 @@ aStats devAoStats={ 6,NULL,NULL,ao_init_record,NULL,ao_write,NULL };
 epicsExportAddress(dset,devAoStats);
 aStats devAiClusts = {6,NULL,ai_clusts_init,ai_clusts_init_record,NULL,ai_clusts_read,NULL };
 epicsExportAddress(dset,devAiClusts);
+aStats devAiFsStats={ 6,NULL,ai_init,ai_fs_init_record,ai_ioint_info,ai_fs_read,NULL };
+epicsExportAddress(dset,devAiFsStats);
 
 static memInfo meminfo = {0.0,0.0,0.0,0.0,0.0,0.0};
 static memInfo workspaceinfo = {0.0,0.0,0.0,0.0,0.0,0.0};
@@ -303,7 +314,7 @@ static epicsMutexId scan_mutex;
 static unsigned num_links            = 0;
 static unsigned num_links_broken     = 0;
 static unsigned num_link_disconnects = 0;
-static fsInfo[10] = {};
+static fsInfo* fslist = NULL;
 
 
 /* ---------------------------------------------------------------------- */
@@ -379,9 +390,14 @@ static void scan_time(int type)
       }
       case FD_TYPE:
       {
+        fsInfo* fs;
 	fdInfo   fdusage_local = {0,0};
         devIocStatsGetFDUsage(&fdusage_local);
+        
         epicsMutexLock(scan_mutex);
+        for (fs = fslist; fs; fs = fs->next) {
+            devIocStatsGetFileSystemUsage(fs);
+        }
 	fdusage = fdusage_local;
         epicsMutexUnlock(scan_mutex);
 	break;
@@ -556,29 +572,60 @@ static long ai_init_record(aiRecord* pr)
 
 static long ai_fs_init_record(aiRecord* pr)
 {
+	int		i;
+	char	*parm;
+	pvtFsArea	*pvt;
+	fsInfo	*fs;
+
 	if(pr->inp.type!=INST_IO)
 	{
 		recGblRecordError(S_db_badField,(void*)pr,
-			"devAiFs (init_record) Illegal INP field");
+			"devAiFsStats (init_record) Illegal INP field");
 		return S_db_badField;
 	}
 	parm = pr->inp.value.instio.string;
-	for(i=0;statsFsGetParms[i].name && pvt==NULL;i++)
+	if (strncmp(parm, "usage ", 6) == 0)
 	{
-		if(strcmp(parm,statsGetParms[i].name)==0)
-		{
-			pvt=(pvtArea*)malloc(sizeof(pvtArea));
-			pvt->index=i;
-			pvt->type=statsGetParms[i].type;
-		}
+		parm += 6;
+		i = 0;
+	} else if (strncmp(parm, "free_bytes ", 11) == 0)
+	{
+		parm += 11;
+		i = 1;
 	}
-	
-	if(pvt==NULL)
+	else
 	{
 		recGblRecordError(S_db_badField,(void*)pr,
-			"devAiStats (init_record) Illegal INP parm field");
+			"devAiFsStats (init_record) Illegal INP parm field");
 		return S_db_badField;
 	}
+	while (*parm && *parm==' ') parm++;
+	if (!*parm)
+	{
+		recGblRecordError(S_db_badField,(void*)pr,
+			"devAiFsStats (init_record) no file name found in INP");
+		return S_db_badField;
+	}
+	pvt=(pvtFsArea*)malloc(sizeof(pvtFsArea));
+	if (!pvt)
+	{
+		recGblRecordError(S_db_badField,(void*)pr,
+			"devAiFsStats (init_record) out of memory");
+		return S_db_noMemory;
+	}
+	for (fs = fslist; fs; fs=fs->next)
+	{
+		if (strcmp(fs->path, parm) == 0) break;
+	}
+	if (!fs) {
+		fs = malloc(sizeof(fsInfo));
+		fs->path = parm;
+		fs->next = fslist;
+		fslist = fs;
+	}
+	pvt->index = i;
+	pvt->type = FD_TYPE;
+	pvt->fs = fs;
 
 	/* Make sure record processing routine does not perform any conversion*/
 	pr->linr=menuConvertNO_CONVERSION;
@@ -695,6 +742,24 @@ static long ai_read(aiRecord* pr)
 
     epicsMutexLock(scan_mutex);
     statsGetParms[pvt->index].func(&val);
+    epicsMutexUnlock(scan_mutex);
+    pr->val = val;
+    pr->udf = 0;
+    return 2; /* don't convert */
+}
+
+static long ai_fs_read(aiRecord* pr)
+{
+    double val = 0;
+    pvtFsArea* pvt=(pvtFsArea*)pr->dpvt;
+
+    if (!pvt) return S_dev_badInpType;
+
+    epicsMutexLock(scan_mutex);
+    switch (pvt->index) {
+        case 0: val = pvt->fs->fsUsage; break;
+        case 1: val = pvt->fs->fsFreeBytes; break;
+    }
     epicsMutexUnlock(scan_mutex);
     pr->val = val;
     pr->udf = 0;
@@ -835,10 +900,6 @@ static void statsCALinksBroken(double *val)
     *val = (double)num_links_broken;
 }
 static void statsCALinkDisconnects(double *val)
-{
-    *val = (double)num_link_disconnects;
-}
-static void statsFsUsage(double *val)
 {
     *val = (double)num_link_disconnects;
 }

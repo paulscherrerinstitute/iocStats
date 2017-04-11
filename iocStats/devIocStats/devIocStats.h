@@ -65,10 +65,11 @@ typedef struct {
     double iocLoad;
 } loadInfo;
 
-typedef struct {
+typedef struct fsInfo {
     const char* path;
     double fsUsage;
     double fsFreeBytes;
+    struct fsInfo* next;
 } fsInfo;
 
 /* Functions (API) for OSD layer */

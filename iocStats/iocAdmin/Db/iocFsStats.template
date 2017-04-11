@@ -1,0 +1,18 @@
+record(ai, "$(IOCNAME):FS_USAGE_$(FSNAME)") {
+  field(DESC, "Disk Usage")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC FS stats")
+  field(INP,  "@usage $(FSPATH)")
+  field(EGU,  "%")
+  field(HIGH, "90")
+  field(HIHI, "98")
+  field(HSV,  "MINOR")
+  field(HHSV, "MAJOR")
+}
+
+record(ai, "$(IOCNAME):FS_FREE_$(FSNAME)") {
+  field(DESC, "Free Bytes")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC FS stats")
+  field(INP,  "@free_bytes $(FSPATH)")
+}

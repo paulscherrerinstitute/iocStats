@@ -79,12 +79,12 @@ TEMPLATES += iocStats/iocAdmin/Db/ioc.template
 TEMPLATES += iocStats/iocAdmin/Db/iocGeneralTime.template
 TEMPLATES += iocStats/iocAdmin/Db/iocScanMonSum.template
 TEMPLATES += iocStats/iocAdmin/Db/iocVxWorksOnly.template
+TEMPLATES += iocStats/iocAdmin/Db/iocFsStats.template
 
 TEMPLATES += iocStats/iocAdmin/Db/iocAdminScanMon.substitutions
 TEMPLATES += iocStats/iocAdmin/Db/iocAdminSoft.substitutions
 TEMPLATES += iocStats/iocAdmin/Db/iocAdminRTEMS.substitutions
 TEMPLATES += iocStats/iocAdmin/Db/iocAdminVxWorks.substitutions
-
 
 ############ SCRIPTS #########
 SCRIPTS += $(wildcard PSI/*.cmd)
