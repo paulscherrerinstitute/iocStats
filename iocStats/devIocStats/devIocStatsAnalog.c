@@ -138,6 +138,7 @@ static int caServInitialized = 0;
 #include <aiRecord.h>
 #include <aoRecord.h>
 #include <recGbl.h>
+#include <alarm.h>
 #include <epicsExport.h>
 
 #include "devIocStats.h"
@@ -170,11 +171,19 @@ struct pvtClustArea
 };
 typedef struct pvtClustArea pvtClustArea;
 
+struct fsInfoList
+{
+    struct fsInfoList* next;
+    int status;
+    fsInfo fs;
+};
+typedef struct fsInfoList fsInfoList;
+
 struct pvtFsArea
 {
 	int index;
 	int type;
-	fsInfo* fs;
+	fsInfoList* fsl;
 };
 typedef struct pvtFsArea pvtFsArea;
 
@@ -314,7 +323,7 @@ static epicsMutexId scan_mutex;
 static unsigned num_links            = 0;
 static unsigned num_links_broken     = 0;
 static unsigned num_link_disconnects = 0;
-static fsInfo* fslist = NULL;
+static fsInfoList* fslist = NULL;
 
 
 /* ---------------------------------------------------------------------- */
@@ -390,13 +399,13 @@ static void scan_time(int type)
       }
       case FD_TYPE:
       {
-        fsInfo* fs;
+        fsInfoList* fsl;
 	fdInfo   fdusage_local = {0,0};
         devIocStatsGetFDUsage(&fdusage_local);
         
         epicsMutexLock(scan_mutex);
-        for (fs = fslist; fs; fs = fs->next) {
-            devIocStatsGetFileSystemUsage(fs);
+        for (fsl = fslist; fsl; fsl = fsl->next) {
+            fsl->status = devIocStatsGetFileSystemUsage(&fsl->fs);
         }
 	fdusage = fdusage_local;
         epicsMutexUnlock(scan_mutex);
@@ -575,7 +584,7 @@ static long ai_fs_init_record(aiRecord* pr)
 	int		i;
 	char	*parm;
 	pvtFsArea	*pvt;
-	fsInfo	*fs;
+	fsInfoList	*fsl;
 
 	if(pr->inp.type!=INST_IO)
 	{
@@ -613,19 +622,22 @@ static long ai_fs_init_record(aiRecord* pr)
 			"devAiFsStats (init_record) out of memory");
 		return S_db_noMemory;
 	}
-	for (fs = fslist; fs; fs=fs->next)
+	for (fsl = fslist; fsl; fsl=fsl->next)
 	{
-		if (strcmp(fs->path, parm) == 0) break;
+		if (strcmp(fsl->fs.path, parm) == 0) break;
 	}
-	if (!fs) {
-		fs = malloc(sizeof(fsInfo));
-		fs->path = parm;
-		fs->next = fslist;
-		fslist = fs;
+	if (!fsl) {
+		fsl = malloc(sizeof(fsInfoList));
+		fsl->next = fslist;
+                fsl->status = -1;
+		fsl->fs.path = parm;
+                fsl->fs.fsUsage = 0;
+                fsl->fs.fsFreeBytes = 0;
+		fslist = fsl;
 	}
 	pvt->index = i;
 	pvt->type = FD_TYPE;
-	pvt->fs = fs;
+	pvt->fsl = fsl;
 
 	/* Make sure record processing routine does not perform any conversion*/
 	pr->linr=menuConvertNO_CONVERSION;
@@ -754,11 +766,16 @@ static long ai_fs_read(aiRecord* pr)
     pvtFsArea* pvt=(pvtFsArea*)pr->dpvt;
 
     if (!pvt) return S_dev_badInpType;
+    
+    if (pvt->fsl->status) {
+        recGblSetSevr(pr, READ_ALARM, INVALID_ALARM);
+        return -1;
+    }
 
     epicsMutexLock(scan_mutex);
     switch (pvt->index) {
-        case 0: val = pvt->fs->fsUsage; break;
-        case 1: val = pvt->fs->fsFreeBytes; break;
+        case 0: val = pvt->fsl->fs.fsUsage; break;
+        case 1: val = pvt->fsl->fs.fsFreeBytes; break;
     }
     epicsMutexUnlock(scan_mutex);
     pr->val = val;

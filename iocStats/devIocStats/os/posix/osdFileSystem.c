@@ -5,6 +5,7 @@
 #define _ISOC99_SOURCE /* for fmin() */
 #include <math.h>
 #include <sys/statvfs.h>
+#include <errno.h>
 #include <stdio.h>
 
 #include <devIocStats.h>
@@ -13,9 +14,10 @@ int devIocStatsGetFileSystemUsage(fsInfo *pval) {
     struct statvfs stat;
 
     if (statvfs(pval->path, &stat) != 0)
-        return -1;
+        return errno;
+
 /*        
-    printf("%s\n", pval->path);
+    printf("\n%s\n", pval->path);
     printf("block size           %lu\n", stat.f_bsize);
     printf("fragment size        %lu\n", stat.f_frsize);
     printf("total fragments      %lu\n", stat.f_blocks);
