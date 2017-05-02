@@ -3,7 +3,6 @@ include /ioc/tools/driver.makefile
 MODULE=iocStats
 
 BUILDCLASSES += Linux
-EXCLUDE_VERSIONS = 3.13
 
 ############# OSD sources #############
 # Base 3.14 does not correctly define POSIX=NO for mingw
@@ -70,24 +69,13 @@ SOURCES += iocStats/devIocStats/ioccar.c
 DBDS += iocStats/devIocStats/devIocStats.dbd
 
 ############ TEMPLATES #########
-TEMPLATES += iocStats/iocAdmin/Db/iocCluster.template
-TEMPLATES += iocStats/iocAdmin/Db/iocRTEMSOnly.template
-TEMPLATES += iocStats/iocAdmin/Db/iocScanMon.template
-TEMPLATES += iocStats/iocAdmin/Db/iocEnvVar.template
-TEMPLATES += iocStats/iocAdmin/Db/iocRTOS.template
-TEMPLATES += iocStats/iocAdmin/Db/ioc.template
-TEMPLATES += iocStats/iocAdmin/Db/iocGeneralTime.template
-TEMPLATES += iocStats/iocAdmin/Db/iocScanMonSum.template
-TEMPLATES += iocStats/iocAdmin/Db/iocVxWorksOnly.template
-TEMPLATES += iocStats/iocAdmin/Db/iocFsStats.template
-
-TEMPLATES += iocStats/iocAdmin/Db/iocAdminScanMon.substitutions
-TEMPLATES += iocStats/iocAdmin/Db/iocAdminSoft.substitutions
-TEMPLATES += iocStats/iocAdmin/Db/iocAdminRTEMS.substitutions
-TEMPLATES += iocStats/iocAdmin/Db/iocAdminVxWorks.substitutions
+TEMPLATES += $(wildcard iocStats/iocAdmin/Db/*.template)
+TEMPLATES += $(wildcard PSI/*.subs)
 
 ############ SCRIPTS #########
 SCRIPTS += $(wildcard PSI/*.cmd)
+
+############ ARCHIVER CONFIG TEMPLATE #########
 SCRIPTS += PSI/cfg/iocStats.archtmp
 
 ############ QT screens ##########

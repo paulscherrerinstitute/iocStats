@@ -5,7 +5,8 @@
 epicsEnvSet("STARTUP","$(PWD=)")
 epicsEnvSet("ST_CMD","startup.script")
 
-dbLoadTemplate("$(iocStats_DB)/iocAdminSoft.substitutions", "IOC=$(IOC)")
-dbLoadTemplate("$(iocStats_DB)/iocAdminScanMon.substitutions", "IOC=$(IOC)")
+dbLoadTemplate("iocStats.subs", "IOC=$(IOC)")
+dbLoadTemplate("iocScanMon.subs", "IOC=$(IOC)")
+dbLoadTemplate("iocGenTime.subs", "IOC=$(IOC)")
 
 # END of iocStats

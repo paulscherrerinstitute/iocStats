@@ -1,0 +1,6 @@
+#GeneralTime not available on EPICS < 3.14.10
+file iocGeneralTime.template
+{
+pattern { IOCNAME }
+	{ "$(IOC)"  }
+}

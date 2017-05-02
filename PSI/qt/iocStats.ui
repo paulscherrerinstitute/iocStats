@@ -146,7 +146,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -200,7 +200,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -292,7 +292,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -443,7 +443,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -497,7 +497,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -586,7 +586,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -637,7 +637,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -727,7 +727,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -816,7 +816,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -889,7 +889,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -944,7 +944,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1034,7 +1034,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1180,7 +1180,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1199,7 +1199,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1218,7 +1218,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1272,7 +1272,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1504,7 +1504,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1594,7 +1594,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1684,7 +1684,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1809,7 +1809,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1901,7 +1901,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -1955,7 +1955,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2117,7 +2117,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2186,7 +2186,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2237,7 +2237,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2288,7 +2288,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2307,11 +2307,11 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>OS Version</string>
+      <string>Kernel Vers</string>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_27">
@@ -2358,7 +2358,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2409,11 +2409,11 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>EPICS Version</string>
+      <string>EPICS Vers</string>
      </property>
     </widget>
     <widget class="caLineEdit" name="calineedit_28">
@@ -2435,7 +2435,7 @@
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
      <property name="channel" stdset="0">
-      <string notr="true">$(IOC):EPICS_VERS</string>
+      <string notr="true">$(IOC):EPICS_VERSION</string>
      </property>
      <property name="background">
       <color>
@@ -2460,11 +2460,11 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>App Directory</string>
+      <string>IOC Dir</string>
      </property>
      <property name="textInteractionFlags">
       <set>Qt::TextBrowserInteraction</set>
@@ -2514,7 +2514,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2533,7 +2533,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2619,7 +2619,7 @@
      <property name="font">
       <font>
        <family>Lucida Sans Typewriter</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="acceptDrops">
@@ -2660,7 +2660,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2765,7 +2765,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2791,7 +2791,7 @@
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
      <property name="channel" stdset="0">
-      <string notr="true">$(IOC):EPICS_HOST_ARCH</string>
+      <string notr="true">$(IOC):HOST_ARCH</string>
      </property>
      <property name="background">
       <color>
@@ -2916,7 +2916,7 @@
      <property name="font">
       <font>
        <family>Sans Serif</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2956,7 +2956,7 @@
       <property name="font">
        <font>
         <family>Sans Serif</family>
-        <pointsize>11</pointsize>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
@@ -3045,7 +3045,7 @@
       <property name="font">
        <font>
         <family>Sans Serif</family>
-        <pointsize>11</pointsize>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
@@ -3136,7 +3136,7 @@
       <property name="font">
        <font>
         <family>Sans Serif</family>
-        <pointsize>11</pointsize>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
