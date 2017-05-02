@@ -18,10 +18,14 @@ of this distribution.
 #undef VALID_DB_REQ
 #undef INVALID_DB_REQ
 /*end of conflicting definitions*/
+#include "epicsVersion.h"
+#ifdef BASE_VERSION
+/* R3.13.x */
+#include "semLib.h"
+#endif
 #include "cadef.h"
 #include "dbCa.h"
 #include "dbLock.h"
-#include "epicsVersion.h"
 /*--------------------------------------------------------------*/
 #ifndef BASE_VERSION
 /* R3.14.x */

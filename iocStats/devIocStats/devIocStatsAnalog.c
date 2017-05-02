@@ -134,6 +134,7 @@ static int caServInitialized = 0;
 #include <dbStaticLib.h>
 #include <dbScan.h>
 #include <devSup.h>
+#include <devLib.h>
 #include <menuConvert.h>
 #include <aiRecord.h>
 #include <aoRecord.h>
@@ -620,7 +621,7 @@ static long ai_fs_init_record(aiRecord* pr)
 	{
 		recGblRecordError(S_db_badField,(void*)pr,
 			"devAiFsStats (init_record) out of memory");
-		return S_db_noMemory;
+		return S_dev_noMemory;
 	}
 	for (fsl = fslist; fsl; fsl=fsl->next)
 	{

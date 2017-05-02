@@ -118,7 +118,7 @@ record(ai, "$(IOCNAME):CALINK_CNT") {
 }
 
 record(ai, "$(IOCNAME):CALINK_BROKEN") {
-  field(DESC, "Number of Not Connected CA Links")
+  field(DESC, "Number of Broken CA Links")
   field(SCAN, "I/O Intr")
   field(DTYP, "IOC stats")
   field(INP, "@calinks_broken")
@@ -130,7 +130,7 @@ record(ai, "$(IOCNAME):CALINK_BROKEN") {
 }
 
 record(ai, "$(IOCNAME):CALINK_DISCON") {
-  field(DESC, "Number of CA Link Disconnects")
+  field(DESC, "Number of CA Disconnects")
   field(SCAN, "I/O Intr")
   field(DTYP, "IOC stats")
   field(INP, "@calink_disconnects")
