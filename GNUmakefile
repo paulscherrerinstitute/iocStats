@@ -24,6 +24,7 @@ SOURCES_Linux += iocStats/devIocStats/os/default/osdSuspTasks.c
 SOURCES_Linux += iocStats/devIocStats/os/default/osdIFErrors.c
 SOURCES_Linux += iocStats/devIocStats/os/default/osdBootInfo.c
 SOURCES_Linux += iocStats/devIocStats/os/posix/osdFileSystem.c
+SOURCES_Linux += iocStats/devIocStats/os/Linux/osdWriteCoreReleaseToBuffer.c
 
 SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdCpuUsage.c
 SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdCpuUtilization.c
@@ -38,6 +39,7 @@ SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdSystemInfo.c
 SOURCES_vxWorks += iocStats/devIocStats/os/posix/osdHostInfo.c
 SOURCES_vxWorks += iocStats/devIocStats/os/default/osdPIDInfo.c
 SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdFileSystem.c
+SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdWriteCoreReleaseToBuffer.c
 SOURCES_3.13    += PSI/rsrv.c
 
 #SOURCES_WIN32 += iocStats/devIocStats/os/default/osdCpuUsage.c
@@ -53,6 +55,7 @@ SOURCES_3.13    += PSI/rsrv.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdHostInfo.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/default/osdPIDInfo.c
 #SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdFileSystem.c
+#SOURCES_WIN32 += iocStats/devIocStats/os/default/osdWriteCoreReleaseToBuffer.c
 
 ############# OSI sources #############
 SOURCES += iocStats/devIocStats/devIocStatsAnalog.c
@@ -60,6 +63,7 @@ SOURCES += iocStats/devIocStats/devIocStatsString.c
 SOURCES += iocStats/devIocStats/devIocStatsWaveform.c
 SOURCES += iocStats/devIocStats/devIocStatsSub.c
 SOURCES += iocStats/devIocStats/devIocStatsTest.c
+SOURCES += iocStats/devIocStats/getRunTimeEpicsVersion.c
 
 # CA link statistics
 USR_INCLUDES+=-I$(EPICS_BASE)/src/db

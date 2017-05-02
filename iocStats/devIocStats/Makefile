@@ -26,6 +26,7 @@ SRCS += devIocStatsString.c
 SRCS += devIocStatsWaveform.c
 SRCS += devIocStatsSub.c
 SRCS += devIocStatsTest.c
+SRCS += getRunTimeEpicsVersion.c
 
 # OSD parts
 # Base 3.14 does not correctly define POSIX=NO for mingw
@@ -45,6 +46,7 @@ SRCS += osdSystemInfo.c
 SRCS += osdHostInfo.c
 SRCS += osdPIDInfo.c
 SRCS += osdFileSystem.c
+SRCS += osdWriteCoreReleaseToBuffer.c
 
 OBJS_vxWorks += osdCpuUsageTest.o
 

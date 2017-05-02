@@ -205,8 +205,8 @@ static void statsBootline(char *d, size_t nelm) { getWaveform(d, nelm, devIocSta
 
 static void statsPwd(char *d, size_t nelm)      { getWaveform(d, nelm, devIocStatsGetPwd); }
 
-static void statsEPICSVer(char *d, size_t nelm) {  
+static void statsEPICSVer(char *d, size_t nelm) {
   memset(d, 0, nelm);
-  strncpy(d, epicsReleaseVersion, nelm);
+  strncpy(d, getRunTimeEpicsVersion(), nelm); 
   d[nelm] = 0;
 }

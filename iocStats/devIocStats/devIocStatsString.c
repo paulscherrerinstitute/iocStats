@@ -357,7 +357,7 @@ static void statsPwd2(char *d)      { getStringPart(d,   MAX_NAME_SIZE, devIocSt
 static void statsHostName (char *d) { getStringPart(d,               0, devIocStatsGetHostname); }
 
 static void statsEPICSVer(char *d)
-{ strncpy(d,  epicsReleaseVersion, MAX_NAME_SIZE); d[MAX_NAME_SIZE]=0; }
+{ sprintf(d, "%.*s", MAX_NAME_SIZE-1, getRunTimeEpicsVersion()); }
 
 static void statsUpTime(char *d)
 {

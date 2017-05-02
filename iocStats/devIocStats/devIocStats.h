@@ -130,3 +130,11 @@ extern int devIocStatsGetPPID (double *proc_id);
 
 /* CA Links */
 extern long ioccar(unsigned int *pcal, unsigned int *pcalnconn, unsigned int *pcaldconn);
+
+/* EPICS Release */
+/* (epicsReleaseVersion is a macro. Thus using it we get the EPICS version
+ * this code was compiled with but not the run-time EPICS version.
+ * Parse the output of coreRelease() instead.)
+ */
+const char* getRunTimeEpicsVersion();
+extern int writeCoreReleaseToBuffer(char* buffer, unsigned int size);
