@@ -1,4 +1,5 @@
 #include <ioLib.h>
+#include <stdio.h>
 #include <symLib.h>
 #include <symLib.h>
 #include <sysSymTbl.h>
@@ -13,17 +14,23 @@ int writeCoreReleaseToBuffer(char* buffer, unsigned int size)
 {
     SYM_TYPE type;
     int oldOut, file;
-    FUNCPTR memDevCreate, memDevDelete;
-    FUNCPTR pipeDevCreate, pipeDevDelete;
+    FUNCPTR memDevCreate, memDevDelete, memDrv;
+    FUNCPTR pipeDevCreate, pipeDevDelete, pipeDrv;
     
     oldOut = ioGlobalStdGet(1);
     /* Do we have memDrv ? */
-    if (symFindByName(sysSymTbl, "memDevCreate", (char**)&memDevCreate, &type) == 0 &&
+    if (symFindByName(sysSymTbl, "memDrv",       (char**)&memDrv, &type) == 0 &&
+        symFindByName(sysSymTbl, "memDevCreate", (char**)&memDevCreate, &type) == 0 &&
         symFindByName(sysSymTbl, "memDevDelete", (char**)&memDevDelete, &type) == 0)
     {
-        if (memDevCreate("/epicsVersion", buffer, size) != 0) return -1;
+        if (memDrv() != 0) goto pipe;
+        if (memDevCreate("/epicsVersion", buffer, size) != 0) goto pipe;
         file = open("/epicsVersion", O_RDWR, 0777);
-        if (file < 0) return -1;
+        if (file < 0)
+        {
+            memDevDelete("/epicsVersion");
+            goto pipe;
+        }
         ioGlobalStdSet(1, file);
         coreRelease();
         ioGlobalStdSet(1, oldOut);
@@ -31,15 +38,22 @@ int writeCoreReleaseToBuffer(char* buffer, unsigned int size)
         memDevDelete("/epicsVersion");
         return 0;
     }
+pipe:
     /* Do we have pipeDrv ? */
-    if (symFindByName(sysSymTbl, "pipeDevCreate", (char**)&pipeDevCreate, &type) == 0 &&
+    if (symFindByName(sysSymTbl, "pipeDrv",       (char**)&pipeDrv, &type) == 0 &&
+        symFindByName(sysSymTbl, "pipeDevCreate", (char**)&pipeDevCreate, &type) == 0 &&
         symFindByName(sysSymTbl, "pipeDevDelete", (char**)&pipeDevDelete, &type) == 0)
     {
         int n, s;
 
-        if (pipeDevCreate("/epicsVersion", 10, 100) != 0) return -1;
+        if (pipeDrv() != 0) goto sockets;
+        if (pipeDevCreate("/epicsVersion", 10, 100) != 0) goto sockets;
         file = open("/epicsVersion", O_RDWR, 0777);
-        if (file < 0) return -1;
+        if (file < 0)
+        {
+            pipeDevDelete("/epicsVersion", 1);
+            goto sockets;
+        }
         ioGlobalStdSet(1, file);
         coreRelease();
         ioGlobalStdSet(1, oldOut);
@@ -56,6 +70,7 @@ int writeCoreReleaseToBuffer(char* buffer, unsigned int size)
         pipeDevDelete("/epicsVersion", 1);
         return 0;
     }
-    /* Let's use sockets */
+sockets:
+    /* Let's use sockets ? */
     return -1;
 }
