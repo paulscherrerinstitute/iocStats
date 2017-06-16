@@ -19,16 +19,16 @@ const char* getRunTimeEpicsVersion()
         char *endv;
         char *endb;
         
-        buffer = malloc(400);
-        if (!buffer) return NULL;
-        if (writeCoreReleaseToBuffer(buffer, 400) != 0) return NULL;
-        
+        buffer = calloc(1,400);
+        if (!buffer) return "<nomem>";
+        if (writeCoreReleaseToBuffer(buffer, 400) != 0) return "<fail>";
+
         ver = strstr(buffer, "EPICS R");
         if (ver) ver += 6;
         else
         {      
             ver = strstr(buffer, "Version R");
-            if (!ver) return NULL;
+            if (!ver) return "<unknown>";
             ver += 8;
         }
         endv = strpbrk(ver, " \t\n$");
