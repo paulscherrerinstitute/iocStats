@@ -109,11 +109,15 @@ static long waveform_read(waveformRecord*);
 static void statsSScript(char *, size_t);
 static void statsBootline(char *, size_t);
 static void statsPwd(char *, size_t);
+static void statsKernelVer(char *, size_t);
+static void statsOSVer(char *, size_t);
 static void statsEPICSVer(char *, size_t);
 
 static validGetWfmParms statsGetWfmParms[]={
 	{ "startup_script",		statsSScript,		STATIC_TYPE },
 	{ "bootline",			statsBootline,		STATIC_TYPE },
+	{ "kernel_ver",			statsKernelVer,		STATIC_TYPE },
+	{ "os_ver",			statsOSVer,		STATIC_TYPE },
 	{ "epics_ver",			statsEPICSVer,		STATIC_TYPE },
         { "pwd",			statsPwd,		STATIC_TYPE },
 	{ NULL,NULL,0 }
@@ -205,8 +209,13 @@ static void statsBootline(char *d, size_t nelm) { getWaveform(d, nelm, devIocSta
 
 static void statsPwd(char *d, size_t nelm)      { getWaveform(d, nelm, devIocStatsGetPwd); }
 
+static void statsKernelVer(char *d, size_t nelm){ getWaveform(d, nelm, devIocStatsGetKernelVersion); }
+
+static void statsOSVer(char *d, size_t nelm)    { getWaveform(d, nelm, devIocStatsGetOSVersion); }
+
 static void statsEPICSVer(char *d, size_t nelm) {
   memset(d, 0, nelm);
   strncpy(d, getRunTimeEpicsVersion(), nelm); 
   d[nelm] = 0;
 }
+

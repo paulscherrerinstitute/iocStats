@@ -1,7 +1,7 @@
 
 file {
-	name="/home/epics/devel/devIocStats-3-1-14/op/adl/ioc_stats_rtems.adl"
-	version=030107
+	name="/afs/psi.ch/group/8431/dirk/git/DRV/iocStats/./iocStats/op/adl/ioc_stats_rtems.adl"
+	version=030105
 }
 display {
 	object {
@@ -500,7 +500,7 @@ text {
 }
 "text update" {
 	object {
-		x=112
+		x=127
 		y=357
 		width=350
 		height=15
@@ -842,13 +842,13 @@ text {
 }
 "text update" {
 	object {
-		x=112
+		x=127
 		y=377
 		width=350
 		height=15
 	}
 	monitor {
-		chan="$(ioc):KERNEL_VERS"
+		chan="$(ioc):OS_VERS"
 		clr=14
 		bclr=4
 	}

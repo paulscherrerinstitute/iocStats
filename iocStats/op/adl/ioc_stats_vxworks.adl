@@ -1,14 +1,14 @@
 
 file {
-	name="/home/epics/devel/devIocStats-3-1-14/op/adl/ioc_stats_vxworks.adl"
-	version=030107
+	name="/afs/psi.ch/group/8431/dirk/git/DRV/iocStats/./iocStats/op/adl/ioc_stats_vxworks.adl"
+	version=030105
 }
 display {
 	object {
 		x=777
 		y=108
 		width=540
-		height=735
+		height=750
 	}
 	clr=14
 	bclr=3
@@ -454,7 +454,7 @@ rectangle {
 rectangle {
 	object {
 		x=0
-		y=527
+		y=547
 		width=540
 		height=2
 	}
@@ -477,7 +477,7 @@ text {
 text {
 	object {
 		x=4
-		y=399
+		y=419
 		width=189
 		height=15
 	}
@@ -489,7 +489,7 @@ text {
 text {
 	object {
 		x=4
-		y=432
+		y=452
 		width=126
 		height=15
 	}
@@ -500,7 +500,7 @@ text {
 }
 "text update" {
 	object {
-		x=130
+		x=135
 		y=339
 		width=350
 		height=15
@@ -516,7 +516,7 @@ text {
 "text update" {
 	object {
 		x=4
-		y=414
+		y=434
 		width=265
 		height=13
 	}
@@ -532,7 +532,7 @@ text {
 "text update" {
 	object {
 		x=4
-		y=447
+		y=467
 		width=265
 		height=12
 	}
@@ -548,7 +548,7 @@ text {
 "text update" {
 	object {
 		x=269
-		y=414
+		y=434
 		width=265
 		height=13
 	}
@@ -563,7 +563,7 @@ text {
 "text update" {
 	object {
 		x=269
-		y=447
+		y=467
 		width=265
 		height=12
 	}
@@ -578,9 +578,9 @@ text {
 rectangle {
 	object {
 		x=313
-		y=527
+		y=547
 		width=1
-		height=260
+		height=205
 	}
 	"basic attribute" {
 		clr=14
@@ -589,7 +589,7 @@ rectangle {
 text {
 	object {
 		x=6
-		y=533
+		y=553
 		width=144
 		height=15
 	}
@@ -601,7 +601,7 @@ text {
 text {
 	object {
 		x=8
-		y=555
+		y=575
 		width=36
 		height=15
 	}
@@ -613,7 +613,7 @@ text {
 text {
 	object {
 		x=8
-		y=575
+		y=595
 		width=36
 		height=15
 	}
@@ -625,7 +625,7 @@ text {
 text {
 	object {
 		x=8
-		y=590
+		y=610
 		width=63
 		height=15
 	}
@@ -637,7 +637,7 @@ text {
 text {
 	object {
 		x=8
-		y=603
+		y=623
 		width=63
 		height=15
 	}
@@ -649,7 +649,7 @@ text {
 text {
 	object {
 		x=348
-		y=536
+		y=556
 		width=72
 		height=15
 	}
@@ -661,7 +661,7 @@ text {
 text {
 	object {
 		x=373
-		y=564
+		y=584
 		width=153
 		height=15
 	}
@@ -673,7 +673,7 @@ text {
 text {
 	object {
 		x=373
-		y=589
+		y=609
 		width=36
 		height=15
 	}
@@ -685,7 +685,7 @@ text {
 text {
 	object {
 		x=373
-		y=609
+		y=629
 		width=27
 		height=15
 	}
@@ -697,7 +697,7 @@ text {
 "text update" {
 	object {
 		x=426
-		y=537
+		y=557
 		width=60
 		height=15
 	}
@@ -714,7 +714,7 @@ text {
 "text update" {
 	object {
 		x=413
-		y=589
+		y=609
 		width=60
 		height=15
 	}
@@ -731,7 +731,7 @@ text {
 "text update" {
 	object {
 		x=413
-		y=609
+		y=629
 		width=60
 		height=15
 	}
@@ -748,7 +748,7 @@ text {
 "text update" {
 	object {
 		x=88
-		y=555
+		y=575
 		width=100
 		height=15
 	}
@@ -765,7 +765,7 @@ text {
 "text update" {
 	object {
 		x=88
-		y=575
+		y=595
 		width=100
 		height=15
 	}
@@ -782,7 +782,7 @@ text {
 "text update" {
 	object {
 		x=88
-		y=595
+		y=615
 		width=100
 		height=15
 	}
@@ -842,13 +842,13 @@ text {
 }
 "text update" {
 	object {
-		x=130
+		x=135
 		y=359
 		width=350
 		height=15
 	}
 	monitor {
-		chan="$(ioc):KERNEL_VERS"
+		chan="$(ioc):OS_VERS"
 		clr=14
 		bclr=4
 	}
@@ -926,7 +926,7 @@ text {
 text {
 	object {
 		x=4
-		y=464
+		y=484
 		width=81
 		height=15
 	}
@@ -938,7 +938,7 @@ text {
 "text update" {
 	object {
 		x=4
-		y=479
+		y=499
 		width=265
 		height=12
 	}
@@ -954,7 +954,7 @@ text {
 "text update" {
 	object {
 		x=269
-		y=479
+		y=499
 		width=265
 		height=12
 	}
@@ -969,7 +969,7 @@ text {
 text {
 	object {
 		x=200
-		y=569
+		y=589
 		width=81
 		height=15
 	}
@@ -981,7 +981,7 @@ text {
 text {
 	object {
 		x=200
-		y=556
+		y=576
 		width=108
 		height=15
 	}
@@ -993,7 +993,7 @@ text {
 "text update" {
 	object {
 		x=198
-		y=587
+		y=607
 		width=100
 		height=15
 	}
@@ -1010,7 +1010,7 @@ text {
 rectangle {
 	object {
 		x=314
-		y=557
+		y=577
 		width=225
 		height=1
 	}
@@ -1021,7 +1021,7 @@ rectangle {
 rectangle {
 	object {
 		x=314
-		y=628
+		y=648
 		width=225
 		height=1
 	}
@@ -1032,7 +1032,7 @@ rectangle {
 text {
 	object {
 		x=373
-		y=634
+		y=654
 		width=99
 		height=15
 	}
@@ -1044,7 +1044,7 @@ text {
 text {
 	object {
 		x=349
-		y=659
+		y=679
 		width=45
 		height=15
 	}
@@ -1056,7 +1056,7 @@ text {
 text {
 	object {
 		x=349
-		y=679
+		y=699
 		width=54
 		height=15
 	}
@@ -1068,7 +1068,7 @@ text {
 "text update" {
 	object {
 		x=413
-		y=659
+		y=679
 		width=60
 		height=15
 	}
@@ -1085,7 +1085,7 @@ text {
 "text update" {
 	object {
 		x=413
-		y=679
+		y=699
 		width=60
 		height=15
 	}
@@ -1102,7 +1102,7 @@ text {
 text {
 	object {
 		x=6
-		y=665
+		y=685
 		width=54
 		height=15
 	}
@@ -1114,7 +1114,7 @@ text {
 text {
 	object {
 		x=6
-		y=685
+		y=705
 		width=27
 		height=15
 	}
@@ -1126,7 +1126,7 @@ text {
 text {
 	object {
 		x=159
-		y=633
+		y=653
 		width=45
 		height=15
 	}
@@ -1138,7 +1138,7 @@ text {
 rectangle {
 	object {
 		x=0
-		y=628
+		y=648
 		width=315
 		height=1
 	}
@@ -1149,7 +1149,7 @@ rectangle {
 text {
 	object {
 		x=5
-		y=378
+		y=399
 		width=108
 		height=15
 	}
@@ -1160,8 +1160,8 @@ text {
 }
 "text update" {
 	object {
-		x=130
-		y=378
+		x=135
+		y=399
 		width=350
 		height=15
 	}
@@ -1176,7 +1176,7 @@ text {
 "text update" {
 	object {
 		x=4
-		y=494
+		y=514
 		width=265
 		height=12
 	}
@@ -1192,7 +1192,7 @@ text {
 "text update" {
 	object {
 		x=269
-		y=494
+		y=514
 		width=265
 		height=12
 	}
@@ -1207,7 +1207,7 @@ text {
 "text update" {
 	object {
 		x=4
-		y=509
+		y=529
 		width=265
 		height=12
 	}
@@ -1223,7 +1223,7 @@ text {
 "text update" {
 	object {
 		x=269
-		y=509
+		y=529
 		width=265
 		height=12
 	}
@@ -1238,7 +1238,7 @@ text {
 text {
 	object {
 		x=104
-		y=648
+		y=668
 		width=54
 		height=15
 	}
@@ -1250,7 +1250,7 @@ text {
 text {
 	object {
 		x=231
-		y=648
+		y=668
 		width=36
 		height=15
 	}
@@ -1458,7 +1458,7 @@ composite {
 "text update" {
 	object {
 		x=76
-		y=665
+		y=685
 		width=110
 		height=15
 	}
@@ -1475,7 +1475,7 @@ composite {
 "text update" {
 	object {
 		x=76
-		y=685
+		y=705
 		width=110
 		height=15
 	}
@@ -1492,7 +1492,7 @@ composite {
 "related display" {
 	object {
 		x=76
-		y=705
+		y=725
 		width=110
 		height=21
 	}
@@ -1508,7 +1508,7 @@ composite {
 "text update" {
 	object {
 		x=194
-		y=665
+		y=685
 		width=110
 		height=15
 	}
@@ -1525,7 +1525,7 @@ composite {
 "text update" {
 	object {
 		x=194
-		y=685
+		y=705
 		width=110
 		height=15
 	}
@@ -1542,7 +1542,7 @@ composite {
 "related display" {
 	object {
 		x=194
-		y=705
+		y=725
 		width=110
 		height=21
 	}
@@ -1554,4 +1554,31 @@ composite {
 	clr=14
 	bclr=6
 	label="Cluster Info"
+}
+text {
+	object {
+		x=5
+		y=379
+		width=90
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Kernel Version"
+}
+"text update" {
+	object {
+		x=135
+		y=379
+		width=350
+		height=15
+	}
+	monitor {
+		chan="$(ioc):KERNEL_VERS"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
 }

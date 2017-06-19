@@ -20,6 +20,7 @@
  *
  */
 
+#include <version.h>
 #include <devIocStats.h>
 
 int devIocStatsInitSystemInfo (void) { return 0; }
@@ -33,5 +34,11 @@ int devIocStatsGetBSPVersion (char **pval)
 int devIocStatsGetKernelVersion (char **pval)
 {
     *pval = kernelVersion();
+    return 0;
+}
+
+int devIocStatsGetOSVersion (char **pval)
+{
+    *pval = vxWorksVersion;
     return 0;
 }

@@ -120,6 +120,7 @@ extern int devIocStatsGetStartupScriptDefault (char **pval);
 extern int devIocStatsInitSystemInfo (void);
 extern int devIocStatsGetBSPVersion (char **pval);
 extern int devIocStatsGetKernelVersion (char **pval);
+extern int devIocStatsGetOSVersion (char **pval);
 
 /* Host Info */
 extern int devIocStatsInitHostInfo (void);

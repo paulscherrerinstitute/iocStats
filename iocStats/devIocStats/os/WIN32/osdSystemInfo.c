@@ -99,3 +99,9 @@ int devIocStatsGetKernelVersion(char **pval) {
 
     return 0;
 }
+
+int devIocStatsGetOSVersion(char **pval) {
+    *pval = versionstring;
+
+    return 0;
+}

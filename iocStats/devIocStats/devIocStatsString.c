@@ -147,6 +147,7 @@ static void statsBootline5(char *);
 static void statsBootline6(char *);
 static void statsBSPRev(char *);
 static void statsKernelVer(char *);
+static void statsOSVer(char *);
 static void statsEPICSVer(char *);
 static void statsEngineer(char *);
 static void statsLocation(char *);
@@ -169,6 +170,7 @@ static validGetStrParms statsGetStrParms[]={
 	{ "bootline_6",			statsBootline6,		STATIC_TYPE },
 	{ "bsp_rev",			statsBSPRev, 		STATIC_TYPE },
 	{ "kernel_ver",			statsKernelVer,		STATIC_TYPE },
+	{ "os_ver",			statsOSVer,		STATIC_TYPE },
 	{ "epics_ver",			statsEPICSVer,		STATIC_TYPE },
 	{ "engineer",			statsEngineer,		STATIC_TYPE },
 	{ "location",			statsLocation,		STATIC_TYPE },
@@ -350,6 +352,7 @@ static void statsLocation(char *d)  { getStringPart(d,               0, devIocSt
 
 static void statsBSPRev(char *d)    { getStringPart(d,               0, devIocStatsGetBSPVersion); }
 static void statsKernelVer(char *d) { getStringPart(d,               0, devIocStatsGetKernelVersion); }
+static void statsOSVer(char *d)     { getStringPart(d,               0, devIocStatsGetOSVersion); }
 
 static void statsPwd1(char *d)      { getStringPart(d,               0, devIocStatsGetPwd); }
 static void statsPwd2(char *d)      { getStringPart(d,   MAX_NAME_SIZE, devIocStatsGetPwd); }

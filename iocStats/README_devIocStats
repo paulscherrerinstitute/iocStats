@@ -23,7 +23,8 @@ String (stringin) Records (DTYP = "IOC stats"), INP = @one of the following:
  		bsp_rev			-CPU board support package revision
 					 (set to "<not available> for all
 					  except RTEMS and vxWorks)
-		kernel_ver		-OS kernel build version
+		kernel_ver		-OS kernel version
+		os_ver		        -OS version
 		epics_ver		-EPICS base version
                 engineer                -IOC Engineer
 					Default - uses ENGINEER env var or

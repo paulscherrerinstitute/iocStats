@@ -30,3 +30,9 @@ int devIocStatsGetKernelVersion (char **pval)
     *pval = notavail;
     return 0;
 }
+
+int devIocStatsGetOSVersion (char **pval)
+{
+    *pval = notavail;
+    return 0;
+}

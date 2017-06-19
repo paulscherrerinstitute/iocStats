@@ -38,3 +38,9 @@ int devIocStatsGetKernelVersion (char **pval)
     *pval = kernel;
     return 0;
 }
+
+int devIocStatsGetOSVersion (char **pval)
+{
+    *pval = kernel;
+    return 0;
+}

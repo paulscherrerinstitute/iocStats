@@ -1,14 +1,14 @@
 
 file {
-	name="/home/epics/devel/devIocStats-3-1-14/op/adl/ioc_stats_soft.adl"
-	version=030107
+	name="/afs/psi.ch/group/8431/dirk/git/DRV/iocStats/./iocStats/op/adl/ioc_stats_soft.adl"
+	version=030105
 }
 display {
 	object {
 		x=570
 		y=161
 		width=540
-		height=560
+		height=580
 	}
 	clr=14
 	bclr=3
@@ -486,7 +486,7 @@ rectangle {
 rectangle {
 	object {
 		x=1
-		y=448
+		y=468
 		width=540
 		height=2
 	}
@@ -509,7 +509,7 @@ text {
 text {
 	object {
 		x=6
-		y=380
+		y=400
 		width=150
 		height=15
 	}
@@ -521,7 +521,7 @@ text {
 text {
 	object {
 		x=6
-		y=413
+		y=433
 		width=150
 		height=15
 	}
@@ -532,7 +532,7 @@ text {
 }
 "text update" {
 	object {
-		x=130
+		x=135
 		y=339
 		width=350
 		height=15
@@ -548,7 +548,7 @@ text {
 "text update" {
 	object {
 		x=6
-		y=395
+		y=415
 		width=265
 		height=13
 	}
@@ -564,7 +564,7 @@ text {
 "text update" {
 	object {
 		x=6
-		y=428
+		y=448
 		width=265
 		height=12
 	}
@@ -580,7 +580,7 @@ text {
 "text update" {
 	object {
 		x=271
-		y=395
+		y=415
 		width=265
 		height=13
 	}
@@ -595,7 +595,7 @@ text {
 "text update" {
 	object {
 		x=271
-		y=428
+		y=448
 		width=265
 		height=12
 	}
@@ -610,7 +610,7 @@ text {
 rectangle {
 	object {
 		x=344
-		y=450
+		y=470
 		width=1
 		height=110
 	}
@@ -621,7 +621,7 @@ rectangle {
 rectangle {
 	object {
 		x=186
-		y=449
+		y=469
 		width=1
 		height=110
 	}
@@ -632,7 +632,7 @@ rectangle {
 text {
 	object {
 		x=16
-		y=454
+		y=474
 		width=120
 		height=15
 	}
@@ -644,7 +644,7 @@ text {
 text {
 	object {
 		x=11
-		y=479
+		y=499
 		width=50
 		height=15
 	}
@@ -656,7 +656,7 @@ text {
 text {
 	object {
 		x=11
-		y=496
+		y=516
 		width=50
 		height=15
 	}
@@ -668,7 +668,7 @@ text {
 text {
 	object {
 		x=11
-		y=514
+		y=534
 		width=50
 		height=15
 	}
@@ -680,7 +680,7 @@ text {
 text {
 	object {
 		x=11
-		y=527
+		y=547
 		width=50
 		height=15
 	}
@@ -692,7 +692,7 @@ text {
 text {
 	object {
 		x=401
-		y=454
+		y=474
 		width=85
 		height=15
 	}
@@ -704,7 +704,7 @@ text {
 text {
 	object {
 		x=189
-		y=454
+		y=474
 		width=105
 		height=15
 	}
@@ -716,7 +716,7 @@ text {
 text {
 	object {
 		x=205
-		y=479
+		y=499
 		width=30
 		height=15
 	}
@@ -728,7 +728,7 @@ text {
 text {
 	object {
 		x=205
-		y=499
+		y=519
 		width=30
 		height=15
 	}
@@ -740,7 +740,7 @@ text {
 "text update" {
 	object {
 		x=475
-		y=479
+		y=499
 		width=60
 		height=15
 	}
@@ -757,7 +757,7 @@ text {
 "text update" {
 	object {
 		x=245
-		y=479
+		y=499
 		width=60
 		height=15
 	}
@@ -774,7 +774,7 @@ text {
 "text update" {
 	object {
 		x=245
-		y=499
+		y=519
 		width=60
 		height=15
 	}
@@ -791,7 +791,7 @@ text {
 "text update" {
 	object {
 		x=79
-		y=479
+		y=499
 		width=100
 		height=15
 	}
@@ -808,7 +808,7 @@ text {
 "text update" {
 	object {
 		x=79
-		y=499
+		y=519
 		width=100
 		height=15
 	}
@@ -825,7 +825,7 @@ text {
 "text update" {
 	object {
 		x=79
-		y=520
+		y=540
 		width=100
 		height=15
 	}
@@ -853,13 +853,13 @@ text {
 }
 "text update" {
 	object {
-		x=130
+		x=135
 		y=359
 		width=350
 		height=15
 	}
 	monitor {
-		chan="$(ioc):KERNEL_VERS"
+		chan="$(ioc):OS_VERS"
 		clr=14
 		bclr=4
 	}
@@ -869,7 +869,7 @@ text {
 text {
 	object {
 		x=351
-		y=479
+		y=499
 		width=100
 		height=15
 	}
@@ -881,7 +881,7 @@ text {
 "text update" {
 	object {
 		x=475
-		y=507
+		y=527
 		width=60
 		height=15
 	}
@@ -898,7 +898,7 @@ text {
 text {
 	object {
 		x=350
-		y=534
+		y=554
 		width=100
 		height=15
 	}
@@ -910,7 +910,7 @@ text {
 "text update" {
 	object {
 		x=475
-		y=534
+		y=554
 		width=60
 		height=15
 	}
@@ -927,7 +927,7 @@ text {
 composite {
 	object {
 		x=350
-		y=499
+		y=519
 		width=100
 		height=30
 	}
@@ -936,7 +936,7 @@ composite {
 		text {
 			object {
 				x=350
-				y=499
+				y=519
 				width=100
 				height=15
 			}
@@ -948,7 +948,7 @@ composite {
 		text {
 			object {
 				x=350
-				y=514
+				y=534
 				width=100
 				height=15
 			}
@@ -1211,4 +1211,31 @@ rectangle {
 	"basic attribute" {
 		clr=14
 	}
+}
+"text update" {
+	object {
+		x=135
+		y=379
+		width=350
+		height=15
+	}
+	monitor {
+		chan="$(ioc):KERNEL_VERS"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=6
+		y=379
+		width=110
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Kernel Version"
 }
