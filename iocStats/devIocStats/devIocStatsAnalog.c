@@ -304,7 +304,7 @@ aStats devAoStats={ 6,NULL,NULL,ao_init_record,NULL,ao_write,NULL };
 epicsExportAddress(dset,devAoStats);
 aStats devAiClusts = {6,NULL,ai_clusts_init,ai_clusts_init_record,NULL,ai_clusts_read,NULL };
 epicsExportAddress(dset,devAiClusts);
-aStats devAiFsStats={ 6,NULL,ai_init,ai_fs_init_record,ai_ioint_info,ai_fs_read,NULL };
+aStats devAiFsStats={ 6,NULL,NULL,ai_fs_init_record,ai_ioint_info,ai_fs_read,NULL };
 epicsExportAddress(dset,devAiFsStats);
 
 static memInfo meminfo = {0.0,0.0,0.0,0.0,0.0,0.0};
