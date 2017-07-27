@@ -56,7 +56,7 @@ int devIocStatsInitSystemInfo (void) {
     {
         if (fgets(line, sizeof(line), file))
         {
-            int n = strlen(line);
+            size_t n = strlen(line);
             if (n > 0 && line[n-1] == '\n')
                 line[n-1] = 0;
             osversion = strdup(line);
@@ -74,20 +74,20 @@ int devIocStatsInitSystemInfo (void) {
         /* find longest name string */
         while (fgets(line, sizeof(line), file))
         {
-            int i;
+            size_t i;
             if ((strncmp(line, "NAME=", 5) == 0 && (i=5)) ||
                 (strncmp(line, "PRETTY_NAME=", 12) == 0 && (i=12)) ||
                 (strncmp(line, "DISTRIB_DESCRIPTION=", 20) == 0 && (i=20)))
             {
-                int n;
+                size_t n;
                 
                 n = strlen(line+i);
-                if (n >= 0 && line[i+n-1] == '\n')
+                if (line[i+n-1] == '\n')
                 {
                     n--;
                     line[i+n] = 0;
                 }
-                if (line[i] == '"' && n >= 0 && line[i+n-1] == '"')
+                if (line[i] == '"' && line[i+n-1] == '"')
                 {
                     i++;
                     n -= 2;
@@ -113,7 +113,7 @@ int devIocStatsInitSystemInfo (void) {
         {
             char* ci = line;
             char* co = line;
-            int field=0;
+            unsigned int field=0;
             /* look for cpe*:/o: */
             if (strncmp(line, "cpe:/o:", 7) == 0)
             {
