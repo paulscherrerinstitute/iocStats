@@ -62,7 +62,6 @@ SOURCES += iocStats/devIocStats/devIocStatsAnalog.c
 SOURCES += iocStats/devIocStats/devIocStatsString.c
 SOURCES += iocStats/devIocStats/devIocStatsWaveform.c
 SOURCES += iocStats/devIocStats/devIocStatsSub.c
-SOURCES += iocStats/devIocStats/devIocStatsTest.c
 SOURCES += iocStats/devIocStats/getRunTimeEpicsVersion.c
 
 # CA link statistics
