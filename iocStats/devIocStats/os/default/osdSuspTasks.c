@@ -28,6 +28,9 @@ static int suspendedTasks = 0;
 
 static void taskFault(void *user, epicsThreadId tid)
 {
+    char tname[32];
+    epicsThreadGetName(tid, tname, sizeof(tname));
+    if (strcmp(tname, "soft_motor") == 0) return;
     suspendedTasks++;
 }
 

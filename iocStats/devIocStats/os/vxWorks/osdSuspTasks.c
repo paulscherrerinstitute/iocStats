@@ -53,7 +53,13 @@ int devIocStatsGetSuspTasks (int *pval)
     int i;
     for (i=0; i < nTasks; i++)
         if (taskIsSuspended(taskIdList[i]))
-           numSuspendedTasks++;
+        {
+            char* tname;
+            tname = taskName(taskIdList[i]);
+            if (tname && strcmp(tname, "soft_motor") == 0)
+                continue;
+            numSuspendedTasks++;
+        }
     *pval = numSuspendedTasks;
     return 0;
 }
