@@ -1,23 +1,33 @@
 #!/bin/bash
 
-# Find all IOCs in the "SWISSFEL" facility with names starting with "S" and
-# running iocStats (they have a channel "<IOC>:TOD")
+# Find all IOCs in the given facility
 # Sort alphabetically, then sort by location and finally group by topic.
 
 TEST='NICOLE|CHRISTOPH|DIDIER|-GJ'
-EXCLUDE=''
+EXCLUDE='^[a-z]|DUMMY'
 
-startDM >/dev/null 2>&1 -noMsg -macro $(
-    wget -q -O - 'http://epics-boot-info.psi.ch/find-channel.aspx/S%:TOD?limit=0&format=csv&header=no&facility=SWISSFEL' | sort \
+if [ ${FACILITY:=${PSI_GFA_FACILITY:=SF}} == SF ]; then FACILITY=SWISSFEL; fi
+
+zenity --info --title "IOC status overview" --text "Collecting IOC information ..." <<< 1 &
+startDM -noMsg >/dev/null 2>&1 -noMsg -macro $(
+    wget -q -O - "http://epics-boot-info.psi.ch/find-channel.aspx/%:TOD?limit=0&format=csv&header=no&facility=$FACILITY" | sort -V \
     | awk -F : '
+        /^ACO/      { ACO = ACO $1 "\n"; next }
+        /^ALI/      { ALI = ALI $1 "\n"; next }
+        /^ALB/      { ALB = ALB $1 "\n"; next }
+        /^ABO/      { ABO = ABO $1 "\n"; next }
+        /^ABR/      { ABR = ABR $1 "\n"; next }
+        /^ARI/      { ARI = ARI $1 "\n"; next }
+        /^A/        { A   = A   $1 "\n"; next }
+        /^X/        { X   = X   $1 "\n"; next }
         /^SLG/      { SLG = SLG $1 "\n"; next }
         /^SIN/      { SIN = SIN $1 "\n"; next }
         /^S[0-9]/   { SNN = SNN $1 "\n"; next }
         /^SAR/      { SAR = SAR $1 "\n"; next }
         /^SAT/      { SAT = SAT $1 "\n"; next }
         /^SGE/      { SGE = SGE $1 "\n"; next }
-                    { SXX = SXX $1 "\n"; }
-        END { print SLG, SIN, SNN, SAR, SAT, SGE, SXX }' \
+                    { S   = S   $1 "\n"; next }
+        END { print ACO, ALI, ALB, ABO, ABR, ARI, A, X, SLG, SIN, SNN, SAR, SAT, SGE, S }' \
     | awk -v test=$TEST -v exclude=$EXCLUDE '
         /^$/        { next }      
 exclude && $1~exclude { next }         
@@ -34,20 +44,25 @@ test && $1~test     { IOCS["TE"]=IOCS["TE"] "IOC=" $1 ";"; next}
         /-VCS/      { IOCS["VA"]=IOCS["VA"] "IOC=" $1 ";"; next}
         /-MAG/      { IOCS["MA"]=IOCS["MA"] "IOC=" $1 ";"; next}
         /-LLRF/     { IOCS["LLRF"]=IOCS["LLRF"] "IOC=" $1 ";"; next}
-        /-ILK/      { IOCS["ILK"]=IOCS["ILK"] "IOC=" $1 ";"; next}
+        /-ILK/      { IOCS["LLRF"]=IOCS["LLRF"] "IOC=" $1 ";"; next}
         /-R/        { IOCS["RF"]=IOCS["RF"] "IOC=" $1 ";"; next}
+        /-TFDB/     { IOCS["RF"]=IOCS["RF"] "IOC=" $1 ";"; next}
         /-MOT/      { IOCS["MO"]=IOCS["MO"] "IOC=" $1 ";"; next}
-        /-DBPM/     { IOCS["BP"]=IOCS["BP"] "IOC=" $1 ";"; next}
         /-DBLM/     { IOCS["BL"]=IOCS["BL"] "IOC=" $1 ";"; next}
-        /-DBCM/     { IOCS["BC"]=IOCS["BC"] "IOC=" $1 ";"; next}
-        /-DBAM/     { IOCS["BA"]=IOCS["BA"] "IOC=" $1 ";"; next}
+        /-DBPM/     { IOCS["DI"]=IOCS["DI"] "IOC=" $1 ";"; next}
+        /-DBCM/     { IOCS["DI"]=IOCS["DI"] "IOC=" $1 ";"; next}
+        /-DBAM/     { IOCS["DI"]=IOCS["DI"] "IOC=" $1 ";"; next}
         /-DSCR/     { IOCS["SC"]=IOCS["SC"] "IOC=" $1 ";"; next}
         /-DDR/      { IOCS["DR"]=IOCS["DR"] "IOC=" $1 ";"; next}
         /-D/        { IOCS["DI"]=IOCS["DI"] "IOC=" $1 ";"; next}
         /-KKV/      { IOCS["KV"]=IOCS["KV"] "IOC=" $1 ";"; next}
-        /^SLG/      { IOCS["LG"]=IOCS["LG"] "IOC=" $1 ";"; next}
+        /^SLG/      { IOCS["LA"]=IOCS["LA"] "IOC=" $1 ";"; next}
         /^STS/      { IOCS["TS"]=IOCS["TS"] "IOC=" $1 ";"; next}
         /^SGE/      { IOCS["GE"]=IOCS["GE"] "IOC=" $1 ";"; next}
+        /^SF-/      { IOCS["GE"]=IOCS["GE"] "IOC=" $1 ";"; next}
+        /^SIN-/     { IOCS["GE"]=IOCS["GE"] "IOC=" $1 ";"; next}
+        /^SAR/      { IOCS["AR"]=IOCS["AR"] "IOC=" $1 ";"; next}
+        /^SLAAR/    { IOCS["AR"]=IOCS["AR"] "IOC=" $1 ";"; next}
                     { IOCS["OT"]=IOCS["OT"] "IOC=" $1 ";"; }
     END { for (i in IOCS) { printf ("%s_IOCS=%s,", i, IOCS[i]) }
-}') iocStats_overview.ui
+}'; kill $!) iocStats_${PSI_GFA_FACILITY}_overview.ui

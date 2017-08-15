@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>220</width>
-    <height>25</height>
+    <height>22</height>
    </rect>
   </property>
   <property name="styleSheet">
@@ -122,7 +122,7 @@ border-radius: 2px;
       <x>0</x>
       <y>0</y>
       <width>155</width>
-      <height>25</height>
+      <height>22</height>
      </rect>
     </property>
     <property name="background">
@@ -151,7 +151,7 @@ border-radius: 2px;
       <x>155</x>
       <y>0</y>
       <width>65</width>
-      <height>25</height>
+      <height>22</height>
      </rect>
     </property>
     <property name="alignment">
@@ -167,7 +167,7 @@ border-radius: 2px;
      <bool>true</bool>
     </property>
     <property name="frameLineWidth" stdset="0">
-     <number>2</number>
+     <number>1</number>
     </property>
     <property name="alarmHandling">
      <enum>caLineEdit::onBackground</enum>
