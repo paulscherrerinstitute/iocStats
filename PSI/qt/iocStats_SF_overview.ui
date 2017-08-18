@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>950</width>
+    <width>980</width>
     <height>687</height>
    </rect>
   </property>
@@ -22,7 +22,7 @@
      <rect>
       <x>0</x>
       <y>55</y>
-      <width>946</width>
+      <width>980</width>
       <height>631</height>
      </rect>
     </property>
@@ -30,7 +30,7 @@
      <enum>QTabWidget::Triangular</enum>
     </property>
     <property name="currentIndex">
-     <number>12</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="TS">
      <attribute name="title">
@@ -41,7 +41,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -59,7 +59,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -68,7 +68,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -80,9 +80,6 @@
         </property>
         <property name="stacking">
          <enum>caInclude::ColumnRow</enum>
-        </property>
-        <property name="numberOfItems" stdset="0">
-         <number>1</number>
         </property>
         <property name="maximumColumns" stdset="0">
          <number>4</number>
@@ -106,7 +103,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -124,7 +121,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -133,7 +130,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -171,7 +168,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -189,7 +186,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -198,7 +195,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -236,7 +233,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -254,7 +251,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -263,7 +260,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -301,7 +298,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -319,7 +316,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -328,7 +325,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -366,7 +363,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -384,7 +381,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -393,7 +390,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -431,7 +428,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -449,7 +446,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -458,7 +455,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -496,7 +493,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -514,7 +511,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -523,7 +520,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -561,7 +558,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -579,7 +576,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -588,207 +585,12 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
         <property name="macro">
          <string>$(MO_IOCS)</string>
-        </property>
-        <property name="filename" stdset="0">
-         <string notr="true">iocStats_small.ui</string>
-        </property>
-        <property name="stacking">
-         <enum>caInclude::ColumnRow</enum>
-        </property>
-        <property name="numberOfItems" stdset="0">
-         <number>1</number>
-        </property>
-        <property name="maximumColumns" stdset="0">
-         <number>4</number>
-        </property>
-        <property name="verticalSpacing" stdset="0">
-         <number>1</number>
-        </property>
-        <property name="horizontalSpacing" stdset="0">
-         <number>5</number>
-        </property>
-       </widget>
-      </widget>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="BM">
-     <attribute name="title">
-      <string>BLM</string>
-     </attribute>
-     <widget class="QScrollArea" name="scrollArea_12">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>941</width>
-        <height>606</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAsNeeded</enum>
-      </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents_12">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>941</width>
-         <height>606</height>
-        </rect>
-       </property>
-       <widget class="caInclude" name="cainclude_12">
-        <property name="geometry">
-         <rect>
-          <x>5</x>
-          <y>0</y>
-          <width>220</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="macro">
-         <string>$(BL_IOCS)</string>
-        </property>
-        <property name="filename" stdset="0">
-         <string notr="true">iocStats_small.ui</string>
-        </property>
-        <property name="stacking">
-         <enum>caInclude::ColumnRow</enum>
-        </property>
-        <property name="numberOfItems" stdset="0">
-         <number>1</number>
-        </property>
-        <property name="maximumColumns" stdset="0">
-         <number>4</number>
-        </property>
-        <property name="verticalSpacing" stdset="0">
-         <number>1</number>
-        </property>
-        <property name="horizontalSpacing" stdset="0">
-         <number>5</number>
-        </property>
-       </widget>
-      </widget>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="SC">
-     <attribute name="title">
-      <string>SCR</string>
-     </attribute>
-     <widget class="QScrollArea" name="scrollArea_13">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>941</width>
-        <height>606</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAsNeeded</enum>
-      </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents_13">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>941</width>
-         <height>606</height>
-        </rect>
-       </property>
-       <widget class="caInclude" name="cainclude_13">
-        <property name="geometry">
-         <rect>
-          <x>5</x>
-          <y>0</y>
-          <width>220</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="macro">
-         <string>$(SC_IOCS)</string>
-        </property>
-        <property name="filename" stdset="0">
-         <string notr="true">iocStats_small.ui</string>
-        </property>
-        <property name="stacking">
-         <enum>caInclude::ColumnRow</enum>
-        </property>
-        <property name="numberOfItems" stdset="0">
-         <number>1</number>
-        </property>
-        <property name="maximumColumns" stdset="0">
-         <number>4</number>
-        </property>
-        <property name="verticalSpacing" stdset="0">
-         <number>1</number>
-        </property>
-        <property name="horizontalSpacing" stdset="0">
-         <number>5</number>
-        </property>
-       </widget>
-      </widget>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="DR">
-     <attribute name="title">
-      <string>DRM</string>
-     </attribute>
-     <widget class="QScrollArea" name="scrollArea_14">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>941</width>
-        <height>606</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAsNeeded</enum>
-      </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents_14">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>941</width>
-         <height>606</height>
-        </rect>
-       </property>
-       <widget class="caInclude" name="cainclude_14">
-        <property name="geometry">
-         <rect>
-          <x>5</x>
-          <y>0</y>
-          <width>220</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="macro">
-         <string>$(DR_IOCS)</string>
         </property>
         <property name="filename" stdset="0">
          <string notr="true">iocStats_small.ui</string>
@@ -821,7 +623,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -839,7 +641,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -848,7 +650,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -886,7 +688,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -904,7 +706,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -913,7 +715,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -944,14 +746,14 @@
     </widget>
     <widget class="QWidget" name="AR">
      <attribute name="title">
-      <string>AR</string>
+      <string>ID</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea_31">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -969,7 +771,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -978,12 +780,142 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
         <property name="macro">
-         <string>$(AR_IOCS)</string>
+         <string>$(ID_IOCS)</string>
+        </property>
+        <property name="filename" stdset="0">
+         <string notr="true">iocStats_small.ui</string>
+        </property>
+        <property name="stacking">
+         <enum>caInclude::ColumnRow</enum>
+        </property>
+        <property name="numberOfItems" stdset="0">
+         <number>1</number>
+        </property>
+        <property name="maximumColumns" stdset="0">
+         <number>4</number>
+        </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>1</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>OPT</string>
+     </attribute>
+     <widget class="QScrollArea" name="scrollArea_32">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>980</width>
+        <height>606</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_32">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>980</width>
+         <height>606</height>
+        </rect>
+       </property>
+       <widget class="caInclude" name="cainclude_32">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>0</y>
+          <width>235</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="macro">
+         <string>$(OP_IOCS)</string>
+        </property>
+        <property name="filename" stdset="0">
+         <string notr="true">iocStats_small.ui</string>
+        </property>
+        <property name="stacking">
+         <enum>caInclude::ColumnRow</enum>
+        </property>
+        <property name="numberOfItems" stdset="0">
+         <number>1</number>
+        </property>
+        <property name="maximumColumns" stdset="0">
+         <number>4</number>
+        </property>
+        <property name="verticalSpacing" stdset="0">
+         <number>1</number>
+        </property>
+        <property name="horizontalSpacing" stdset="0">
+         <number>5</number>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>PHOT</string>
+     </attribute>
+     <widget class="QScrollArea" name="scrollArea_33">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>980</width>
+        <height>606</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_33">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>980</width>
+         <height>606</height>
+        </rect>
+       </property>
+       <widget class="caInclude" name="cainclude_33">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>0</y>
+          <width>235</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="macro">
+         <string>$(PH_IOCS)</string>
         </property>
         <property name="filename" stdset="0">
          <string notr="true">iocStats_small.ui</string>
@@ -1016,7 +948,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>606</height>
        </rect>
       </property>
@@ -1034,7 +966,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>606</height>
         </rect>
        </property>
@@ -1043,7 +975,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -1081,7 +1013,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>941</width>
+        <width>980</width>
         <height>416</height>
        </rect>
       </property>
@@ -1099,7 +1031,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>416</height>
         </rect>
        </property>
@@ -1108,7 +1040,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -1141,7 +1073,7 @@
        <rect>
         <x>0</x>
         <y>450</y>
-        <width>941</width>
+        <width>980</width>
         <height>156</height>
        </rect>
       </property>
@@ -1159,7 +1091,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>941</width>
+         <width>980</width>
          <height>156</height>
         </rect>
        </property>
@@ -1168,7 +1100,7 @@
          <rect>
           <x>5</x>
           <y>0</y>
-          <width>220</width>
+          <width>235</width>
           <height>22</height>
          </rect>
         </property>
@@ -1219,7 +1151,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>950</width>
+      <width>980</width>
       <height>50</height>
      </rect>
     </property>
