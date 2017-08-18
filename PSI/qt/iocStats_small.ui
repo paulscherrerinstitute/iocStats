@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>220</width>
+    <width>235</width>
     <height>22</height>
    </rect>
   </property>
@@ -121,7 +121,7 @@ border-radius: 2px;
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>155</width>
+      <width>170</width>
       <height>22</height>
      </rect>
     </property>
@@ -148,7 +148,7 @@ border-radius: 2px;
    <widget class="caLineEdit" name="calineedit_30">
     <property name="geometry">
      <rect>
-      <x>155</x>
+      <x>170</x>
       <y>0</y>
       <width>65</width>
       <height>22</height>
