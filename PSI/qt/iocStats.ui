@@ -2124,6 +2124,15 @@
       <string>Heart Beat</string>
      </property>
     </widget>
+    <zorder>calabel_26</zorder>
+    <zorder>calineedit_25</zorder>
+    <zorder>calabel_27</zorder>
+    <zorder>calineedit_26</zorder>
+    <zorder>caled_32</zorder>
+    <zorder>caled_33</zorder>
+    <zorder>caled_31</zorder>
+    <zorder>calabel_25</zorder>
+    <zorder>openRmc</zorder>
    </widget>
    <widget class="QGroupBox" name="groupBox_6">
     <property name="geometry">
@@ -2956,7 +2965,7 @@
     <property name="channel" stdset="0">
      <string notr="true">$(IOC):ELB-PON-SIGN</string>
     </property>
-    <widget class="caRelatedDisplay" name="carelateddisplay_2">
+    <widget class="caRelatedDisplay" name="openIfcmon">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -3314,6 +3323,107 @@
      </widget>
     </widget>
    </widget>
+   <widget class="caFrame" name="caframe_6">
+    <property name="geometry">
+     <rect>
+      <x>355</x>
+      <y>5</y>
+      <width>81</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <widget class="caShellCommand" name="openRmc">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>0</y>
+       <width>56</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="label">
+      <string notr="true">rmc</string>
+     </property>
+     <property name="foreground">
+      <color>
+       <red>0</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="background">
+      <color>
+       <red>183</red>
+       <green>157</green>
+       <blue>92</blue>
+      </color>
+     </property>
+     <property name="labels">
+      <string/>
+     </property>
+     <property name="files">
+      <string>xterm -T $(IOC) -fa Monospace -fs 11 -e &quot;read -p \&quot;user ($USER): \&quot; &amp;&amp; ssh -l \${REPLY:-$USER} -t \&quot;`wget -qO- http://inventory.psi.ch/soap/vmeCabling.ashx|awk '/^$(IOC) /{print $9}'`\&quot; minicom $(IOC) || read a&quot;</string>
+     </property>
+     <property name="args">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="caFrame" name="caframe_5">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>5</y>
+      <width>81</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="visibility">
+     <enum>caFrame::Calc</enum>
+    </property>
+    <property name="visibilityCalc">
+     <string notr="true">G</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(IOC):SHELLBOX</string>
+    </property>
+    <widget class="caShellCommand" name="openTelnet">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>66</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="label">
+      <string notr="true">telnet</string>
+     </property>
+     <property name="foreground">
+      <color>
+       <red>0</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="background">
+      <color>
+       <red>183</red>
+       <green>157</green>
+       <blue>92</blue>
+      </color>
+     </property>
+     <property name="labels">
+      <string/>
+     </property>
+     <property name="files">
+      <string>xterm -T $(IOC) -fa Monospace -fs 11 -e &quot;telnet `caget -plain $(IOC):SHELLBOX | tr ':&quot;' ' '`&quot;</string>
+     </property>
+     <property name="args">
+      <string/>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <customwidgets>
@@ -3352,6 +3462,11 @@
    <class>caCalc</class>
    <extends>QLabel</extends>
    <header>caCalc</header>
+  </customwidget>
+  <customwidget>
+   <class>caShellCommand</class>
+   <extends>QWidget</extends>
+   <header>caShellCommand</header>
   </customwidget>
  </customwidgets>
  <resources/>
