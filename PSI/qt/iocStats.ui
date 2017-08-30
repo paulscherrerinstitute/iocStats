@@ -2124,15 +2124,6 @@
       <string>Heart Beat</string>
      </property>
     </widget>
-    <zorder>calabel_26</zorder>
-    <zorder>calineedit_25</zorder>
-    <zorder>calabel_27</zorder>
-    <zorder>calineedit_26</zorder>
-    <zorder>caled_32</zorder>
-    <zorder>caled_33</zorder>
-    <zorder>caled_31</zorder>
-    <zorder>calabel_25</zorder>
-    <zorder>openRmc</zorder>
    </widget>
    <widget class="QGroupBox" name="groupBox_6">
     <property name="geometry">
@@ -2877,7 +2868,7 @@
       <enum>caFrame::Calc</enum>
      </property>
      <property name="visibilityCalc">
-      <string notr="true">G</string>
+      <string notr="true">G&amp;&amp;!J</string>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(IOC):SHELLBOX</string>
@@ -3382,7 +3373,7 @@
      <enum>caFrame::Calc</enum>
     </property>
     <property name="visibilityCalc">
-     <string notr="true">G</string>
+     <string notr="true">G&amp;&amp;!J</string>
     </property>
     <property name="channel" stdset="0">
      <string notr="true">$(IOC):SHELLBOX</string>
