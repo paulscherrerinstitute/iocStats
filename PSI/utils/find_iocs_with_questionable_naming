@@ -6,8 +6,8 @@ if [ ${FACILITY:=${PSI_GFA_FACILITY:=SF}} == SF ]; then FACILITY=SWISSFEL; fi
 [ $PSI_GFA_FACILITY == SLS ] && FILTER=AX || FILTER=${PSI_GFA_FACILITY:0:1}
 
 case $PSI_GFA_FACILITY in
-    SLS) PATTERN='(A[A-Z]{4}|X[0-9]{2}[A-Z]{2})-(PC[0-9]*|VME)(-[A-Z0-9]+)?' ;;
-    SF) PATTERN='S[A-Z0-9]+-C(PC[LW]|VME|SSU|PPM)(-[A-Z0-9-]+)?' ;;
+    SLS) PATTERN='^(A[A-Z]{4}|X[0-9]{2}[A-Z]{2})-(PC[0-9]*|VME)(-[A-Z0-9]+)?' ;;
+    SF) PATTERN='^S[A-Z0-9]+-C(PC[LW]|VME|SSU|PPM)(-[A-Z0-9-]+)?' ;;
 esac
 
 wget -q -O - "http://epics-boot-info.psi.ch/find-channel.aspx/%:TOD?limit=0&format=csv&header=no&facility=$FACILITY" | sort -V \
@@ -23,11 +23,12 @@ do
     else
         OWNER="<unknown owner>"
     fi
-    OS=$(caget -noname -nostatus $IOC:KERNEL_VERS 2>/dev/null)
+    OS=$(caget $IOC:KERNEL_VERS 2>/dev/null)
     case "$OS" in
         *Windows*) OS=Windows ;;
         *"Linux 2.6"*) OS="Linux PC" ;;
         "") OS="<not running>" ;;
+        *"variable not connected"*) OS="<not running>" ;;
         '""') OS="<unknown os>" ;;
     esac
     echo $IOC $OWNER $OS
