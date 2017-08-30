@@ -43,8 +43,9 @@ int devIocStatsInitSystemInfo (void) {
        candidates:
         - /etc/redhat-release
         - /etc/system-release
-        - /etc//lsb-release
-        - /etc//system-release-cpe
+        - /etc/lsb-release
+        - /etc/system-release-cpe
+        - /etc/issue
     */
     osversion = notavail;
     
@@ -52,6 +53,8 @@ int devIocStatsInitSystemInfo (void) {
     file = fopen("/etc/system-release", "r");
     if (!file)
     file = fopen("/etc/redhat-release", "r");
+    if (!file)
+    file = fopen("/etc/issue", "r"); /* Moxa has this */
     if (file)
     {
         if (fgets(line, sizeof(line), file))
@@ -145,7 +148,7 @@ int devIocStatsInitSystemInfo (void) {
         return 0;
     }
             
-    return 0;
+    return -1;
 }
 
 int devIocStatsGetBSPVersion (char **pval)
