@@ -26,6 +26,7 @@ of this distribution.
 #include "cadef.h"
 #include "dbCa.h"
 #include "dbLock.h"
+#include "dbCommon.h"
 /*--------------------------------------------------------------*/
 #ifndef BASE_VERSION
 /* R3.14.x */
@@ -41,7 +42,7 @@ long ioccar(unsigned int *pcal, unsigned int *pcalnconn, unsigned int *pcaldconn
 {
     DBENTRY		dbentry;
     long		status;
-    char		*precord;
+    dbCommon		*precord;
     dbRecordType	*pdbRecordType;
     dbFldDes		*pdbFldDes;
     DBLINK		*plink;
@@ -58,11 +59,11 @@ long ioccar(unsigned int *pcal, unsigned int *pcalnconn, unsigned int *pcaldconn
 	while(!status) {
 	    pdbRecordType = dbentry.precordType;
 	    precord = dbentry.precnode->precord;
+            dbScanLock(precord);
 	    for(j=0; j<pdbRecordType->no_links; j++) {
 		pdbFldDes = pdbRecordType->papFldDes[pdbRecordType->link_ind[j]];
-		plink = (DBLINK *)(precord + pdbFldDes->offset);
+		plink = (DBLINK *)((char *)precord + pdbFldDes->offset);
 		if (plink->type == CA_LINK) {
-	            dbLockSetGblLock(); 
 	            if (plink->type == CA_LINK) {
 		        ncalinks++;
 		        pca = (caLink *)plink->value.pv_link.pvt;
@@ -71,9 +72,9 @@ long ioccar(unsigned int *pcal, unsigned int *pcalnconn, unsigned int *pcaldconn
 		            nDisconnect += pca->nDisconnect;
 		        }
 	            }
-	            dbLockSetGblUnlock();
                 }
 	    }
+            dbScanUnlock(precord);
 	    status = dbNextRecord(&dbentry);
 	}
 	status = dbNextRecordType(&dbentry);
