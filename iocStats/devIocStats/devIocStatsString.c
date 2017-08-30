@@ -90,6 +90,7 @@
 #include <epicsTime.h>
 #include <epicsFindSymbol.h>
 
+#include <alarm.h>
 #include <dbAccess.h>
 #include <devSup.h>
 #include <stringinRecord.h>
@@ -256,6 +257,7 @@ static long envvar_init_record(stringinRecord* pr)
 		   "devStringinEnvVar (init_record) Illegal INP parm field");
 		return S_db_badField;
 	}
+        strcpy(pr->val, notavail);
 	return 0;	/* success */
 }
 
@@ -276,10 +278,7 @@ static long epics_init_record(stringinRecord* pr)
           ppParam++;
         }
         pr->dpvt = 0;
-        strcpy(pr->val, "<not available>");
-        return 0;
-        recGblRecordError(S_db_badField,(void*)pr,
-                "devStringinEnvVar (init_record) Illegal INP parm field");
+        strcpy(pr->val, notavail);
         return S_db_badField;
 }
 
@@ -296,13 +295,16 @@ static long stringin_read(stringinRecord* pr)
 
 static long envvar_read(stringinRecord* pr)
 {
-	char **envvar = &notavail;
         char *buf;
 
 	if (!pr->dpvt) return S_dev_badInpType;
         
-        if ( (buf=getenv((char *)pr->dpvt)) ) envvar = &buf;
-        strncpy(pr->val, *envvar, MAX_NAME_SIZE);
+        if ( !(buf=getenv((char *)pr->dpvt)) )
+        {
+            recGblSetSevr(pr, READ_ALARM, INVALID_ALARM);
+            return S_db_badField;
+        }
+        strncpy(pr->val, buf, MAX_NAME_SIZE);
         pr->val[MAX_NAME_SIZE]=0; 
 	pr->udf=0;
 	return(0);	/* success */
