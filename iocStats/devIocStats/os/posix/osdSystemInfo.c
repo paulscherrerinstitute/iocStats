@@ -17,12 +17,15 @@
  *  Modification History
  *  2009-05-20 Ralph Lange (HZB/BESSY)
  *     Restructured OSD parts
+ *  2017 Dirk Zimoch (PSI)
+ *     Search for OS version in several files
  *
  */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 #include <sys/utsname.h>
 #include <devIocStats.h>
 
@@ -53,8 +56,6 @@ int devIocStatsInitSystemInfo (void) {
     file = fopen("/etc/system-release", "r");
     if (!file)
     file = fopen("/etc/redhat-release", "r");
-    if (!file)
-    file = fopen("/etc/issue", "r"); /* Moxa has this */
     if (file)
     {
         if (fgets(line, sizeof(line), file))
@@ -147,7 +148,38 @@ int devIocStatsInitSystemInfo (void) {
         fclose(file);
         return 0;
     }
-            
+
+    /* as a last resort try /etc/issue */
+    file = fopen("/etc/issue", "r");
+    if (file)
+    {
+        /* read first line only */
+        if (fgets(line, sizeof(line), file))
+        {
+            size_t n = strlen(line);
+            if (n > 0 && line[n-1] == '\n')
+                line[n-1] = 0;
+            osversion = strdup(line);
+            /* remove escape sequences */
+            char* p = osversion;
+            while ((p = strchr(p, '\\')) != NULL)
+            {
+                n -= 2;
+                memmove(p, p+2, n-(p-osversion));
+            }
+            p = osversion;
+            while ((p = strchr(p, '@')) != NULL)
+            {
+                n -= 2;
+                memmove(p, p+2, n-(p-osversion));
+            }
+            /* remove trailing spaces */
+            while (n && isspace(osversion[n-1])) n--;
+        }
+        fclose(file);
+        return 0;
+    }
+
     return -1;
 }
 
