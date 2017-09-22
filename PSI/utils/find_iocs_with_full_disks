@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ ${FACILITY:=${PSI_GFA_FACILITY:=SF}} == SF ]; then FACILITY=SWISSFEL; fi
+
+for i in $(
+    wget -q -O - "http://epics-boot-info.psi.ch/find-channel.aspx/%:FS_USAGE_%?limit=0&format=csv&header=no&facility=$FACILITY" | sort -V \
+    | awk -F , '{print $1}')
+do
+    caget $i 2>/dev/null | grep SEVR
+done
