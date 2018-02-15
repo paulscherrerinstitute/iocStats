@@ -10,7 +10,7 @@ EXCLUDE='^S.*-[CL]CAM'
 [ $PSI_GFA_FACILITY == SLS ] && FILTER=AX || FILTER=${PSI_GFA_FACILITY:0:1}
 
 #show a little dialog box
-zenity --progress --pulsate --title "IOC status" --text "Collecting IOC information\nfrom Inventory ..." <<<1 &
+zenity --progress --pulsate --title "IOC status" --text "Collecting $FACILITY IOC information\nfrom Inventory ..." <<<1 &
 
 ulimit -n 4096
 caqtdm >/dev/null -noMsg -macro $(
@@ -18,24 +18,28 @@ caqtdm >/dev/null -noMsg -macro $(
     | awk -F : -v exclude=$EXCLUDE -v filter=$FILTER '
 exclude && $1~exclude { next }         
 filter && $1!~"^[" filter "]" { print "filtered out: " $1 > "/dev/stderr"; next }         
-        /^ACO/      { ACO = ACO $1 "\n"; next }
-        /^ALI/      { ALI = ALI $1 "\n"; next }
-        /^ALB/      { ALB = ALB $1 "\n"; next }
-        /^ABO/      { ABO = ABO $1 "\n"; next }
-        /^ABR/      { ABR = ABR $1 "\n"; next }
-        /^ARI/      { ARI = ARI $1 "\n"; next }
-        /^SLG/      { SLG = SLG $1 "\n"; next }
-        /^SIN/      { SIN = SIN $1 "\n"; next }
-        /^S[0-9]/   { SNN = SNN $1 "\n"; next }
-        /^SAR/      { SAR = SAR $1 "\n"; next }
-        /^SAT/      { SAT = SAT $1 "\n"; next }
-        /^SGE/      { SGE = SGE $1 "\n"; next }
-        /^SL/       { SL  = SL  $1 "\n"; next }
-                    { OTH = OTH $1 "\n"; next }
-        END { print ACO, ALI, ALB, ABO, ABR, ARI, SLG, SIN, SNN, SAR, SAT, SGE, SL, OTH }' \
+        /^PROF/     { PROF = PROF $1 "\n"; next }
+        /^PRO/      { PRO  = PRO  $1 "\n"; next }
+        /^P.*PASS$/ { PASS = PASS $1 "\n"; next }
+        /^ACO/      { ACO  = ACO  $1 "\n"; next }
+        /^ALI/      { ALI  = ALI  $1 "\n"; next }
+        /^ALB/      { ALB  = ALB  $1 "\n"; next }
+        /^ABO/      { ABO  = ABO  $1 "\n"; next }
+        /^ABR/      { ABR  = ABR  $1 "\n"; next }
+        /^ARI/      { ARI  = ARI  $1 "\n"; next }
+        /^SLG/      { SLG  = SLG  $1 "\n"; next }
+        /^SIN/      { SIN  = SIN  $1 "\n"; next }
+        /^S[0-9]/   { SNN  = SNN  $1 "\n"; next }
+        /^SAR/      { SAR  = SAR  $1 "\n"; next }
+        /^SAT/      { SAT  = SAT  $1 "\n"; next }
+        /^SGE/      { SGE  = SGE  $1 "\n"; next }
+        /^SL/       { SL   = SL   $1 "\n"; next }
+                    { OTH  = OTH  $1 "\n"; next }
+        END { print ACO ALI ALB ABO ABR ARI SLG SIN SNN SAR SAT SGE SL PROF PRO PASS OTH }' \
     | awk -v test=$TEST '
         /^$/        { next }      
 test && $1~test     { IOCS["TE"]=IOCS["TE"] "IOC=" $1 ";"; next}
+        /^P/        { IOCS["P"] =IOCS["P"]  "IOC=" $1 ";"; next}
         /-TS/       { IOCS["TS"]=IOCS["TS"] "IOC=" $1 ";"; next}
         /-ALCSYNC/  { IOCS["TS"]=IOCS["TS"] "IOC=" $1 ";"; next}
         /-SRX/      { IOCS["TS"]=IOCS["TS"] "IOC=" $1 ";"; next}
