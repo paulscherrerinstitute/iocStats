@@ -1,0 +1,8 @@
+#!/bin/bash
+
+TEST='TEST|-GJ'
+
+if [ ${FACILITY:=${PSI_GFA_FACILITY:=SF}} == SF ]; then FACILITY=SWISSFEL; fi
+[ $PSI_GFA_FACILITY == SLS ] && FILTER=AX || FILTER=${PSI_GFA_FACILITY:0:1}
+
+wget -q -O - "http://epics-boot-info.psi.ch/find-channel.aspx/%:%:%?limit=0&format=csv&header=no&facility=$FACILITY"
