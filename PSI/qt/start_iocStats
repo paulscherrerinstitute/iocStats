@@ -37,9 +37,12 @@ filter && $1!~"^[" filter "]" { print "filtered out: " $1 > "/dev/stderr"; next 
                     { OTH  = OTH  $1 "\n"; next }
         END { print ACO ALI ALB ABO ABR ARI SLG SIN SNN SAR SAT SGE SL PROF PRO PASS OTH }' \
     | awk -v test=$TEST '
+        BEGIN       { IOCS["OT"]="" }
         /^$/        { next }      
 test && $1~test     { IOCS["TE"]=IOCS["TE"] "IOC=" $1 ";"; next}
-        /^P/        { IOCS["P"] =IOCS["P"]  "IOC=" $1 ";"; next}
+        /^PG/       { IOCS["PG"]=IOCS["PG"] "IOC=" $1 ";"; next}
+        /^P.*VME/   { IOCS["PV"]=IOCS["PV"] "IOC=" $1 ";"; next}
+        /^P/        { IOCS["PS"]=IOCS["PS"] "IOC=" $1 ";"; next}
         /-TS/       { IOCS["TS"]=IOCS["TS"] "IOC=" $1 ";"; next}
         /-ALCSYNC/  { IOCS["TS"]=IOCS["TS"] "IOC=" $1 ";"; next}
         /-SRX/      { IOCS["TS"]=IOCS["TS"] "IOC=" $1 ";"; next}
