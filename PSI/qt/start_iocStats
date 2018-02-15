@@ -4,7 +4,7 @@
 # Sort alphabetically, then sort by location and finally group by topic.
 
 TEST='TEST|-GJ'
-EXCLUDE=''
+EXCLUDE='^S.*-[CL]CAM'
 
 [ ${FACILITY:=${PSI_GFA_FACILITY:=SF}} == SF ] && FACILITY=SWISSFEL
 [ $PSI_GFA_FACILITY == SLS ] && FILTER=AX || FILTER=${PSI_GFA_FACILITY:0:1}
@@ -12,7 +12,8 @@ EXCLUDE=''
 #show a little dialog box
 zenity --progress --pulsate --title "IOC status" --text "Collecting IOC information\nfrom Inventory ..." <<<1 &
 
-startDM -noMsg >/dev/null 2>&1 -noMsg -macro $(
+ulimit -n 4096
+caqtdm >/dev/null -noMsg -macro $(
     wget -q -O - "http://epics-boot-info.psi.ch/find-channel.aspx/%:TOD?limit=0&format=csv&header=no&facility=$FACILITY" | sort -V \
     | awk -F : -v exclude=$EXCLUDE -v filter=$FILTER '
 exclude && $1~exclude { next }         
