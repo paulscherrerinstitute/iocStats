@@ -32,14 +32,18 @@ static double cpuFromProc (void) {
     long user = 0;
     long nice = 0;
     long sys = 0;
+    long idle = 0;
+    long io = 0;
+    long irq = 0;
+    long softirq = 0;
     FILE *fp;
 
     fp = fopen(statfile, "r");
     if (fp) {
-        fscanf(fp, "cpu %lu %lu %lu", &user, &nice, &sys);
+        fscanf(fp, "cpu %lu %lu %lu %lu %lu %lu %lu", &user, &nice, &sys, &idle, &io, &irq, &softirq);
         fclose(fp);
     }
-    return (user + nice + sys) / (double)TICKS_PER_SEC;
+    return (user + nice + sys + io + irq + softirq) / (double)TICKS_PER_SEC;
 }
 
 int devIocStatsInitCpuUsage (void) {
