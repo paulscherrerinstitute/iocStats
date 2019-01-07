@@ -40,6 +40,7 @@ filter && $1!~"^[" filter "]" { print "filtered out: " $1 > "/dev/stderr"; next 
         BEGIN       { IOCS["OT"]="" }
         /^$/        { next }      
 test && $1~test     { IOCS["TE"]=IOCS["TE"] "IOC=" $1 ";"; next}
+        /^SGE/      { IOCS["GE"]=IOCS["GE"] "IOC=" $1 ";"; next}
         /^PG/       { IOCS["PG"]=IOCS["PG"] "IOC=" $1 ";"; next}
         /^P.*VME/   { IOCS["PV"]=IOCS["PV"] "IOC=" $1 ";"; next}
         /^P/        { IOCS["PS"]=IOCS["PS"] "IOC=" $1 ";"; next}
@@ -72,7 +73,6 @@ test && $1~test     { IOCS["TE"]=IOCS["TE"] "IOC=" $1 ";"; next}
         /^SLG/      { IOCS["LA"]=IOCS["LA"] "IOC=" $1 ";"; next}
         /^SLAAR/    { IOCS["LA"]=IOCS["LA"] "IOC=" $1 ";"; next}
         /^STS/      { IOCS["TS"]=IOCS["TS"] "IOC=" $1 ";"; next}
-        /^SGE/      { IOCS["GE"]=IOCS["GE"] "IOC=" $1 ";"; next}
         /^SF-/      { IOCS["GE"]=IOCS["GE"] "IOC=" $1 ";"; next}
         /^SIN-/     { IOCS["GE"]=IOCS["GE"] "IOC=" $1 ";"; next}
         /^SARUN-/   { IOCS["ID"]=IOCS["ID"] "IOC=" $1 ";"; next}
