@@ -3353,7 +3353,7 @@
       <string/>
      </property>
      <property name="files">
-      <string>xterm -T $(IOC) -fa Monospace -fs 11 -e &quot;read -p \&quot;user ($USER): \&quot; &amp;&amp; ssh -l \${REPLY:-$USER} -t \&quot;`wget -qO- http://inventory.psi.ch/soap/vmeCabling.ashx|awk '/^$(IOC) /{print $9}'`\&quot; minicom $(IOC) || read a&quot;</string>
+      <string>xterm -T $(IOC) -fa Monospace -fs 11 -e &quot;read -p \&quot;user ($USER): \&quot; &amp;&amp; rmc -u \${REPLY:-$USER} $(IOC) || read a&quot;</string>
      </property>
      <property name="args">
       <string/>
