@@ -51,6 +51,7 @@ long ioccar(unsigned int *pcal, unsigned int *pcalnconn, unsigned int *pcaldconn
     unsigned int	nDisconnect=0;
     caLink		*pca;
     int			j;
+    int			locked=0;
 
     dbInitEntry(pdbbase,&dbentry);
     status = dbFirstRecordType(&dbentry);
@@ -59,22 +60,27 @@ long ioccar(unsigned int *pcal, unsigned int *pcalnconn, unsigned int *pcaldconn
 	while(!status) {
 	    pdbRecordType = dbentry.precordType;
 	    precord = dbentry.precnode->precord;
-            dbScanLock(precord);
 	    for(j=0; j<pdbRecordType->no_links; j++) {
 		pdbFldDes = pdbRecordType->papFldDes[pdbRecordType->link_ind[j]];
 		plink = (DBLINK *)((char *)precord + pdbFldDes->offset);
 		if (plink->type == CA_LINK) {
-	            if (plink->type == CA_LINK) {
-		        ncalinks++;
-		        pca = (caLink *)plink->value.pv_link.pvt;
-		        if(pca && pca->chid && (ca_field_type(pca->chid) != TYPENOTCONN)) {
-		            nconnected++;
-		            nDisconnect += pca->nDisconnect;
-		        }
-	            }
-                }
+		    if (!locked) {
+			dbScanLock(precord);
+			locked = 1;
+			if (plink->type != CA_LINK) continue; /* may have changed meanwhile */
+		    }
+		    ncalinks++;
+		    pca = (caLink *)plink->value.pv_link.pvt;
+		    if (pca && pca->chid && ca_state(pca->chid) == cs_conn) {
+			nconnected++;
+			nDisconnect += pca->nDisconnect;
+		    }
+	        }
 	    }
-            dbScanUnlock(precord);
+	    if (locked) {
+		dbScanUnlock(precord);
+		locked = 0;
+            }
 	    status = dbNextRecord(&dbentry);
 	}
 	status = dbNextRecordType(&dbentry);
