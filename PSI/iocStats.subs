@@ -29,4 +29,5 @@ pattern { IOCNAME, ENVNAME           , ENVVAR                     , ENVTYPE}
 	{ "$(IOC)" , IOC_LOG_INET    , EPICS_IOC_LOG_INET         , epics  }     
 	{ "$(IOC)" , HOST_ARCH       , EPICS_HOST_ARCH            , env    }
 	{ "$(IOC)" , SHELLBOX        , SHELLBOX                   , env    }
+	{ "$(IOC)" , BOOTPC          , BOOTPC                     , env    }
 }
