@@ -1,7 +1,6 @@
 #include <ioLib.h>
 #include <stdio.h>
 #include <symLib.h>
-#include <symLib.h>
 #include <sysSymTbl.h>
 #include <epicsVersion.h>
 #ifdef BASE_VERSION
@@ -16,8 +15,8 @@ int writeCoreReleaseToBuffer(char* buffer, unsigned int size)
     int oldOut, file;
     FUNCPTR memDevCreate, memDevDelete, memDrv;
     FUNCPTR pipeDevCreate, pipeDevDelete, pipeDrv;
-    
-    oldOut = ioGlobalStdGet(1);
+
+    oldOut = ioTaskStdGet(0, 1);
     /* Do we have memDrv ? */
     if (symFindByName(sysSymTbl, "memDrv",       (char**)&memDrv, &type) == 0 &&
         symFindByName(sysSymTbl, "memDevCreate", (char**)&memDevCreate, &type) == 0 &&
@@ -31,9 +30,9 @@ int writeCoreReleaseToBuffer(char* buffer, unsigned int size)
             memDevDelete("/epicsVersion");
             goto pipe;
         }
-        ioGlobalStdSet(1, file);
+        ioTaskStdSet(0, 1, file);
         coreRelease();
-        ioGlobalStdSet(1, oldOut);
+        ioTaskStdSet(0, 1, oldOut);
         close(file);
         memDevDelete("/epicsVersion");
         return 0;
@@ -54,9 +53,9 @@ pipe:
             pipeDevDelete("/epicsVersion", 1);
             goto sockets;
         }
-        ioGlobalStdSet(1, file);
+        ioTaskStdSet(0, 1, file);
         coreRelease();
-        ioGlobalStdSet(1, oldOut);
+        ioTaskStdSet(0, 1, oldOut);
         ioctl(file, FIONMSGS, (int)&n);
         size--;
         while (size && n--)
