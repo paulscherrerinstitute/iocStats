@@ -14,7 +14,6 @@ int writeCoreReleaseToBuffer(char* buffer, unsigned int size)
     SYM_TYPE type;
     int oldOut, file;
     FUNCPTR memDevCreate, memDevDelete, memDrv;
-    FUNCPTR pipeDevCreate, pipeDevDelete, pipeDrv;
 
     oldOut = ioTaskStdGet(0, 1);
     /* Do we have memDrv ? */
