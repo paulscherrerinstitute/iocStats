@@ -1,12 +1,16 @@
+#ifdef _WIN32
+#include <io.h>
+#include <fcntl.h>
+#define fdopen _fdopen
+#define pipe(FDS) _pipe(FDS,1024,_O_BINARY)
+#else
 #define _POSIX_SOURCE
 #include <unistd.h>
+#endif
 #include <stdio.h>
 #include "epicsStdio.h"
 #include "epicsRelease.h"
 
-#ifdef WIN32
-#define fdopen _fdopen
-#endif
 
 int writeCoreReleaseToBuffer(char* buffer, unsigned int size)
 {
