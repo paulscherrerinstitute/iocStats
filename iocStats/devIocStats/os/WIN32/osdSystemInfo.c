@@ -61,6 +61,11 @@ int devIocStatsInitSystemInfo(void) {
                     sprintf(versionstring, "Windows 7/Server 2008 %d.%d(%d)", dwMajorVersion, dwMinorVersion, dwBuild);
                     break;
                 }
+                case(2):
+                {
+                    sprintf(versionstring, "Windows 8/Server 2012 or newer %d.%d(%d)", dwMajorVersion, dwMinorVersion, dwBuild);
+                    break;
+                }
             }
             break;
         }

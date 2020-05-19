@@ -42,20 +42,20 @@ SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdFileSystem.c
 SOURCES_vxWorks += iocStats/devIocStats/os/vxWorks/osdWriteCoreReleaseToBuffer.c
 SOURCES_3.13    += PSI/rsrv.c
 
-#SOURCES_WIN32 += iocStats/devIocStats/os/default/osdCpuUsage.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdCpuUtilization.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdFdUsage.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdMemUsage.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/default/osdWorkspaceUsage.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/default/osdClustInfo.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/default/osdSuspTasks.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/default/osdIFErrors.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdBootInfo.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdSystemInfo.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdHostInfo.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/default/osdPIDInfo.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdFileSystem.c
-#SOURCES_WIN32 += iocStats/devIocStats/os/default/osdWriteCoreReleaseToBuffer.c
+SOURCES_WIN32 += iocStats/devIocStats/os/default/osdCpuUsage.c
+SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdCpuUtilization.c
+SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdFdUsage.c
+SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdMemUsage.c
+SOURCES_WIN32 += iocStats/devIocStats/os/default/osdWorkspaceUsage.c
+SOURCES_WIN32 += iocStats/devIocStats/os/default/osdClustInfo.c
+SOURCES_WIN32 += iocStats/devIocStats/os/default/osdSuspTasks.c
+SOURCES_WIN32 += iocStats/devIocStats/os/default/osdIFErrors.c
+SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdBootInfo.c
+SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdSystemInfo.c
+SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdHostInfo.c
+SOURCES_WIN32 += iocStats/devIocStats/os/default/osdPIDInfo.c
+SOURCES_WIN32 += iocStats/devIocStats/os/WIN32/osdFileSystem.c
+SOURCES_WIN32 += iocStats/devIocStats/os/default/osdWriteCoreReleaseToBuffer.c
 
 ############# OSI sources #############
 SOURCES += iocStats/devIocStats/devIocStatsAnalog.c

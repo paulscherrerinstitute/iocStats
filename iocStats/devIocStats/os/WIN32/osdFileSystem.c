@@ -13,8 +13,8 @@ int devIocStatsGetFileSystemUsage(fsInfo *pval) {
         &availBytes, &totalBytes, &freeBytes))
         return -1;
 
-    pval->fsUsage = 100*(1-(double)availBytes/(double)totalBytes);
+    pval->fsUsage = 100*(1-(double)availBytes.QuadPart/(double)totalBytes.QuadPart);
 
-    pval->fsFreeBytes = (double)availBytes;
+    pval->fsFreeBytes = (double)availBytes.QuadPart;
     return 0;
 }

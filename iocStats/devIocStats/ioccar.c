@@ -36,7 +36,7 @@ of this distribution.
 #endif
 /*--------------------------------------------------------------*/
 
-extern struct dbBase *pdbbase;
+epicsShareExtern struct dbBase *pdbbase;
 
 long ioccar(unsigned int *pcal, unsigned int *pcalnconn, unsigned int *pcaldconn)
 {
