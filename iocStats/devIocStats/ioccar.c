@@ -11,17 +11,23 @@ described on the COPYRIGHT_Combined file included as part
 of this distribution.
 **********************************************************************/
 #include "dbStaticLib.h"
+#include "dbAccess.h"
 /*definitions needed because of old vs new database access*/
 #undef DBR_SHORT
 #undef DBR_PUT_ACKT
 #undef DBR_PUT_ACKS
 #undef VALID_DB_REQ
 #undef INVALID_DB_REQ
+#undef DBR_GR_LONG
+#undef DBR_GR_DOUBLE
+#undef DBR_CTRL_LONG
+#undef DBR_CTRL_DOUBLE
 /*end of conflicting definitions*/
 #include "epicsVersion.h"
 #ifdef BASE_VERSION
 /* R3.13.x */
 #include "semLib.h"
+extern DBBASE *pdbbase;
 #endif
 #include "cadef.h"
 #include "dbCa.h"
@@ -32,11 +38,8 @@ of this distribution.
 /* R3.14.x */
 #include "epicsMutex.h"
 #include "dbCaPvt.h"
-
 #endif
 /*--------------------------------------------------------------*/
-
-epicsShareExtern struct dbBase *pdbbase;
 
 long ioccar(unsigned int *pcal, unsigned int *pcalnconn, unsigned int *pcaldconn)
 {
