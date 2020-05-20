@@ -23,74 +23,61 @@
  */
 
 #include <windows.h>
-#include <epicsStdio.h>
+#include <stdio.h>
 #include <devIocStats.h>
 
-static char* versionstring;
+#define MAX_VERSTRING_SIZE 128
+static char versionstring[MAX_VERSTRING_SIZE] = "\0";
+
+/* Read a registry value of REG_SZ type
+ * Note: Caller should free the returned pointer
+ */
+LPBYTE readRegStringValue(HKEY hKey, LPCSTR lpName) {
+    DWORD cbData;
+    LPBYTE lpData = NULL;
+
+    /* Get value size */
+    if (RegQueryValueEx(hKey, lpName, NULL, NULL, NULL, &cbData) != ERROR_SUCCESS) {
+        return NULL;
+    }
+    /* Alloc memory and read the value. */
+    lpData = calloc(cbData + 1, 1);
+    if (RegQueryValueEx(hKey, lpName, NULL, NULL, lpData, &cbData) != ERROR_SUCCESS) {
+        free(lpData);
+        return NULL;
+    }
+    /* Ensure it is null terminated */
+    lpData[cbData] = 0;
+    return lpData;
+}
 
 int devIocStatsInitSystemInfo(void) {
+    HKEY hKey;
+    LPBYTE lpData = NULL;
+    int j = 0;
 
-    DWORD dwVersion = 0;
-    DWORD dwMajorVersion = 0;
-    DWORD dwMinorVersion = 0;
-    DWORD dwBuild = 0;
+    if (RegOpenKeyEx(HKEY_LOCAL_MACHINE, 
+                "Software\\Microsoft\\Windows NT\\CurrentVersion",
+                0,
+                KEY_READ,
+                &hKey) != ERROR_SUCCESS)
+        return -1;
 
-    dwVersion = GetVersion();
-
-    // Get the Windows version.
-
-    dwMajorVersion = (DWORD) (LOBYTE(LOWORD(dwVersion)));
-    dwMinorVersion = (DWORD) (HIBYTE(LOWORD(dwVersion)));
-
-    // Get the build number.
-
-    if (dwVersion < 0x80000000)
-        dwBuild = (DWORD) (HIWORD(dwVersion));
-    versionstring = calloc(40, 1);
-    switch (dwMajorVersion) {
-        case(6):
-        {
-            switch (dwMinorVersion) {
-                case(0):
-                {
-                    sprintf(versionstring, "Windows Vista/server 2003 %d.%d(%d)", dwMajorVersion, dwMinorVersion, dwBuild);
-                    break;
-                }
-                case(1):
-                {
-                    sprintf(versionstring, "Windows 7/Server 2008 %d.%d(%d)", dwMajorVersion, dwMinorVersion, dwBuild);
-                    break;
-                }
-                case(2):
-                {
-                    sprintf(versionstring, "Windows 8/Server 2012 or newer %d.%d(%d)", dwMajorVersion, dwMinorVersion, dwBuild);
-                    break;
-                }
-            }
-            break;
-        }
-        case(5):
-        {
-            switch (dwMinorVersion) {
-                case(0):
-                {
-                    sprintf(versionstring, "Windows 2000 %d.%d(%d)", dwMajorVersion, dwMinorVersion, dwBuild);
-                    break;
-                }
-                case(1):
-                {
-                    sprintf(versionstring, "Windows XP %d.%d(%d)", dwMajorVersion, dwMinorVersion, dwBuild);
-                    break;
-                }
-                case(2):
-                {
-                    sprintf(versionstring, "Windows Server 2003 %d.%d(%d)", dwMajorVersion, dwMinorVersion, dwBuild);
-                    break;
-                }
-            }
-            break;
-        }
+    /* Product name, e.g. "Windows 10 Enterprise 2016 LTSB", "Windows Server 2016 Standard" */
+    lpData = readRegStringValue(hKey, "ProductName");
+    if (lpData) {
+        j = sprintf_s(versionstring, MAX_VERSTRING_SIZE, "%s", lpData);
+        free(lpData);
     }
+
+    /* More identifiable than build number for Windows 10, e.g. "1607", "2004" */
+    lpData = readRegStringValue(hKey, "ReleaseId");
+    if (lpData) {
+        j = sprintf_s(versionstring + j, MAX_VERSTRING_SIZE - j, " %s", lpData);
+        free(lpData);
+    }
+
+    RegCloseKey(hKey);
     return 0;
 }
 
