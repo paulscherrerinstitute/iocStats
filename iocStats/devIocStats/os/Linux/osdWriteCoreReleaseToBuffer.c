@@ -7,7 +7,7 @@
 
 int writeCoreReleaseToBuffer(char* buffer, unsigned int size)
 {
-    FILE *oldOut = epicsGetThreadStdin();
+    FILE *oldOut = epicsGetThreadStdout();
     FILE *file = fmemopen(buffer, size, "w");
     if (!file) return -1;
     epicsSetThreadStdout(file);

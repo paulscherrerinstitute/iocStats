@@ -18,7 +18,7 @@ int writeCoreReleaseToBuffer(char* buffer, unsigned int size)
     int s;
 
     if (pipe(fd) < 0) return -1;
-    FILE *oldOut = epicsGetThreadStdin();
+    FILE *oldOut = epicsGetThreadStdout();
     FILE *out = fdopen(fd[1], "w");
     epicsSetThreadStdout(out);
     coreRelease();
