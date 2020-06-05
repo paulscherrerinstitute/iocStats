@@ -186,15 +186,14 @@ record(ai, "$(IOCNAME):SYS_CPU_LOAD") {
   field(EGU, "%")
   field(PREC, "1")
   field(HOPR, "100")
-  field(HIHI, "80")
-  field(HIGH, "70")
+  field(HIHI, "$(LOADHIHI=80)")
+  field(HIGH, "$(LOADHI=70)")
   field(HHSV, "MAJOR")
   field(HSV, "MINOR")
   info(autosaveFields_pass0, "HOPR LOPR HIHI HIGH LOW LOLO HHSV HSV LSV LLSV")
 }
 
 record(ai, "$(IOCNAME):IOC_CPU_LOAD") {
-#  alias("$(IOCNAME):LOAD")
   field(DESC, "IOC CPU Load")
   field(SCAN, "I/O Intr")
   field(DTYP, "IOC stats")
@@ -202,8 +201,8 @@ record(ai, "$(IOCNAME):IOC_CPU_LOAD") {
   field(EGU, "%")
   field(PREC, "1")
   field(HOPR, "100")
-  field(HIHI, "80")
-  field(HIGH, "70")
+  field(HIHI, "$(LOADHIHI=80)")
+  field(HIGH, "$(LOADHI=70)")
   field(HHSV, "MAJOR")
   field(HSV, "MINOR")
   info(autosaveFields_pass0, "HOPR LOPR HIHI HIGH LOW LOLO HHSV HSV LSV LLSV")
