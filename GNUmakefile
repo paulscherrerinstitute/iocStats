@@ -2,7 +2,7 @@ include /ioc/tools/driver.makefile
 
 MODULE=iocStats
 
-BUILDCLASSES += Linux
+BUILDCLASSES += vxWorks Linux WIN32
 
 ############# OSD sources #############
 # Base 3.14 does not correctly define POSIX=NO for mingw
