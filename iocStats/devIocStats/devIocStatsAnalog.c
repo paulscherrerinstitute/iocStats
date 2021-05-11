@@ -671,7 +671,7 @@ static long ao_init_record(aoRecord* pr)
 	if(pvt==NULL)
 	{
 		recGblRecordError(S_db_badField,(void*)pr,
-			"devAiStats (init_record) Illegal INP parm field");
+			"devAiStats (init_record) Illegal OUT parm field");
 		return S_db_badField;
 	}
 
