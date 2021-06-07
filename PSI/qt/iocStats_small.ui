@@ -116,35 +116,6 @@ border-radius: 2px;
 </string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="caRelatedDisplay" name="caRelatedDisplay_0">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>170</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="background">
-     <color>
-      <red>183</red>
-      <green>157</green>
-      <blue>92</blue>
-     </color>
-    </property>
-    <property name="labels">
-     <string>$(IOC)</string>
-    </property>
-    <property name="files">
-     <string>iocStats.ui</string>
-    </property>
-    <property name="args">
-     <string>IOC=$(IOC)</string>
-    </property>
-    <property name="removeParent" stdset="0">
-     <string>false</string>
-    </property>
-   </widget>
    <widget class="caLineEdit" name="calineedit_30">
     <property name="geometry">
      <rect>
@@ -176,6 +147,102 @@ border-radius: 2px;
      <enum>caLineEdit::string</enum>
     </property>
    </widget>
+   <widget class="caFrame" name="caframe_1">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>181</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="visibility">
+     <enum>caFrame::Calc</enum>
+    </property>
+    <property name="visibilityCalc">
+     <string notr="true">G=0</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(IOC):TOD</string>
+    </property>
+    <widget class="caRelatedDisplay" name="caRelatedDisplay_1">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>170</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="background">
+      <color>
+       <red>183</red>
+       <green>157</green>
+       <blue>92</blue>
+      </color>
+     </property>
+     <property name="labels">
+      <string>$(IOC)</string>
+     </property>
+     <property name="files">
+      <string>G_IOCMON_ioc_status.ui</string>
+     </property>
+     <property name="args">
+      <string>IOC=$(IOC)</string>
+     </property>
+     <property name="removeParent" stdset="0">
+      <string>false</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="caFrame" name="caframe_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>181</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="visibility">
+     <enum>caFrame::Calc</enum>
+    </property>
+    <property name="visibilityCalc">
+     <string notr="true">G&gt;0</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(IOC):TOD</string>
+    </property>
+    <widget class="caRelatedDisplay" name="caRelatedDisplay_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>170</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="background">
+      <color>
+       <red>183</red>
+       <green>157</green>
+       <blue>92</blue>
+      </color>
+     </property>
+     <property name="labels">
+      <string>$(IOC)</string>
+     </property>
+     <property name="files">
+      <string>iocStats.ui</string>
+     </property>
+     <property name="args">
+      <string>IOC=$(IOC)</string>
+     </property>
+     <property name="removeParent" stdset="0">
+      <string>false</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <customwidgets>
@@ -183,6 +250,12 @@ border-radius: 2px;
    <class>caRelatedDisplay</class>
    <extends>QWidget</extends>
    <header>caRelatedDisplay</header>
+  </customwidget>
+  <customwidget>
+   <class>caFrame</class>
+   <extends>QFrame</extends>
+   <header>caFrame</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>caLineEdit</class>
