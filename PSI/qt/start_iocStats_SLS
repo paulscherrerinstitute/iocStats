@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# Find all IOCs in the given facility
+# Sort alphabetically, then sort by location and finally group by topic.
+
+TEST='TEST|-GJ'
+EXCLUDE='^S.*-[CL]CAM'
+
+[ ${FACILITY:=${PSI_GFA_FACILITY:=SF}} == SF ] && FACILITY=SWISSFEL
+[ $PSI_GFA_FACILITY == SLS ] && FILTER=AX || FILTER=${PSI_GFA_FACILITY:0:1}
+
+
+#show a little dialog box
+zenity --progress --pulsate --title "IOC status" --text "Collecting $FACILITY IOC information\nfrom Inventory ..." <<<1 &
+
+ulimit -n 4096
+
+#test && $1~test     { IOCS["TE"]=IOCS["TE"] "IOC=" $1 ";"; next}
+
+
+caqtdm >/dev/null -noMsg -macro $(
+    wget -q -O - "http://epics-boot-info.psi.ch/find-channel.aspx/%:UPTIME?limit=0&format=csv&header=no&facility=$FACILITY" | sort -V \
+    | awk -F : -v exclude=$EXCLUDE -v filter=$FILTER '
+exclude && $1~exclude { next }         
+filter && $1!~"^[" filter "]" { print "filtered out: " $1 > "/dev/stderr"; next }         
+        /^ACO/      { ACO  = ACO  $1 "\n"; next }
+        /^ALI/      { ALI  = ALI  $1 "\n"; next }
+        /^ALB/      { ALB  = ALB  $1 "\n"; next }
+        /^ABO/      { ABO  = ABO  $1 "\n"; next }
+        /^ABT/      { ABT  = ABT  $1 "\n"; next }
+        /^ABR/      { ABR  = ABR  $1 "\n"; next }
+        /^ARI/      { ARI  = ARI  $1 "\n"; next }
+                    { OTH  = OTH  $1 "\n"; next }
+        END { print ACO ALI ALB ABO ABT ABR ARI OTH}' \
+    | awk -v test=$TEST '
+        BEGIN       { IOCS["OT"]="" }
+        /^$/        { next }      
+        /^ARIAL/    { IOCS["AL"]=IOCS["AL"] "IOC=" $1 ";"; next}     
+        /^A.*-VCS/  { IOCS["VA"]=IOCS["VA"] "IOC=" $1 ";"; next}
+        /^A.*VA-/   { IOCS["VA"]=IOCS["VA"] "IOC=" $1 ";"; next}
+        /^ALIMA/    { IOCS["MA"]=IOCS["MA"] "IOC=" $1 ";"; next} 
+        /^ALBMA/    { IOCS["MA"]=IOCS["MA"] "IOC=" $1 ";"; next} 
+        /^ABOMA/    { IOCS["MA"]=IOCS["MA"] "IOC=" $1 ";"; next}
+        /^ABRMA/    { IOCS["MA"]=IOCS["MA"] "IOC=" $1 ";"; next} 
+        /^ARIMA/    { IOCS["MA"]=IOCS["MA"] "IOC=" $1 ";"; next} 
+        /^ALIRF/    { IOCS["RF"]=IOCS["RF"] "IOC=" $1 ";"; next}
+        /^ABORF/    { IOCS["RF"]=IOCS["RF"] "IOC=" $1 ";"; next}
+        /^ABTRF/    { IOCS["RF"]=IOCS["RF"] "IOC=" $1 ";"; next}
+        /^ATSRF/    { IOCS["RF"]=IOCS["RF"] "IOC=" $1 ";"; next}
+        /^ARIRF/    { IOCS["RF"]=IOCS["RF"] "IOC=" $1 ";"; next}             
+        /^ACORF/    { IOCS["TI"]=IOCS["TI"] "IOC=" $1 ";"; next}
+        /^A.*DI.*-BPM/ { IOCS["BPM"]=IOCS["BPM"] "IOC=" $1 ";"; next}
+        /^A.*DI.*-C[0-9]/  { IOCS["BPM"]=IOCS["BPM"] "IOC=" $1 ";"; next}
+        /^A.*DI.*-TU/ { IOCS["BPM"]=IOCS["BPM"] "IOC=" $1 ";"; next}
+        /^A.*DI/   { IOCS["DI"]=IOCS["DI"] "IOC=" $1 ";"; next}
+        /^X.*-.*ID/ { IOCS["ID"]=IOCS["ID"] "IOC=" $1 ";"; next}
+        /^X0[1-9].*-.*/ { IOCS["BEAM"]=IOCS["BEAM"] "IOC=" $1 ";"; next}
+        /^X1[0-2].*-.*/ { IOCS["BEAM"]=IOCS["BEAM"] "IOC=" $1 ";"; next}
+                    { IOCS["OT"]=IOCS["OT"] "IOC=" $1 ";"; }
+    END { for (i in IOCS) { printf ("%s_IOCS=%s,", i, IOCS[i]) }
+}'; kill $!) iocStats_${PSI_GFA_FACILITY}_overview.ui
