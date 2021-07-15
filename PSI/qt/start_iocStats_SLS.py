@@ -13,9 +13,10 @@ pro = subprocess.Popen(proc_cmd, stdout=subprocess.PIPE,
                        shell=True, preexec_fn=os.setsid) 
 
 os.system("ulimit -n 4096")
-
-#stream = os.popen('wget -q -O - "http://epics-boot-info.psi.ch/find-channel.aspx/%:UPTIME?limit=0&format=csv&header=no&facility=SLS" | sort | awk -F , \'{ print $1 }\'')
-stream = os.popen("ioc boots -f SLS|awk '{ print $1 }'")
+#stream = os.popen("ioc boots -f SLS|awk '{ print $1 }'")
+#alternative with web service
+#curl 'http://iocinfo.psi.ch/api/v2/records?pattern=.*%3AUPTIME&facility=sls' | jq -r '.[].ioc' | uniq
+stream = os.popen("ioc records --facility sls '.*:UPTIME$' | awk -F '  +' '{print $4}' | uniq")
 output = stream.read()
 iocs = output.split("\n")
 
@@ -36,25 +37,25 @@ for ioc in iocs:
     if re.search('TEST', ioc) or re.search('^[A,X]', ioc)==None:
         continue
     if re.search('^ARIAL', ioc):
-        IOCs["AL_IOCS"].append(ioc.split(':')[0])
+        IOCs["AL_IOCS"].append(ioc)
     elif re.search('^ACORF', ioc):
         IOCs["TI_IOCS"].append(ioc.split(':')[0])
     elif re.search('^A.*-VCS', ioc) or re.search('^A.*VA-', ioc):
-        IOCs["VA_IOCS"].append(ioc.split(':')[0])
+        IOCs["VA_IOCS"].append(ioc)
     elif re.search('^ALIMA', ioc) or re.search('^ALBMA', ioc) or re.search('^ABOMA', ioc) or re.search('^ABRMA', ioc) or re.search('^ARIMA', ioc):
-        IOCs["MA_IOCS"].append(ioc.split(':')[0])
+        IOCs["MA_IOCS"].append(ioc)
     elif re.search('^ALIRF', ioc) or re.search('^ABORF', ioc) or re.search('^ABTRF', ioc) or re.search('^ATSRF', ioc) or re.search('^ARIRF', ioc):
-        IOCs["RF_IOCS"].append(ioc.split(':')[0])
+        IOCs["RF_IOCS"].append(ioc)
     elif re.search('^A.*DI.*-BPM', ioc) or re.search('^A.*DI.*-C[0-9]', ioc) or re.search('^A.*DI.*-TU', ioc):
-        IOCs["BPM_IOCS"].append(ioc.split(':')[0])
+        IOCs["BPM_IOCS"].append(ioc)
     elif re.search('^A.*DI.*', ioc):
-        IOCs["DI_IOCS"].append(ioc.split(':')[0])
+        IOCs["DI_IOCS"].append(ioc)
     elif re.search('^X.*-.*ID', ioc):
-        IOCs["ID_IOCS"].append(ioc.split(':')[0])
+        IOCs["ID_IOCS"].append(ioc)
     elif re.search('X0[1-9].*-.*', ioc) or re.search('X1[0-2].*-.*', ioc):
-        IOCs["BEAM_IOCS"].append(ioc.split(':')[0])
+        IOCs["BEAM_IOCS"].append(ioc)
     else:
-        IOCs["OT_IOCS"].append(ioc.split(':')[0])
+        IOCs["OT_IOCS"].append(ioc)
             
 macro_param = ""
 for i in IOCs:
