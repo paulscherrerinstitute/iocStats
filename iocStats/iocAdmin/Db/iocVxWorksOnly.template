@@ -23,3 +23,10 @@ record(ai, "$(IOCNAME):DAT_MBUF_MAX") {
   field(INP, "@data_mbuf")
   field(PINI, "YES")
 }
+
+record (sub,"$(IOC):RESTART")
+{
+    alias ("$(IOC):REBOOT")
+    field (DESC,"Channel to restart IOC")
+    field (SNAM,"reboot")
+}
